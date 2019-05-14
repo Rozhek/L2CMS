@@ -1,0 +1,242 @@
+<div id="page-wrapper" class="page-loading"><!-- Preloader -->
+    <!-- Preloader functionality (initialized in js/app.js) - pageLoading() -->
+    <!-- Used only if page preloader is enabled from inc/config (PHP version) or the class 'page-loading' is added in #page-wrapper element (HTML version) -->
+    <div class="preloader themed-background"><h1 class="push-top-bottom text-light text-center"><strong>Your Title</h1>
+
+        <div class="inner"><h3 class="text-light visible-lt-ie9 visible-lt-ie10"><strong>Загрузка..</strong></h3>
+
+            <div class="preloader-spinner hidden-lt-ie9 hidden-lt-ie10"></div>
+        </div>
+    </div>
+    <div id="page-container" class="sidebar-partial sidebar-visible-lg">
+        <!-- Sidebar -->
+        #parse("cp/ru/menu.vm")
+        <!-- END Sidebar -->
+        <!-- Main Container -->
+        <div id="main-container">
+            <!-- Header -->
+            #parse("cp/ru/account/pagemenu.vm")
+            <div id="page-content">
+                <style> /*scroll bar*/ @-webkit-keyframes myanimation { from { left: 0%; } to { left: 50%; } } h1 {
+                    text-align: center; font-weight: 400; font-size: 20px; padding: 20px 0; color: #777; }
+                    .checkout-wrap { color: #444; margin: 10px auto; /*max-width: 1200px;*/ position: relative; }
+                    ul.checkout-bar li { color: #ccc; display: block; font-size: 16px; font-weight: 600; padding: 14px
+                    20px 14px 80px; position: relative; } ul.checkout-bar li:before { -webkit-box-shadow: inset 2px 2px
+                    2px 0px rgba(0, 0, 0, 0.2); box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.2); background: #ddd;
+                    border: 2px solid #FFF; border-radius: 50%; color: #fff; font-size: 16px; font-weight: 700; left:
+                    20px; line-height: 37px; height: 35px; position: absolute; text-align: center; text-shadow: 1px 1px
+                    rgba(0, 0, 0, 0.2); top: 4px; width: 35px; z-index: 16; } ul.checkout-bar li.active { color:
+                    #8bc53f; font-weight: bold; } ul.checkout-bar li.active:before { background: #8bc53f; z-index: 17; }
+                    ul.checkout-bar li.visited { background: #ECECEC; color: #57aed1; z-index: 17; } ul.checkout-bar
+                    li.visited:before { background: #57aed1; z-index: 17; } ul.checkout-bar li:nth-child(1):before {
+                    content: "3%"; } ul.checkout-bar li:nth-child(2):before { content: "5%"; } ul.checkout-bar
+                    li:nth-child(3):before { content: "10%"; } ul.checkout-bar li:nth-child(4):before { content: "15%"; }
+                    ul.checkout-bar li:nth-child(5):before { content: "20%"; } ul.checkout-bar a { color: #57aed1;
+                    font-size: 16px; font-weight: 600; text-decoration: none; } @media all and (min-width: 800px) {
+                    .checkout-bar li.active:after { -webkit-animation: myanimation 3s 0; background-size: 35px 35px;
+                    background-color: #8bc53f; background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255,
+                    0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2)
+                    75%, transparent 75%, transparent); background-image: -moz-linear-gradient(-45deg, rgba(255, 255,
+                    255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255,
+                    0.2) 75%, transparent 75%, transparent); -webkit-box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0,
+                    0.2); box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.2); content: ""; height: 15px; width: 100%;
+                    left: 50%; position: absolute; top: -50px; z-index: 0; } /*.checkout-wrap { margin: 80px auto; }*/
+                    ul.checkout-bar { -webkit-box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.2); box-shadow: inset
+                    2px 2px 2px 0px rgba(0, 0, 0, 0.2); background-size: 35px 35px; background-color: #EcEcEc;
+                    background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%,
+                    transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%,
+                    transparent); background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.4) 25%,
+                    transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%,
+                    transparent 75%, transparent); border-radius: 15px; height: 15px; margin: 0 auto; padding: 0;
+                    position: absolute; width: 100%; } ul.checkout-bar:before { background-size: 35px 35px;
+                    background-color: #57aed1; background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255,
+                    0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2)
+                    75%, transparent 75%, transparent); background-image: -moz-linear-gradient(-45deg, rgba(255, 255,
+                    255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255,
+                    0.2) 75%, transparent 75%, transparent); -webkit-box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0,
+                    0.2); box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.2); border-radius: 15px; content: " ";
+                    height: 15px; left: 0; position: absolute; width: 8.6%; } ul.checkout-bar li { display:
+                    inline-block; margin: 50px 0 0; padding: 0; text-align: center; width: 18.2%; } ul.checkout-bar
+                    li:before { height: 45px; left: 45%; line-height: 45px; position: absolute; top: -65px; width: 45px;
+                    z-index: 15; } ul.checkout-bar li.visited { background: none; } ul.checkout-bar li.visited:after {
+                    background-size: 35px 35px; background-color: #57aed1; background-image:
+                    -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%,
+                    rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+                    background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%,
+                    transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%,
+                    transparent); -webkit-box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.2); box-shadow: inset 2px
+                    2px 2px 0px rgba(0, 0, 0, 0.2); content: ""; height: 15px; left: 50%; position: absolute; top:
+                    -50px; width: 100%; z-index: 15; } } ul.checkout-bar { margin:0 auto 40px !important; position:
+                    static !important; }
+                </style>
+                <div class="content-header">
+                    <div class="header-section">
+                        <div class="checkout-wrap">
+                            <ul class="checkout-bar">
+                                <li class="">300</li>
+                                <li class="">1000</li>
+                                <li class="">2000</li>
+                                <li class="">3500</li>
+                                <li class="">7000</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-sm-8">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <style> .active-pay { position: absolute; opacity: -1; } .enable-donate.active-pay {
+                                    position: absolute; margin: -157px 0px 0px 178px; opacity: 1; }
+                                </style>
+                                <div class="block">
+                                    <!-- Input Sizes Title -->
+                                    <div class="block-title"><h2>Пожертвование <strong> на Мастер Аккаунт!</strong>
+                                    </h2></div>
+                                    <!-- END Input Sizes Title -->
+                                    <!-- Input Sizes Content -->
+                                    <form id="donat-form-send" action="" method="post" class="form-horizontal form-bordered">
+                                        <input type="hidden" name="account" value="${name}">
+                                        <input type="hidden" name="module" value="block_wedget_payment_agrigator">
+                                        <input type="hidden" name="method" id="method-pay" value="unitpay">
+                                        <input type="hidden" name="desc" value="Покупка внутриигровой валюты">
+
+                                        <div class="form-group">
+	                                        #if($unitpayEnabled)
+                                            <div class="col-sm-4 col-sm-offset-1">
+                                                <button type="button" data-pay="unitpay" class="btn btn-alt btn-lg btn-default donat-pay enable-donate animation-pulse">
+                                                    <img width="200" src="/account/payment_agrigator/unitpay.jpg" alt="">
+                                                    <div class="active-pay themed-color"><i class="fa fa-certificate"></i></div>
+                                                </button>
+                                            </div>
+	                                        #end
+	                                        #if($g2aEnabled)
+                                            <div class="col-sm-4 ">
+                                                <button type="button" data-pay="g2a" class="btn btn-alt btn-lg btn-default donat-pay ">
+                                                    <img width="200" src="/account/payment_agrigator/g2apay.jpg" alt="">
+                                                    <div class="active-pay themed-color"><i class="fa fa-certificate"></i></div>
+                                                </button>
+                                            </div>
+	                                        #end
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="val_number">Укажите сумму <span class="text-danger" title="Укажите сумму">*</span></label>
+
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+                                                    <input type="hidden" name="sum" id="sum" value="0">
+                                                    <input type="number" id="enter_sum" class="form-control" placeholder="1.0">
+                                                    <span class="input-group-addon" title="Бонус Gold">
+                                                        <i class="fa fa-plus"></i>
+                                                        <span id="bonus" style="font-weight: bold;">0</span> Бонус</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group form-actions">
+                                            <div class="col-sm-9 col-sm-offset-5">
+                                                <button type="submit" id="btn-pay-agrigator" class="btn btn-sm btn-primary submit-btn"> Пополнить </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- END Input Sizes Content -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="block">
+                                    <!-- Input Groups - Icons/Text Title -->
+                                    <div class="block-title"><h2><strong>Бонус код</strong> Активация</h2></div>
+                                    <!-- END Input Groups - Icons/Text Title -->
+                                    <!-- Input Groups Content -->
+                                    <form name="get_bonus_cod" action="" class="form-horizontal" method="post" onsubmit="return false;">
+                                        <input type="hidden" name="module" value="block_wedget_bonus_cod">
+
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-gift"></i></span>
+                                                    <input type="text" name="bonus-cod" class="form-control" placeholder="Введите бонус код">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="impute-hide-cod" style="display: none">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                                        <select id="account-bonus-cod" name="account" class="form-control" size="1">
+                                                            <option value="0">Выберите аккаунт</option>
+                                                            #foreach($account in $accounts)<option value="$account.account">$account.account</option>#end
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group" id="char-list-bonus-cod" style="display: none">
+                                                <div class="col-md-12">
+                                                    <div class="input-group"><span class="input-group-addon">
+                                                        <i class="fa fa-street-view"></i></span>
+                                                        <select id="select-char-id-bonus-cod" name="char" class="form-control" size="1">
+                                                            <option value="0">Выберите персонажа</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group form-actions ">
+                                            <button type="submit" class="center-block btn btn-sm btn-default submit-btn">Активировать</button>
+                                        </div>
+                                    </form>
+                                    <!-- END Input Groups - Icons/Text Content -->
+                                </div>
+                                <script>
+                                     var char_list_bonus = new Array(); #foreach($account in $accounts) char_list_bonus["$account.account"] = new Array( #foreach($player in $playersArray.get("$account.account")) {value:'$player',name:'$player'}#if($foreach.hasNext),#end #end ); #end
+                                </script>
+                                <div class="block">
+                                    <!-- Responsive Full Title -->
+                                    <div class="block-title"><h2><strong>Бонусы</strong> за пополнение!</h2></div>
+                                    <!-- END Responsive Full Title -->
+                                    <!-- Responsive Full Content -->
+                                    <div class="table-responsive text-center">
+                                        <table class="table table-vcenter table-striped">
+                                            <tbody>
+                                            <tr>
+                                                <td>От 300 Gold</td>
+                                                <td><span class="label label-warning">+3%</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>От 1000 Gold</td>
+                                                <td><span class="label label-warning">+5%</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>От 2000 Gold</td>
+                                                <td><span class="label label-warning">+10%</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>От 3500 Gold</td>
+                                                <td><span class="label label-warning">+15%</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>От 7000 Gold</td>
+                                                <td><span class="label label-warning">+20%</span></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- END Responsive Full Content -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="clearfix">
+                <div class="pull-left"><span id="year-copy"></span> &copy; <a href="http://${domain}/" target="_blank">${domain}</a></div>
+            </footer>
+        </div>
+    </div>
+</div>
+<!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
+<a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>

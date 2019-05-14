@@ -1,0 +1,90 @@
+<header class="navbar navbar-default">
+    <!-- Navbar Header -->
+    <div class="navbar-header">
+        <!-- Horizontal Menu Toggle + Alternative Sidebar Toggle Button, Visible only in small screens (< 768px) -->
+        <!--ul class="nav navbar-nav-custom pull-right visible-xs">
+            <li>
+                <a href="javascript:void(0)" data-toggle="collapse" data-target="#horizontal-menu-collapse">Menu</a>
+            </li>
+            <li><a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar-alt');"><i
+                    class="fa fa-envelope"></i><span
+                    class="label label-primary label-indicator animation-floating">1</span></a></li>
+        </ul-->
+        <!-- END Horizontal Menu Toggle + Alternative Sidebar Toggle Button -->
+        <!-- Main Sidebar Toggle Button -->
+        <ul class="nav navbar-nav-custom">
+            <li>
+                <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar');this.blur();"><i class="fa fa-bars fa-fw"></i></a>
+            </li>
+        </ul>
+        <!-- END Main Sidebar Toggle Button -->
+    </div>
+    <!-- END Navbar Header -->
+    <!--ul class="nav navbar-nav-custom pull-right hidden-xs">
+        <li><a href="javascript:void(0)"
+               onclick="App.sidebar('toggle-sidebar-alt', 'toggle-other');this.blur();"><i
+                class="fa fa-envelope"></i><span
+                class="label label-danger label-indicator animation-floating">1</span></a></li>
+    </ul-->
+    <div id="horizontal-menu-collapse" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#modal-restart" data-toggle="modal"><i class="hi hi-off"></i> Перезагрузка</a>
+            </li>
+            <div id="modal-restart" class="modal animation-fadeInQuick" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title"> <strong>Перезагрузить</strong> Вебсайт</h4>
+                        </div>
+                        <div class="modal-body">
+                                <p>Вы действительно хоитите перезагрузить вебсайт? </p>
+                                <div class="form-group form-actions">
+                                    <div style="min-height: 30px">
+                                        <div class="col-xs-1"></div>
+                                        <div class="col-xs-3">
+                                            <a href="/admin/restart" class="btn btn-sm btn-danger"><i class="fa fa-angle-right"></i> Да</a>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <button type="button" data-dismiss="modal" class="btn btn-sm btn-default"><i class="fa fa-angle-right"></i> Нет</button>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div></div></div></div>
+            <li>
+                <a href="/admin/mail"><i class="hi hi-envelope"></i> Рассылка</a>
+            </li>
+            <li>
+                <a href="/admin/news"><i class="gi gi-notes"></i> Новости</a>
+            </li>
+	        <li>
+		        <a href="/admin/blocks"><i class="gi gi-sort"></i> Блоки</a>
+	        </li>
+            <li>
+                <a href="/admin/support"><i class="gi gi-headset"></i> Поддержка</a>
+            </li>
+	        <li class="dropdown">
+		        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Язык <img width="25" src="/account/img/flag/rus.png">
+			        <i class="fa fa-angle-down"></i>
+		        </a>
+		        <ul class="dropdown-menu">
+			        <li>
+				        <a lang="en" href="javascript:void(0)">English <img class="pull-right" width="25" src="/account/img/flag/eng.png"></a>
+			        </li>
+			        <li>
+				        <a lang="ru" href="javascript:void(0)">Русский <img class="pull-right" width="25" src="/account/img/flag/rus.png"></a>
+			        </li>
+		        </ul>
+	        </li>
+        </ul>
+        <ul style="float: right;" class="nav navbar-nav">
+            <li>
+                <a href="/account/log"><i class="fi fi-log"></i> Лог</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="exit-mw" data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="gi gi-exit"></i> Выход</a>
+            </li>
+        </ul>
+    </div>
+</header>

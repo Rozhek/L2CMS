@@ -1,0 +1,49 @@
+<div class="tab-pane" id="news-edit">
+    <div class="block-content-full">
+        <div class="block" style="border: 0px;">
+            <div class="text-center"><h3><strong>Create news</strong></h3></div>
+            <!-- Basic Form Elements Content -->
+            <form class="form-horizontal" action="#springUrl("/admin/news/add")">
+
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="example-text-input">Title</label>
+                <div class="col-md-8">
+                    #springFormInput("news.title" 'type="text" class="form-control" placeholder="Enter the title of news"')
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="example-textarea-input">Content</label>
+                <div class="col-md-8">
+                    #springFormTextarea("news.content" 'id="example-textarea-input" rows="9" class="form-control" placeholder="Text..."')
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="example-text-input">Link</label>
+                <div class="col-md-8">
+                    #springFormInput("news.link" 'type="text" class="form-control" placeholder="Enter the link on forum"')
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="example-text-input">Image</label>
+                <div class="col-md-5">
+                    <input type="file" name="file">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="example-select">Language</label>
+                <div class="col-md-3">
+                    <select class="form-control" size="1" name="lang">
+                        <option selected value="ru">Russian</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group form-actions">
+                <div class="col-md-3 col-md-offset-2">
+                    <button type="submit" class="btn btn-sm btn-primary submit-multipart"><i
+                            class="fa fa-angle-right"></i> Post </button>
+                </div>
+            </div>
+            </form><!-- END Basic Form Elements Content --></div>
+    </div>
+</div>

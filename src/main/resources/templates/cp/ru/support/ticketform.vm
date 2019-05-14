@@ -1,0 +1,72 @@
+<div class="block" style="border: 0px;">
+    <div class="text-center"><h3><strong>Новая заявка</strong></h3></div>
+    <!-- Basic Form Elements Content -->
+    <form name="support" action="" class="form-horizontal" method="post" onsubmit="return false;">
+        <input type="hidden" name="module" value="block_wedget_support">
+        <input type="hidden" name="send" value="tickets-new">
+        <div class="form-group">
+            <label class="col-md-3 control-label" for="example-select">Сервер</label>
+            <div class="col-md-9">
+                <select id="server" name="support_server" class="form-control" size="1">
+                    <option value="0">Выберите сервер</option>
+                    <option value="1" selected>High Five x30</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label" for="example-select">Аккаунт</label>
+            <div class="col-md-9">
+                <select id="account_name" name="support_account_name" class="form-control" size="1">
+                <option value="0">Выберите аккаунт</option>
+                #foreach($account in $accounts)<option value="$account.account">$account.account</option>#end
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label" for="example-select">Персонаж</label>
+            <div class="col-md-9">
+                <select id="char_id" name="support_char_name" class="form-control" size="1">
+                <option value="0">Выберите персонажа</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label" for="example-select">Категория</label>
+            <div class="col-md-9"><select name="support_category" class="form-control" size="1">
+                <option value="0">Выберите категорию</option>
+                <option value="1">Общие вопросы</option>
+                <option value="2">Сайт, Форум, Кабинет</option>
+                <option value="3">Ошибки клиента</option>
+                <option value="4">Ошибки игры</option>
+                <option value="5">Блокировка аккаунта / персонажа</option>
+                <option value="6">Кража предметов</option>
+                <option value="7">Сообщить о софте</option>
+                <option value="8">Проблема с пополнением баланса</option>
+                <option value="9">Другое</option>
+            </select></div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label" for="example-text-input">Тема</label>
+            <div class="col-md-9">
+                <input type="text" name="support_title" class="form-control"
+                                         placeholder="Введите тему сообщения" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label" for="example-textarea-input">Сообщение</label>
+            <div class="col-md-9">
+                <textarea id="example-textarea-input" name="support_message" rows="9"
+                                            class="form-control" placeholder="Сообщение..." required></textarea>
+            </div>
+        </div>
+        <div class="form-group form-actions">
+            <div class="col-md-9 col-md-offset-3">
+                <button type="submit" class="btn btn-sm btn-primary submit-btn"><i class="fa fa-angle-right"></i> Отправить </button>
+            </div>
+        </div>
+    </form>
+    <!-- END Basic Form Elements Content -->
+</div>
+<script>
+var char_support = new Array(); #foreach($account in $accounts) char_support["$account.account"] = new Array( #foreach($player in $players)#if($player.accountId == $account.id)#if($result),#end {value:'$player.name',name:'$player.name'}#set($result=true)#end#end ); #end
+</script>

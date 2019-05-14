@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if IE 9]><html class="no-js lt-ie10"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Lineage - your title</title>
+    <meta name="description" content="Lineage - your title">
+    <meta name="author" content="You">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0"><!-- Icons -->
+    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"><!-- END Icons -->
+    <!-- Stylesheets --><!-- Bootstrap is included in its original form, unaltered -->
+    <link rel="stylesheet" href="/account/css/bootstrap.min.css">
+    <!-- Related styles of various icon packs and plugins -->
+    <link rel="stylesheet" href="/account/css/plugins.css">
+    <!-- The main stylesheet of this template. All Bootstrap overwrites are defined in here -->
+    <link rel="stylesheet" href="/account/css/main.css">
+    <!-- Include a specific file here from css/themes/ folder to alter the default theme of the template -->
+    <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
+    <link rel="stylesheet" href="/account/css/themes.css"><!-- END Stylesheets -->
+    <!-- Modernizr (browser feature detection library) & Respond.js (enables responsive CSS code on browsers that don't support it, eg IE8) -->
+    <script src="/account/js/vendor/modernizr-respond.min.js"></script>
+    <style type="text/css">.jqstooltip { width: auto !important; height: auto !important; position: absolute;left:
+        0px;top: 0px;visibility: hidden;background: #000000;color: white;font-size: 11px;text-align: left;white-space:
+        nowrap;padding: 5px;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}
+    </style>
+    <style type="text/css">.jqstooltip { width: auto !important; height: auto !important; position: absolute;left:
+        0px;top: 0px;visibility: hidden;background: #000000;color: white;font-size: 11px;text-align: left;white-space:
+        nowrap;padding: 5px;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}
+    </style>
+</head>
+<body><!-- Coming Soon Background -->
+<!-- For best results use an image with a resolution of 1280x1280 pixels (prefer a blurred image for smaller file size) -->
+<!-- Coming Soon -->
+<div class="full-page-container text-center">
+    <!-- Title -->
+    <h1 class="text-light">
+        <img style=" margin-top: -6px;" src="/site/images/logo.png">
+    </h1>
+
+    <h3 class="h3 text-light">$messagetitle</h3>
+    <!-- END Title -->
+    <!-- Countdown -->
+    <div class="full-page-section">
+        <h2 class="h3 text-light push">$messagetext</h2>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="btn-group">
+                    <a href="/login" class="btn btn-danger"><strong>Кабинет</strong></a>
+                    <a href="http://forum.${domain}/" class="btn btn-danger"><strong>Форум</strong></a></div>
+            </div>
+        </div>
+    </div>
+    <!-- END Countdown -->
+    <!-- Subscribe Form -->
+    <div class="h5 text-light push">© 2018 — ДАННЫЙ СЕРВЕР ЯВЛЯЕТСЯ ТЕСТОВЫМ ВАРИАНТОМ ИГРЫ LINEAGE II И ПРЕДНАЗНАЧЕН ТОЛЬКО ДЛЯ ОЗНАКОМЛЕНИЯ ИГРОКОВ. ВСЕ ПРАВА ПРИНАДЛЕЖАТ КОМПАНИИ NCSOFT.</div>
+    <!-- END Subscribe Form -->
+</div>
+<!-- END Coming Soon -->
+<!--[if IE 8]>
+<script src="/account/js/helpers/excanvas.min.js"></script><![endif]-->
+<!-- jQuery, Bootstrap.js, jQuery plugins and Custom JS code -->
+<script src="/account/js/vendor/jquery-1.11.3.min.js"></script>
+<script src="/account/js/vendor/jquery.cookie.js"></script>
+<script src="/account/js/vendor/bootstrap.min.js"></script>
+<script src="/account/js/plugins.js"></script>
+<script src="/account/js/app.js"></script>
+</body>
+</html>

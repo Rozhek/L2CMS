@@ -1,0 +1,1392 @@
+<div id="page-wrapper" class="page-loading">
+    <!-- Preloader -->
+    <!-- Preloader functionality (initialized in js/app.js) - pageЗагрузка.) -->
+    <!-- Used only if page preloader is enabled from inc/config (PHP version) or the class 'page-loading' is added in #page-wrapper element (HTML version) -->
+    <div class="preloader themed-background"><h1 class="push-top-bottom text-light text-center"><strong>Your Title</h1>
+
+        <div class="inner"><h3 class="text-light visible-lt-ie9 visible-lt-ie10"><strong>Загрузка..</strong></h3>
+
+            <div class="preloader-spinner hidden-lt-ie9 hidden-lt-ie10"></div>
+        </div>
+    </div>
+    <div id="page-container" class="sidebar-partial sidebar-visible-lg">
+        <!-- Sidebar -->
+        #parse("cp/ru/menu.vm")
+        <!-- END Sidebar -->
+        <!-- Main Container -->
+        <div id="main-container">
+            <!-- Header -->
+            <!-- In the PHP version you can set the following options from inc/config file -->
+            <!-- Available header.navbar classes: 'navbar-default' for the default light header 'navbar-inverse' for an alternative dark header 'navbar-fixed-top' for a top fixed header (fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar()) 'header-fixed-top' has to be added on #page-container only if the class 'navbar-fixed-top' was added 'navbar-fixed-bottom' for a bottom fixed header (fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar())) 'header-fixed-bottom' has to be added on #page-container only if the class 'navbar-fixed-bottom' was added -->
+            #parse("cp/ru/account/pagemenu.vm")
+            <div id="page-content">
+                <style type="text/css"> .balance-animation { position: relative; cursor: pointer; } .balance-animation
+                    .update-balance { position: absolute; top: 40%; left: 50%; font-size:30px; margin:-15px 0 0 -15px;
+                    opacity: 0; -webkit-transition: all 0.3s ease; -moz-transition: all 0.3s ease; -o-transition: all
+                    0.3s ease; transition: all 0.3s ease; } .balance-animation:hover strong , .balance-animation.active
+                    strong { display: none; -webkit-transition: all 0.3s ease; -moz-transition: all 0.3s ease;
+                    -o-transition: all 0.3s ease; transition: all 0.3s ease; } .balance-animation:hover .update-balance,
+                    .balance-animation.active .update-balance { opacity:1; -webkit-animation: rotate 2s linear infinite;
+                    animation: rotate 2s linear infinite; } @-webkit-keyframes rotate { 0%{ -webkit-transform:
+                    rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); transform: rotate(0deg); }
+                    100% { -webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); -o-transform:
+                    rotate(360deg); transform: rotate(360deg); } } @keyframes rotate { 0%{ -webkit-transform:
+                    rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); transform: rotate(0deg); }
+                    100% { -webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); -o-transform:
+                    rotate(360deg); transform: rotate(360deg); } }
+                </style>
+                <div class="content-header content-header-media">
+                    <div class="header-section">
+                        <div class="row">
+                            <!-- Main Title (hidden on small devices for the statistics to fit) -->
+                            <div class="col-md-7 col-lg-9 hidden-xs hidden-sm">
+                                <div><strong style="font-size: 27px;">$!name</strong><br>
+                                    <h1><small>Each day is Your Day!</small>
+                                        </small></h1>
+                                </div>
+                            </div>
+                            <!-- END Main Title -->
+                            <!-- Top Stats -->
+                            <div class="col-md-5 col-lg-3">
+                                <div class="row text-center">
+                                    <div class="col-xs-6 col-sm-6">
+                                        <h2 class="animation-hatch balance-animation"><i style="color: red"
+                                                                                         class="gi gi-roundabout update-balance"></i><strong>0</strong><br>
+                                            <small><i class="gi gi-coins"></i> Donation Balance</small>
+                                        </h2>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6">
+                                        <h2 class="animation-hatch"><strong>0</strong>%<br>
+                                            <small><i class="gi gi-wallet"></i> Discount</small>
+                                        </h2>
+                                    </div>
+                                    <!--<div class="col-xs-4 col-sm-4"><h2 class="animation-hatch"><strong>0</strong><br><small><i class="gi gi-envelope"></i> Replies</small></h2></div> We hide the last stat to fit the other 3 on small devices ><div-- class="col-sm-3 hidden-xs"><h2 class="animation-hatch"><strong>0</strong><br><small><i class="fa fa-heart-o"></i> Likes</small></h2></div-->
+                                </div>
+                            </div><!-- END Top Stats --></div>
+                    </div>
+                    <img src="/account/img/placeholders/headers/dashboard_header.jpg"
+                         alt="header image" class="animation-pulseSlow"></div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <style> .store-item-rating { position: absolute; top: 0; right: 0; left: 0; text-align:
+                                    center; padding: 10px; opacity: 1; background-color: rgba(244, 255, 0, 0.60);
+                                    -webkit-transition: all .2s ease-out; transition: all .2s ease-out; z-index: 10; }
+                                    .store-item:hover .store-item-rating { top: 15px; opacity: 1; background-color:
+                                    rgba(244, 255, 0, 0.90); filter: alpha(opacity=100); } .item{ width: 232px; display:
+                                    inline-block; margin: 15px 25px 6px 14px; }
+                                </style>
+                                <ul class="breadcrumb breadcrumb-top">
+                                    <li><a href="/account">Cabinet</a></li>
+                                    <li><a href="/account/shop">Shop</a></li>
+                                </ul>
+                                <div><!-- Default Tabs -->
+                                    <ul class="nav nav-pills push" data-toggle="tabs">
+                                        <li class="active"><a href="#tabs-E-coins" style="font-size: 16px;">E-coins
+                                            (3)</a></li>
+                                        <li><a href="#tabs-Set-novice" style="font-size: 16px;">Set novice (3)</a></li>
+                                        <li><a href="#tabs-Runes-and-vitality" style="font-size: 16px;">Runes and
+                                            vitality (5)</a></li>
+                                        <li><a href="#tabs-Weapon" style="font-size: 16px;">Weapon (24)</a></li>
+                                        <li><a href="#tabs-Armor" style="font-size: 16px;">Armor (13)</a></li>
+                                        <li><a href="#tabs-Jewelry" style="font-size: 16px;">Jewelry (3)</a></li>
+                                        <li><a href="#tabs-Misc" style="font-size: 16px;">Misc (9)</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane " id="tabs-Armor">
+                                            <div class=" store-items">
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="51"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/avadon_heavy_set.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="51"
+                                                                                       data-toggle="modal"><strong>Avadon
+                                                            Heavy Set</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 25</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="57"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/avadon_Leather_set.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="57"
+                                                                                       data-toggle="modal"><strong>Avadon
+                                                            Leather Set</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 25</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="58"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/doom_robe_set.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="58"
+                                                                                       data-toggle="modal"><strong>Doom
+                                                            Robe Set</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 60</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="63"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/fullplate.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="63"
+                                                                                       data-toggle="modal"><strong>Full
+                                                            Plate Set</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 15</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="64"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/platedleather.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="64"
+                                                                                       data-toggle="modal"><strong>Plated
+                                                            Leather Set</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 15</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="65"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/karmian.jpg" alt=""
+                                                                class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="65"
+                                                                                       data-toggle="modal"><strong>Karmian
+                                                            Set</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 15</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="66"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/avadone_robe.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="66"
+                                                                                       data-toggle="modal"><strong>Avadon
+                                                            Robe Set</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 30</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="67"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/drake.jpg" alt=""
+                                                                class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="67"
+                                                                                       data-toggle="modal"><strong>Drake
+                                                            Leather Set</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 12</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="68"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/bw_heavy.jpg" alt=""
+                                                                class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="68"
+                                                                                       data-toggle="modal"><strong>Blue
+                                                            Wolf Heavy Set</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 60</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="69"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/blue_wolf_light_set.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="69"
+                                                                                       data-toggle="modal"><strong>Blue
+                                                            Wolf Light Set</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 60</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="70"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/blue_wolf_robe_set.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="70"
+                                                                                       data-toggle="modal"><strong>Blue
+                                                            Wolf Robe Set</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 60</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="71"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/doom_heavy_set.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="71"
+                                                                                       data-toggle="modal"><strong>Doom
+                                                            Heavy Set</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 60</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="72"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/doom_ligh.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="72"
+                                                                                       data-toggle="modal"><strong>Doom
+                                                            Leather Set</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 60</span><br></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane " id="tabs-Misc">
+                                            <div class=" store-items">
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="52"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/fruite.jpg" alt=""
+                                                                class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="52"
+                                                                                       data-toggle="modal"><strong>Fruite
+                                                            Cocktail</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 7</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="53"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/qhp.jpg" alt=""
+                                                                class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="53"
+                                                                                       data-toggle="modal"><strong>Greater
+                                                            Healing Potions</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 10</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="76"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/D_Grade_shots.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="76"
+                                                                                       data-toggle="modal"><strong>Soulshots
+                                                            and spiritshots D grade</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 2</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="77"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/C_Grade_shots.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="77"
+                                                                                       data-toggle="modal"><strong>Soulshots
+                                                            and spiritshots C grade</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 3</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="78"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/B_Grade_shots.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="78"
+                                                                                       data-toggle="modal"><strong>Soulshots
+                                                            and spiritshots B grade</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 4</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="79"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/A_Grade_shots.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="79"
+                                                                                       data-toggle="modal"><strong>Soulshots
+                                                            and spiritshots A grad</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 5</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="80"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/S_Grade_shots.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="80"
+                                                                                       data-toggle="modal"><strong>Soulshots
+                                                            and spiritshots S grade</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 6</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="110"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/vitality.jpg" alt=""
+                                                                class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="110"
+                                                                                       data-toggle="modal"><strong>Vitality
+                                                            items</strong></a></span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="118"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/boxes02a82.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="118"
+                                                                                       data-toggle="modal"><strong>Boxes</strong></a></span>
+                                                            <span class="store-item-price themed-color-dark pull-right"><i
+                                                                    class="gi gi-coins"></i> 12</span><br></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane " id="tabs-Runes-and-vitality">
+                                            <div class=" store-items">
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="54"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/rune_22.jpg" alt=""
+                                                                class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="54"
+                                                                                       data-toggle="modal"><strong>Premium/Bonus
+                                                            Rune</strong></a></span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="55"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/rune_23.jpg" alt=""
+                                                                class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="55"
+                                                                                       data-toggle="modal"><strong>Fame/Crystal
+                                                            Rune</strong></a></span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="56"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/vitality.jpg" alt=""
+                                                                class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="56"
+                                                                                       data-toggle="modal"><strong>Vitality
+                                                            items</strong></a></span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="111"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Premium_rune.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="111"
+                                                                                       data-toggle="modal"><strong>Premium
+                                                            Rune (+30%) - Forever + Bonus Rune for a gift!</strong></a></span>
+                                                            <span class="store-item-price themed-color-dark pull-right"><i
+                                                                    class="gi gi-coins"></i> 360</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="112"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Premium_rune.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="112"
+                                                                                       data-toggle="modal"><strong>Premium
+                                                            Rune (+30%) - 28 days + Bonus Rune for a gift!</strong></a></span>
+                                                            <span class="store-item-price themed-color-dark pull-right"><i
+                                                                    class="gi gi-coins"></i> 120</span><br></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane " id="tabs-Set-novice">
+                                            <div class=" store-items">
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="59"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/set_1.jpg" alt=""
+                                                                class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="59"
+                                                                                       data-toggle="modal"><strong>Set
+                                                            Novice</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 70</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="60"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/set_2.jpg" alt=""
+                                                                class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="60"
+                                                                                       data-toggle="modal"><strong>Set
+                                                            Novice</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 235</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="61"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/set_3.jpg" alt=""
+                                                                class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="61"
+                                                                                       data-toggle="modal"><strong>Set
+                                                            Novice</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 295</span><br></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane " id="tabs-Jewelry">
+                                            <div class=" store-items">
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="62"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/JewelryB.jpg" alt=""
+                                                                class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="62"
+                                                                                       data-toggle="modal"><strong>Black
+                                                            Ore jewelry set</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 35</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="93"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/С_grade_adamantite.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="93"
+                                                                                       data-toggle="modal"><strong>Adamantite
+                                                            jewelry set</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 20</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="94"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/С_grade.jpg" alt=""
+                                                                class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="94"
+                                                                                       data-toggle="modal"><strong>С-grade
+                                                            jewelry set</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 7</span><br></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane " id="tabs-Weapon">
+                                            <div class=" store-items">
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="75"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Dual_Sword.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="75"
+                                                                                       data-toggle="modal"><strong>Dual
+                                                            Sword</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 12</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="81"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/berserker_blade.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="81"
+                                                                                       data-toggle="modal"><strong>Berserker
+                                                            Blade</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 15</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="82"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Samurai_Longsword.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="82"
+                                                                                       data-toggle="modal"><strong>Samurai
+                                                            Longsword</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 15</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="83"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Homunkuluss_Sword.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="83"
+                                                                                       data-toggle="modal"><strong>Homunkulus
+                                                            Sword</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 15</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="84"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Club_of_Nature.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="84"
+                                                                                       data-toggle="modal"><strong>Club
+                                                            of Nature</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 15</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="85"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Eminence_Bow.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="85"
+                                                                                       data-toggle="modal"><strong>Eminence
+                                                            Bow</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 15</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="86"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Crystal_Dagger.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="86"
+                                                                                       data-toggle="modal"><strong>Crystal
+                                                            Dagger</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 15</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="87"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Yaksa_Mace.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="87"
+                                                                                       data-toggle="modal"><strong>Yaksa
+                                                            Mace</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 12</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="88"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Karik_Horn.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="88"
+                                                                                       data-toggle="modal"><strong>Karik
+                                                            Horn</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 15</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="89"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Great_Pata.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="89"
+                                                                                       data-toggle="modal"><strong>Great
+                                                            Pata</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 12</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="95"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Orcish_Poleaxe.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="95"
+                                                                                       data-toggle="modal"><strong>Orcish
+                                                            Poleaxe</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 12</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="96"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Great-Sword.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="96"
+                                                                                       data-toggle="modal"><strong>Great
+                                                            Sword</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 30</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="97"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Keshanberk.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="97"
+                                                                                       data-toggle="modal"><strong>Keshanberk</strong></a></span>
+                                                            <span class="store-item-price themed-color-dark pull-right"><i
+                                                                    class="gi gi-coins"></i> 25</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="98"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Sword-of-Valhalla.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="98"
+                                                                                       data-toggle="modal"><strong>Sword
+                                                            of Valhalla</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 30</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="99"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Spell-Breaker.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="99"
+                                                                                       data-toggle="modal"><strong>Spell
+                                                            Breaker</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 30</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="100"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Sprites-Staff.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="100"
+                                                                                       data-toggle="modal"><strong>Sprites
+                                                            Staff</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 25</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="101"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Dark-Elven-Long-Bow.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="101"
+                                                                                       data-toggle="modal"><strong>Dark
+                                                            Elven Lond Bow</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 25</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="102"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Kris.jpg" alt=""
+                                                                class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="102"
+                                                                                       data-toggle="modal"><strong>Kris</strong></a></span>
+                                                            <span class="store-item-price themed-color-dark pull-right"><i
+                                                                    class="gi gi-coins"></i> 30</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="103"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Hell-Knife.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="103"
+                                                                                       data-toggle="modal"><strong>Hell
+                                                            Knife</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 70</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="104"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Heavy-War-Axe.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="104"
+                                                                                       data-toggle="modal"><strong>Heavy
+                                                            War Axe</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 25</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="105"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Ice-Storm-Hammer.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="105"
+                                                                                       data-toggle="modal"><strong>Ice
+                                                            Storm Hammer</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 30</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="106"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Arthro-Nail.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="106"
+                                                                                       data-toggle="modal"><strong>Arthro
+                                                            Nail</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 25</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="107"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Great-Axe.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="107"
+                                                                                       data-toggle="modal"><strong>Great
+                                                            Axe</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 25</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="108"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/tsurugi.jpg" alt=""
+                                                                class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="108"
+                                                                                       data-toggle="modal"><strong>Trurugi
+                                                            DualSword</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 25</span><br></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane active" id="tabs-E-coins">
+                                            <div class=" store-items">
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="113"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Box-with-E-Coins.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="113"
+                                                                                       data-toggle="modal"><strong>Box
+                                                            with E-Coins I</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 200</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="114"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Box-with-E-Coins-2.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="114"
+                                                                                       data-toggle="modal"><strong>Box
+                                                            with E-Coins II</strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 500</span><br></div>
+                                                    </div>
+                                                </div>
+                                                <div class="item animation-fadeInQuick" data-toggle="animation-appear"
+                                                     data-animation-class="animation-fadeInQuick"
+                                                     data-element-offset="-100">
+                                                    <div class="store-item">
+                                                        <div class="store-item-image"><a href="#modal-open-shop"
+                                                                                         class="window-shop-open"
+                                                                                         data-shop="115"
+                                                                                         data-toggle="modal"><img
+                                                                src="http://${domain}/img_shop/Box-with-E-Coins-3.jpg"
+                                                                alt="" class="img-responsive"></a></div>
+                                                        <div class="store-item-info clearfix"><span
+                                                                class="store-item-price themed-color-dark pull-left"
+                                                                style="width: 59%;"><a href="#modal-open-shop"
+                                                                                       class="window-shop-open"
+                                                                                       data-shop="115"
+                                                                                       data-toggle="modal"><strong>Box
+                                                            with E-Coins III </strong></a></span> <span
+                                                                class="store-item-price themed-color-dark pull-right"><i
+                                                                class="gi gi-coins"></i> 1000</span><br></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- END Default Tabs --></div><!-- Modal Terms -->
+                                <div id="modal-open-shop" class="modal animation-fadeInQuick" tabindex="-1"
+                                     role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog" style="width: 730px;">
+                                        <div class="modal-content ajax-loud-window"></div>
+                                    </div>
+                                </div><!-- END Modal Terms --> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="clearfix">
+                <div class="pull-left"><span id="year-copy"></span> &copy; <a href="http://${domain}/"
+                                                                              target="_blank">${domain}</a></div>
+            </footer>
+        </div>
+    </div>
+</div><!-- Scroll to top link, initialized in js/app.js - scrollToTop() --><a href="#" id="to-top"><i
+        class="fa fa-angle-double-up"></i></a>

@@ -1,0 +1,424 @@
+<div class="tree-node bracket-main round-3 match-7 top-node children-2">
+	<div class="children">
+		<div class="tree-node bracket-main round-2 match-5 child-0 children-2">
+			<div class="children">
+
+				<div class="tree-node bracket-main round-1 match-1 child-0">
+					<div class="parent ">
+						<div class="tourney-match">
+							<div class="content">
+								<div class="match-type regular-match">
+									<a href="javascript:void(0);"><span></span></a>
+									#set($match = $final[1])
+									#if($!match.team1)#set($team1 = $finalTeams.get($match.team1))#end
+									#if($!match.team2)#set($team2 = $finalTeams.get($match.team2))#end
+									<div class="match round-1 bracket-main-round-1 $match.state #if(!$!team1 && !$!team2)no-teams-set#end">
+										<a href="javascript:void(0);" class="match-link">
+											#if($!team1)
+											<div class="contestant tourney-contestant contestant-1 #if($match.winner==$team1.id)winner#else looser#end eid-node-$team1.id">
+												<span class="seed seed-holder"></span>
+												<span class="team-image"><img src="$team1.icon" width="32" height="32" alt=""></span>
+												<span class="team-moved" title="$team1.name">$team1.name</span>
+												<span class="wins">$match.score1</span>
+											</div>
+											#else
+											<div class="contestant tourney-contestant contestant-1">
+												<span class="seed seed-holder"></span>
+												<span class="team-image"></span>
+												<span class="no-team" title="Team 1">--</span>
+												<span class="wins">0</span>
+											</div>
+											#end
+											#if($!team2)
+											<div class="contestant tourney-contestant contestant-2 #if($match.winner==$team2.id)winner#else looser#end eid-node-$team2.id">
+												<span class="seed seed-holder"></span>
+												<span class="team-image"><img src="$team2.icon" width="32" height="32" alt=""></span>
+												<span class="team-moved" title="$team2.name">$team2.name</span>
+												<span class="wins">$match.score2</span>
+											</div>
+											#else
+											<div class="contestant tourney-contestant contestant-2">
+												<span class="seed seed-holder"></span>
+												<span class="team-image"></span>
+												<span class="no-team" title="Team 2">--</span>
+												<span class="wins">0</span>
+											</div>
+											#end
+										</a>
+									</div>
+									#if($!match.getStartTime())
+									<span class="time"><time class="local-time" datetime="$match.getStartTime()">$match.getLocalTime()</time> - </span>
+									<span><time class="date" datetime="$match.getStartTime()">$match.getLocalDate()</time></span>
+									#end
+								</div>
+							</div>
+						</div>
+						<div class="connector to-parent bracket-main round-1 match-1 child-0 #if($!match.winner)eid-node-$match.winner#end #if($match.winner==$team2.id) winner-bottom #end">
+							<div class="path" style="height: 56.8438px;"></div>
+						</div>
+					</div>
+				</div>
+				<div class="clear">#set($team1 = $null) #set($team2 = $null) #set($match = $null)</div>
+
+				<div class="tree-node bracket-main round-1 match-2 child-1">
+					<div class="parent ">
+
+						<div class="tourney-match">
+
+							<div class="content">
+								<div class="match-type regular-match">
+									<a href="javascript:void(0);"><span></span></a>
+									#set($match = $final[2])
+									#if($!match.team1)#set($team1 = $finalTeams.get($match.team1))#end
+									#if($!match.team2)#set($team2 = $finalTeams.get($match.team2))#end
+									<div class="match round-1 bracket-main-round-1 $match.state #if(!$!team1 && !$!team2)no-teams-set#end">
+										<a href="javascript:void(0);" class="match-link">
+											#if($!team1)
+											<div class="contestant tourney-contestant contestant-1 #if($match.winner==$team1.id)winner#else looser#end eid-node-$team1.id">
+												<span class="seed seed-holder"></span>
+												<span class="team-image"><img src="$team1.icon" width="32" height="32" alt=""></span>
+												<span class="team-moved" title="$team1.name">$team1.name</span>
+												<span class="wins">$match.score1</span>
+											</div>
+											#else
+											<div class="contestant tourney-contestant contestant-1">
+												<span class="seed seed-holder"></span>
+												<span class="team-image"></span>
+												<span class="no-team" title="Team 1">--</span>
+												<span class="wins">0</span>
+											</div>
+											#end
+											#if($!team2)
+											<div class="contestant tourney-contestant contestant-2 #if($match.winner==$team2.id)winner#else looser#end eid-node-$team2.id">
+												<span class="seed seed-holder"></span>
+												<span class="team-image"><img src="$team2.icon" width="32" height="32" alt=""></span>
+												<span class="team-moved" title="$team2.name">$team2.name</span>
+												<span class="wins">$match.score2</span>
+											</div>
+											#else
+											<div class="contestant tourney-contestant contestant-2">
+												<span class="seed seed-holder"></span>
+												<span class="team-image"></span>
+												<span class="no-team" title="Team 2">--</span>
+												<span class="wins">0</span>
+											</div>
+											#end
+										</a>
+									</div>
+									#if($!match.getStartTime())
+									<span class="time"><time class="local-time" datetime="$match.getStartTime()">$match.getLocalTime()</time> - </span>
+									<span><time class="date" datetime="$match.getStartTime()">$match.getLocalDate()</time></span>
+									#end
+								</div>
+							</div>
+
+						</div>          <div class="connector to-parent bracket-main round-1 match-2 child-1 #if($!match.winner)eid-node-$match.winner#end #if($match.winner==$team2.id) winner-bottom #end">
+						<div class="path" style="height: 72.1563px; top: -6.15625px;"></div>
+					</div>
+					</div>
+				</div>
+				<div class="clear">#set($team1 = $null) #set($team2 = $null) #set($match = $null)</div>
+			</div>
+
+			<div class="parent ">
+
+				<div class="tourney-match">
+
+					<div class="content">
+						<div class="match-type regular-match">
+							<a href="javascript:void(0);"><span></span></a>
+							#set($match = $final[5])
+							#if($!match.team1)#set($team1 = $finalTeams.get($match.team1))#end
+							#if($!match.team2)#set($team2 = $finalTeams.get($match.team2))#end
+							<div class="match round-2 bracket-main-round-2 $match.state #if(!$!team1 && !$!team2)no-teams-set#end">
+								<div class="connector to-children"></div>
+								<a href="javascript:void(0);" class="match-link">
+									#if($!team1)
+									<div class="contestant tourney-contestant contestant-1 #if($match.winner==$team1.id)winner#else looser#end eid-node-$team1.id">
+										<span class="seed seed-holder"></span>
+										<span class="team-image"><img src="$team1.icon" width="32" height="32" alt=""></span>
+										<span class="team-moved" title="$team1.name">$team1.name</span>
+										<span class="wins">$match.score1</span>
+									</div>
+									#else
+									<div class="contestant tourney-contestant contestant-1">
+										<span class="seed seed-holder"></span>
+										<span class="team-image"></span>
+										<span class="no-team" title="Team 1">--</span>
+										<span class="wins">0</span>
+									</div>
+									#end
+									#if($!team2)
+									<div class="contestant tourney-contestant contestant-2 #if($match.winner==$team2.id)winner#else looser#end eid-node-$team2.id">
+										<span class="seed seed-holder"></span>
+										<span class="team-image"><img src="$team2.icon" width="32" height="32" alt=""></span>
+										<span class="team-moved" title="$team2.name">$team2.name</span>
+										<span class="wins">$match.score2</span>
+									</div>
+									#else
+									<div class="contestant tourney-contestant contestant-2">
+										<span class="seed seed-holder"></span>
+										<span class="team-image"></span>
+										<span class="no-team" title="Team 2">--</span>
+										<span class="wins">0</span>
+									</div>
+									#end
+								</a>
+							</div>
+							#if($!match.getStartTime())
+							<span class="time"><time class="local-time" datetime="$match.getStartTime()">$match.getLocalTime()</time> - </span>
+							<span><time class="date" datetime="$match.getStartTime()">$match.getLocalDate()</time></span>
+							#end
+						</div>
+					</div>
+
+				</div>
+				<div class="connector to-parent bracket-main round-2 match-5 child-0 children-2 #if($!match.winner)eid-node-$match.winner#end #if($match.winner==$team2.id) winner-bottom #end">
+					<div class="path"></div>
+				</div>
+			</div>
+		</div>
+		<div class="clear">#set($team1 = $null) #set($team2 = $null) #set($match = $null)</div>
+
+		<div class="tree-node bracket-main round-2 match-6 child-1 children-2">
+			<div class="children">
+
+				<div class="tree-node bracket-main round-1 match-3 child-0">
+					<div class="parent ">
+
+						<div class="tourney-match">
+
+							<div class="content">
+								<div class="match-type regular-match">
+									<a href="javascript:void(0);"><span></span></a>
+									#set($match = $final[3])
+									#if($!match.team1)#set($team1 = $finalTeams.get($match.team1))#end
+									#if($!match.team2)#set($team2 = $finalTeams.get($match.team2))#end
+									<div class="match round-1 bracket-main-round-1 $match.state #if(!$!team1 && !$!team2)no-teams-set#end">
+										<a href="javascript:void(0);" class="match-link">
+											#if($!team1)
+											<div class="contestant tourney-contestant contestant-1 #if($match.winner==$team1.id)winner#else looser#end eid-node-$team1.id">
+												<span class="seed seed-holder"></span>
+												<span class="team-image"><img src="$team1.icon" width="32" height="32" alt=""></span>
+												<span class="team-moved" title="$team1.name">$team1.name</span>
+												<span class="wins">$match.score1</span>
+											</div>
+											#else
+											<div class="contestant tourney-contestant contestant-1">
+												<span class="seed seed-holder"></span>
+												<span class="team-image"></span>
+												<span class="no-team" title="Team 1">--</span>
+												<span class="wins">0</span>
+											</div>
+											#end
+											#if($!team2)
+											<div class="contestant tourney-contestant contestant-2 #if($match.winner==$team2.id)winner#else looser#end eid-node-$team2.id">
+												<span class="seed seed-holder"></span>
+												<span class="team-image"><img src="$team2.icon" width="32" height="32" alt=""></span>
+												<span class="team-moved" title="$team2.name">$team2.name</span>
+												<span class="wins">$match.score2</span>
+											</div>
+											#else
+											<div class="contestant tourney-contestant contestant-2">
+												<span class="seed seed-holder"></span>
+												<span class="team-image"></span>
+												<span class="no-team" title="Team 2">--</span>
+												<span class="wins">0</span>
+											</div>
+											#end
+										</a>
+									</div>
+									#if($!match.getStartTime())
+									<span class="time"><time class="local-time" datetime="$match.getStartTime()">$match.getLocalTime()</time> - </span>
+									<span><time class="date" datetime="$match.getStartTime()">$match.getLocalDate()</time></span>
+									#end
+								</div>
+							</div>
+
+						</div>
+						<div class="connector to-parent bracket-main round-1 match-3 child-0 #if($!match.winner)eid-node-$match.winner#end #if($match.winner==$team2.id) winner-bottom #end">
+							<div class="path" style="height: 56.8438px;"></div>
+						</div>
+					</div>
+				</div>
+				<div class="clear">#set($team1 = $null) #set($team2 = $null) #set($match = $null)</div>
+
+				<div class="tree-node bracket-main round-1 match-4 child-1">
+					<div class="parent ">
+
+						<div class="tourney-match">
+
+							<div class="content">
+								<div class="match-type regular-match">
+									<a href="javascript:void(0);"><span></span></a>
+									#set($match = $final[4])
+									#if($!match.team1)#set($team1 = $finalTeams.get($match.team1))#end
+									#if($!match.team2)#set($team2 = $finalTeams.get($match.team2))#end
+									<div class="match round-1 bracket-main-round-1 $match.state #if(!$!team1 && !$!team2)no-teams-set#end">
+										<a href="javascript:void(0);" class="match-link">
+											#if($!team1)
+											<div class="contestant tourney-contestant contestant-1 #if($match.winner==$team1.id)winner#else looser#end eid-node-$team1.id">
+												<span class="seed seed-holder"></span>
+												<span class="team-image"><img src="$team1.icon" width="32" height="32" alt=""></span>
+												<span class="team-moved" title="$team1.name">$team1.name</span>
+												<span class="wins">$match.score1</span>
+											</div>
+											#else
+											<div class="contestant tourney-contestant contestant-1">
+												<span class="seed seed-holder"></span>
+												<span class="team-image"></span>
+												<span class="no-team" title="Team 1">--</span>
+												<span class="wins">0</span>
+											</div>
+											#end
+											#if($!team2)
+											<div class="contestant tourney-contestant contestant-2 #if($match.winner==$team2.id)winner#else looser#end eid-node-$team2.id">
+												<span class="seed seed-holder"></span>
+												<span class="team-image"><img src="$team2.icon" width="32" height="32" alt=""></span>
+												<span class="team-moved" title="$team2.name">$team2.name</span>
+												<span class="wins">$match.score2</span>
+											</div>
+											#else
+											<div class="contestant tourney-contestant contestant-2">
+												<span class="seed seed-holder"></span>
+												<span class="team-image"></span>
+												<span class="no-team" title="Team 2">--</span>
+												<span class="wins">0</span>
+											</div>
+											#end
+										</a>
+									</div>
+									#if($!match.getStartTime())
+									<span class="time"><time class="local-time" datetime="$match.getStartTime()">$match.getLocalTime()</time> - </span>
+									<span><time class="date" datetime="$match.getStartTime()">$match.getLocalDate()</time></span>
+									#end
+								</div>
+							</div>
+
+						</div>
+						<div class="connector to-parent bracket-main round-1 match-4 child-1 #if($!match.winner)eid-node-$match.winner#end #if($match.winner==$team2.id) winner-bottom #end">
+							<div class="path" style="height: 72.1563px; top: -6.15625px;"></div>
+						</div>
+					</div>
+				</div>
+				<div class="clear">#set($team1 = $null) #set($team2 = $null) #set($match = $null)</div>
+			</div>
+			<div class="parent ">
+
+				<div class="tourney-match">
+
+					<div class="content">
+						<div class="match-type regular-match">
+							<a href="javascript:void(0);"><span></span></a>
+							#set($match = $final[6])
+							#if($!match.team1)#set($team1 = $finalTeams.get($match.team1))#end
+							#if($!match.team2)#set($team2 = $finalTeams.get($match.team2))#end
+							<div class="match round-2 bracket-main-round-2 $match.state #if(!$!team1 && !$!team2)no-teams-set#end">
+								<div class="connector to-children"></div>
+								<a href="javascript:void(0);" class="match-link">
+									#if($!team1)
+									<div class="contestant tourney-contestant contestant-1 #if($match.winner==$team1.id)winner#else looser#end eid-node-$team1.id">
+										<span class="seed seed-holder"></span>
+										<span class="team-image"><img src="$team1.icon" width="32" height="32" alt=""></span>
+										<span class="team-moved" title="$team1.name">$team1.name</span>
+										<span class="wins">$match.score1</span>
+									</div>
+									#else
+									<div class="contestant tourney-contestant contestant-1">
+										<span class="seed seed-holder"></span>
+										<span class="team-image"></span>
+										<span class="no-team" title="Team 1">--</span>
+										<span class="wins">0</span>
+									</div>
+									#end
+									#if($!team2)
+									<div class="contestant tourney-contestant contestant-2 #if($match.winner==$team2.id)winner#else looser#end eid-node-$team2.id">
+										<span class="seed seed-holder"></span>
+										<span class="team-image"><img src="$team2.icon" width="32" height="32" alt=""></span>
+										<span class="team-moved" title="$team2.name">$team2.name</span>
+										<span class="wins">$match.score2</span>
+									</div>
+									#else
+									<div class="contestant tourney-contestant contestant-2">
+										<span class="seed seed-holder"></span>
+										<span class="team-image"></span>
+										<span class="no-team" title="Team 2">--</span>
+										<span class="wins">0</span>
+									</div>
+									#end
+								</a>
+							</div>
+							#if($!match.getStartTime())
+							<span class="time"><time class="local-time" datetime="$match.getStartTime()">$match.getLocalTime()</time> - </span>
+							<span><time class="date" datetime="$match.getStartTime()">$match.getLocalDate()</time></span>
+							#end
+						</div>
+					</div>
+
+				</div>
+				<div class="connector to-parent bracket-main round-2 match-6 child-1 children-2 #if($!match.winner)eid-node-$match.winner#end #if($match.winner==$team2.id) winner-bottom #end">
+					<div class="path"></div>
+				</div>
+			</div>
+		</div>
+		<div class="clear">#set($team1 = $null) #set($team2 = $null) #set($match = $null)</div>
+	</div>
+	<div class="parent last-round">
+
+		<div class="tourney-match">
+
+			<div class="content">
+				<div class="match-type regular-match">
+					<a href="javascript:void(0);"><span></span></a>
+					#set($match = $final[7])
+					#if($!match.team1)#set($team1 = $finalTeams.get($match.team1))#end
+					#if($!match.team2)#set($team2 = $finalTeams.get($match.team2))#end
+					<div class="match round-3 bracket-main-round-3 $match.state #if(!$!team1 && !$!team2)no-teams-set#end">
+						<div class="connector to-children"></div>
+						<a href="javascript:void(0);" class="match-link">
+							#if($!team1)
+							<div class="contestant tourney-contestant contestant-1 #if($match.winner==$team1.id)winner#else looser#end eid-node-$team1.id">
+								<span class="seed seed-holder"></span>
+								<span class="team-image"><img src="$team1.icon" width="32" height="32" alt=""></span>
+								<span class="team-moved" title="$team1.name">$team1.name</span>
+								<span class="wins">$match.score1</span>
+							</div>
+							#else
+							<div class="contestant tourney-contestant contestant-1">
+								<span class="seed seed-holder"></span>
+								<span class="team-image"></span>
+								<span class="no-team" title="Team 1">--</span>
+								<span class="wins">0</span>
+							</div>
+							#end
+							#if($!team2)
+							<div class="contestant tourney-contestant contestant-2 #if($match.winner==$team2.id)winner#else looser#end eid-node-$team2.id">
+								<span class="seed seed-holder"></span>
+								<span class="team-image"><img src="$team2.icon" width="32" height="32" alt=""></span>
+								<span class="team-moved" title="$team2.name">$team2.name</span>
+								<span class="wins">$match.score2</span>
+							</div>
+							#else
+							<div class="contestant tourney-contestant contestant-2">
+								<span class="seed seed-holder"></span>
+								<span class="team-image"></span>
+								<span class="no-team" title="Team 2">--</span>
+								<span class="wins">0</span>
+							</div>
+							#end
+						</a>
+					</div>
+					#if($!match.getStartTime())
+					<span class="time"><time class="local-time" datetime="$match.getStartTime()">$match.getLocalTime()</time> - </span>
+					<span><time class="date" datetime="$match.getStartTime()">$match.getLocalDate()</time></span>
+					#end
+				</div>
+			</div>
+
+		</div>
+		<div class="connector to-parent bracket-main round-3 match-7 top-node children-2 ">
+			<div class="path"></div>
+		</div>
+	</div>
+</div>
+<div class="clear">#set($team1 = $null) #set($team2 = $null) #set($match = $null)</div>

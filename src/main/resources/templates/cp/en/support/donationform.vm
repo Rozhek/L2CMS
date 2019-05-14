@@ -1,0 +1,93 @@
+<div class="block" style="border: 0px;">
+    <div class="text-center"><h3><strong>Create a new ticket</strong></h3></div>
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="progress progress-striped active">
+                <div id="progress-bar-wizard" class="progress-bar progress-bar-danger" role="progressbar"
+                     aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0"></div>
+            </div>
+            <form id="progress-wizard" action="" name="support" class="form-horizontal" method="post" onsubmit="return false;">
+                <input type="hidden" name="module" value="block_wedget_support">
+                <input type="hidden" name="send" value="tickets-new-donation">
+                <input type="hidden" id="agrigation" name="agrigation" value="unitpay">
+                <!-- First Step -->
+                <div id="progress-first" class="step">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="example-username">Select a payment system</label>
+                        <div class="col-md-8">
+	                        #if($unitpayEnabled)
+                            <button type="button" data-pay="unitpay" class="btn btn-alt btn-lg btn-default donat-pay enable-donate animation-pulse">
+                                <img width="100" src="/account/payment_agrigator/unitpay.png" alt="">
+                            </button>
+	                        #end
+	                        <br>
+	                        #if($g2aEnabled)
+                            <button type="button" data-pay="g2a" class="btn btn-alt btn-lg btn-default donat-pay ">
+                                <img width="100" src="/account/payment_agrigator/g2apay.png" alt="">
+                            </button>
+	                        #end
+                        </div>
+                    </div>
+                </div>
+                <!-- END First Step -->
+                <!-- Second Step -->
+                <div id="progress-second" class="step">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="example-firstname">Order number or transaction id</label>
+                        <div class="col-md-8">
+                            <input type="text" name="transactions" class="form-control" placeholder="..." required></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="example-lastname">Donation date</label>
+                        <div class="col-md-8">
+                            <input type="text" id="example-datepicker5" name="data-date"
+                                                     class="form-control input-datepicker-close"
+                                                     data-date-format="mm/dd/yy" placeholder="mm/dd/yy" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="example-timepicker">Donation time</label>
+                        <div class="col-md-8">
+                            <div class="input-group bootstrap-timepicker">
+                                <input type="text" id="example-timepicker24" name="data-time"
+                                       class="form-control input-timepicker24" required>
+                                <span class="input-group-btn">
+                                    <a href="javascript:void(0)" class="btn btn-primary"><i class="fa fa-clock-o"></i></a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="example-city">Amount of donation</label>
+                        <div class="col-md-8">
+                            <input type="number" name="money-count" class="form-control" placeholder="0" required>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Second Step -->
+                <!-- Third Step -->
+                <div id="progress-third" class="step">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="example-bio">A comment</label>
+                        <div class="col-md-8">
+                            <textarea id="example-progress-bio" name="comment" rows="5" class="form-control" placeholder="A comment.." required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Third Step -->
+                <!-- Form Buttons -->
+                <div class="form-group form-actions">
+                    <div class="col-md-8 col-md-offset-4">
+                        <input type="reset" class="btn btn-sm btn-warning" value="Back">
+                        <input type="submit" class="btn btn-sm btn-primary" value="Next" id="subm">
+                    </div>
+                </div>
+                <!-- END Form Buttons -->
+            </form>
+            <!-- END Progress Wizard Content -->
+        </div>
+    </div>
+</div>
+<script>
+     $('.input-datepicker-close').datepicker({ weekStart: 1}).on('changeDate', function(e){ $(this).datepicker('hide'); }); $('.input-timepicker24').timepicker({ minuteStep: 1,showSeconds: false,showMeridian: false}); $('body').on('click', '.donat-pay', function () {  var donat_type = $(this).data('pay'); $('#agrigation').val( donat_type ); $('.donat-pay').removeClass("enable-donate animation-pulse"); $(this).addClass("enable-donate animation-pulse"); }); $('#progress-wizard').formwizard({  focusFirstInput: true, disableUIStyles: true, validationEnabled: true, validationOptions: {  errorClass: 'help-block animation-slideDown', errorElement: 'span', errorPlacement: function(error, e) {  e.parents('.form-group > div').append(error); }, highlight: function(e) {  $(e).closest('.form-group').removeClass('has-success has-error').addClass('has-error'); $(e).closest('.help-block').remove(); }, success: function(e) {  e.closest('.form-group').removeClass('has-success has-error'); e.closest('.help-block').remove(); } }, inDuration: 0, outDuration: 0, textBack : 'Back', textNext : 'Next', textSubmit : 'Send' });  var progressBar = $('#progress-bar-wizard'); progressBar .css('width', '33%') .attr('aria-valuenow', '33'); $("#progress-wizard").bind('step_shown', function(event, data){  if (data.currentStep === 'progress-first') {  progressBar .css('width', '33%') .attr('aria-valuenow', '33') .removeClass('progress-bar-warning progress-bar-success') .addClass('progress-bar-danger'); } else if (data.currentStep === 'progress-second') {  progressBar .css('width', '66%') .attr('aria-valuenow', '66') .removeClass('progress-bar-danger progress-bar-success') .addClass('progress-bar-warning'); } else if (data.currentStep === 'progress-third') {  $("#subm").addClass('submit-btn'); progressBar .css('width', '100%') .attr('aria-valuenow', '100') .removeClass('progress-bar-danger progress-bar-warning') .addClass('progress-bar-success'); } });
+</script>

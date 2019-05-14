@@ -1,0 +1,160 @@
+<div class="block" style="border: 0px;">
+    <div class="text-center"><h3><strong>Create a new ticket</strong></h3></div>
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="progress progress-striped active">
+                <div id="progress-bar-wizard" class="progress-bar progress-bar-danger" role="progressbar"
+                     aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0">
+                </div>
+            </div>
+            <form id="progress-wizard" action="" name="support" class="form-horizontal" method="post" onsubmit="return false;">
+                <input type="hidden" name="module" value="block_wedget_support">
+                <input type="hidden" name="send" value="tickets-new-drop-item">
+                <input type="hidden" id="sharing" name="sharing" value="not">
+                <input type="hidden" id="protect" name="protect" value="not">
+                <!-- First Step -->
+                <div id="progress-first" class="step">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="example-select">Server</label>
+                        <div class="col-md-9">
+                            <select id="server" name="support_server" class="form-control" size="1">
+                            <option value="0">Select a server</option>
+                            <option value="1" selected>High Five x30</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="example-select">Account</label>
+                        <div class="col-md-9">
+                            <select id="account_name" name="support_account_name" class="form-control" size="1">
+                            <option value="0">Select account</option>
+                            #foreach($account in $accounts)<option value="$account.account">$account.account</option>#end
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="example-select">Character</label>
+                        <div class="col-md-9">
+                            <select id="char_id" name="support_char_name" class="form-control" size="1">
+                            <option value="0">Choose your character</option>
+                            </select>
+                        </div>
+                    </div>
+                </div><!-- END First Step --><!-- Second Step -->
+                <div id="progress-second" class="step">
+                    <div class="form-group">
+                        <label class="col-md-12 text-center" style="font-size: 15px;">Did any other players had an access to your account?</label>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <span class="help-block">Please note, if during the investigation would be found, that other players was allowed to access to your account, we will consider this fact as a attempt to confuse the Administration. In this case your account will be punished according to the Rules.</span>
+                            <button type="button" class="btn btn-block btn-warning" id="button-not">No</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-block btn-success" id="button-yes">Yes</button>
+                            <span class="help-block">If other players was allowed to access to your account - the items will not be returned. In this case you can order the service of investigation and we will provide you with the results. Service cost - individually</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Second Step -->
+                <!-- Third Step -->
+                <div id="progress-third" class="step">
+                    <div id="show-not">
+                        <div class="form-group">
+                            <label class="col-md-12 text-center" style="font-size: 15px;">Was the account protection enabled?</label>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-block btn-warning" id="button-protect-not">No</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-block btn-success" id="button-protect-yes">Yes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="show-yes" style="display: none">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="example-lastname">Approximate date of loss</label>
+                            <div class="col-md-8">
+                                <input type="text" name="data-date-drop-sharing" class="form-control input-datepicker-close"
+                                                         data-date-format="mm/dd/yy" placeholder="mm/dd/yy" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="example-lastname">Last entry into the game before missing</label>
+                            <div class="col-md-8">
+                                <input type="text" name="data-date-last-enter-sharing"
+                                                         class="form-control input-datepicker-close"
+                                                         data-date-format="mm/dd/yy" placeholder="mm/dd/yy" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="example-firstname">List of nicks who have access to your account</label>
+                            <div class="col-md-8"><input type="text" name="nick_sharing" class="form-control"
+                                                         placeholder="..." required></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Third Step -->
+                <!-- Third Step -->
+                <div id="progress-finish" class="step">
+                    <div id="show-not-2">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="example-lastname">Approximate date of loss</label>
+                            <div class="col-md-8">
+                                <input type="text" name="data-date-drop-no-sharing" class="form-control input-datepicker-close"
+                                                         data-date-format="mm/dd/yy" placeholder="mm/dd/yy" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="example-lastname">Last entry into the game before missing</label>
+                            <div class="col-md-8">
+                                <input type="text" name="data-date-last-enter-no-sharing"
+                                                         class="form-control input-datepicker-close"
+                                                         data-date-format="mm/dd/yy" placeholder="mm/dd/yy" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="example-firstname">Skype</label>
+                            <div class="col-md-8">
+                                <input type="text" name="skype" class="form-control" placeholder="..." required>
+                            </div>
+                        </div>
+                        <div class="form-group"><label class="col-md-4 control-label" for="example-bio">List the missing items</label>
+                            <div class="col-md-8">
+                                <textarea id="example-progress-bio" name="comment_no_share" rows="5" class="form-control" placeholder="..." required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="show-yes-2" style="display: none">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="example-bio">List the missing items</label>
+                            <div class="col-md-8">
+                                <textarea id="example-progress-bio" name="comment_share" rows="5"
+                                                            class="form-control" placeholder="..." required></textarea>
+                            </div>
+                        </div>
+                        <label class="col-md-12 text-center" style="font-size: 15px;">Attention! The cost of search is assigned individually! The search results will be provided within 24 hours.</label>
+                    </div>
+                </div>
+                <!-- END Third Step -->
+                <!-- Form Buttons -->
+                <div class="form-group form-actions">
+                    <div class="col-md-8 col-md-offset-4">
+                        <input type="reset" class="btn btn-sm btn-warning" value="Back">
+                        <input type="submit" class="btn btn-sm btn-primary" value="Next" id="subm">
+                    </div>
+                </div>
+                <!-- END Form Buttons -->
+            </form>
+            <!-- END Progress Wizard Content -->
+        </div>
+    </div>
+</div>
+<script>
+var char_support = new Array(); #foreach($account in $accounts) char_support["$account.account"] = new Array( #foreach($player in $players)#if($player.accountId == $account.id)#if($result),#end {value:'$player.name',name:'$player.name'}#set($result=true)#end#end ); #end  $('.input-datepicker-close').datepicker({ weekStart: 1}).on('changeDate', function(e){ $(this).datepicker('hide'); }); $('.input-timepicker24').timepicker({ minuteStep: 1,showSeconds: true,showMeridian: false}); $('body').on('click', '#button-not', function () {  $('#sharing').val( 'not' ); $('#show-not-2').fadeIn(); $('#show-not').fadeIn(); $('#show-yes-2').fadeOut(); $('#show-yes').fadeOut(); }).on('click', '#button-yes', function () {  $('#sharing').val( 'yes' ); $('#show-yes-2').fadeIn(); $('#show-yes').fadeIn(); $('#show-not-2').fadeOut(); $('#show-not').fadeOut(); }).on('click', '#button-protect-not', function () {  $('#protect').val( 'yes' ); }).on('click', '#button-protect-yes', function () {  $('#protect').val( 'yes' ); }); $('#progress-wizard').formwizard({  focusFirstInput: true, disableUIStyles: true, validationEnabled: true, validationOptions: {  errorClass: 'help-block animation-slideDown', errorElement: 'span', errorPlacement: function(error, e) {  e.parents('.form-group > div').append(error); }, highlight: function(e) {  $(e).closest('.form-group').removeClass('has-success has-error').addClass('has-error'); $(e).closest('.help-block').remove(); }, success: function(e) {  e.closest('.form-group').removeClass('has-success has-error'); e.closest('.help-block').remove(); } }, inDuration: 0, outDuration: 0, textBack : 'Back', textNext : 'Next', textSubmit : 'Send' });  var progressBar = $('#progress-bar-wizard'); progressBar .css('width', '33%') .attr('aria-valuenow', '33'); $("#progress-wizard").bind('step_shown', function(event, data){  if (data.currentStep === 'progress-first') {  progressBar .css('width', '25%') .attr('aria-valuenow', '25') .removeClass('progress-bar-warning progress-bar-success') .addClass('progress-bar-danger'); } else if (data.currentStep === 'progress-second') {  progressBar .css('width', '50%') .attr('aria-valuenow', '50') .removeClass('progress-bar-danger progress-bar-success') .addClass('progress-bar-warning'); } else if (data.currentStep === 'progress-third') {  progressBar .css('width', '75%') .attr('aria-valuenow', '75') .removeClass('progress-bar-danger progress-bar-warning') .addClass('progress-bar-success'); } else if (data.currentStep === 'progress-finish') {  $("#subm").addClass('submit-btn'); progressBar .css('width', '100%') .attr('aria-valuenow', '100') .removeClass('progress-bar-danger progress-bar-warning') .addClass('progress-bar-success'); } });
+</script>

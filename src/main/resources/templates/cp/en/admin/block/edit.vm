@@ -1,0 +1,62 @@
+<div class="tab-pane active" id="block-edit">
+    <div class="block-content-full">
+        <div class="block" style="border: 0px;">
+            <div class="text-center"><h3><strong>Edit block</strong></h3></div>
+            <!-- Basic Form Elements Content -->
+            <form class="form-horizontal" action="#springUrl("/admin/blocks/edit")">
+            #springFormHiddenInput("block.id")
+	        <div class="form-group">
+		        <label class="col-md-2 control-label" for="example-text-input">Type</label>
+		        <div class="col-md-3">
+			        <select class="form-control" size="1" name="type" onchange="typeSelectHandler(this)">
+				        <option value=0>Hide</option>
+				        <option #if($block.type == 1)selected#end value=1>Banner</option>
+				        <option #if($block.type == 2)selected#end value=2>Stream</option>
+			        </select>
+		        </div>
+	        </div>
+	        <div class="form-group">
+		        <label class="col-md-2 control-label" for="example-text-input">Title</label>
+		        <div class="col-md-8">
+			        #springFormInput("block.title" 'type="text" class="form-control" placeholder="Enter the title of banner\stream"')
+		        </div>
+	        </div>
+	        <div class="form-group" id="block_text">
+		        <label class="col-md-2 control-label" for="example-textarea-input">Text</label>
+		        <div class="col-md-8">
+			        #springFormTextarea("block.text" 'id="example-textarea-input" rows="4" class="form-control" placeholder="Banner text.."')
+		        </div>
+	        </div>
+	        <div class="form-group" id="block_src">
+		        <label class="col-md-2 control-label" for="example-text-input">Link</label>
+		        <div class="col-md-8">
+			        #springFormInput("block.src" 'type="text" class="form-control" placeholder="Enter the link of banner\stream source"')
+		        </div>
+	        </div>
+	        <div class="form-group" id="block_back">
+		        <label class="col-md-2 control-label" for="example-text-input">Background</label>
+		        <div class="col-md-8">
+			        #springFormInput("block.background" 'type="text" class="form-control" placeholder="Background of banner\stream"')
+			        <img src="$block.background" alt="" class="nimg" width="224" height="128"/>
+		        </div>
+	        </div>
+	        <div class="form-group">
+		        <label class="col-md-2 control-label" for="example-select">Language</label>
+		        <div class="col-md-3">
+			        <select class="form-control" size="1" name="lang">
+				        <option value="">Both</option>
+				        <option #if($block.lang == "ru")selected#end value="ru">Russian</option>
+				        <option #if($block.lang == "en")selected#end value="en">English</option>
+			        </select>
+		        </div>
+	        </div>
+            <div class="form-group form-actions">
+                <div class="col-md-3 col-md-offset-2">
+                    <button type="submit" class="btn btn-sm btn-primary submit-btn"><i class="fa fa-angle-right"></i> Save </button>
+                </div>
+            </div>
+            </form><!-- END Basic Form Elements Content --></div>
+    </div>
+</div>
+
+

@@ -1,0 +1,116 @@
+﻿<div id="wrapper">
+    <div id="left">
+	    #if(!$streamList.isEmpty())
+	    <div id="streems">
+		    <h2><span>Streams</span></h2>
+		    #foreach($stream in $streamList)
+		    <div id="video">
+			    #if(!$stream.src.isEmpty())
+			    <iframe src="$stream.src" height="160" width="290" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
+			    #else
+			    <a href="#"><img src="$stream.background" alt=""></a>
+			    #end
+		    </div>
+		    #end
+	    </div>
+	    #end
+        <h2><span>News and events</span></h2>
+        <div id="project-news">
+            #foreach($newsOne in $newsList)
+            <div id="news">
+                <div class="news-img">
+                    <img src="/image/$newsOne.id" alt="">
+                </div>
+                <div id="news-title">
+                    <div id="trapezoid"></div>
+                    <div id="date">$newsOne.getDay()<span>$newsOne.getMonth()</span></div>
+                    <h3>$newsOne.title</h3>
+                </div>
+                <div id="news-text"><span>$newsOne.content</span></div>
+                <div id="readmore"><a href="$newsOne.link">Read more</a></div>
+            </div>
+            #end
+        </div>
+    </div>
+    <div id="right">
+	    #if(!$bannerList.isEmpty())
+	    <div id="banner-right">
+		    #foreach($banner in $bannerList)
+		    <div class="container">
+			    <img src="$banner.background" alt="" />
+			    <p class="title">$banner.title<span>$banner.text</span></p>
+			    <div class="overlay"></div>
+			    <div class="button"><a href="$banner.src"> READ MORE </a></div>
+		    </div>
+		    #end
+	    </div>
+	    #end
+        <h4><span>New on forum</span></h4>
+        <div id="forum-news">
+	        #if($forumType == "xenforo")
+            #foreach($theme in $themeList)
+            <div class="forum-col">
+	            <div class="ava">
+		            #if($theme.avatarDate != 0)
+		            #set( $cluster = $theme.userId / 1000 )
+		            <img src="$forumLink/data/avatars/s/$cluster/${theme.userId}.jpg?${theme.avatarDate}" alt="Ava">
+		            #else
+		            <img src="$forumLink/styles/default/xenforo/avatars/avatar_${theme.gender}_s.png" alt="Ava">
+		            #end
+	            </div>
+                <div class="forum-link"><a href="$forumLink/index.php?threads/$theme.topicId/unread">$theme.title</a></div>
+                <div class="forum-date">$theme.name | $theme.date</div>
+            </div>
+            #end
+            #end
+        </div>
+        <!--h4><span>Top stats</span></h4-->
+        <!--div id="top-players">
+            <div class="tabs">
+                <div class="tab" id="serv-tab">
+                    <label> Top:</label>
+                </div>
+                <div class="tab">
+                    <input type="radio" id="tab-1" name="tab-group-1" checked>
+                    <label for="tab-1"><span>Level</span></label>
+                    <div class="tab-content">
+                        #set( $count = 1 )
+                        #foreach($topLevel in $topLevelList)
+                        <div class="top-col">
+                            <span>${count}.</span> $topLevel.getName() <p>$topLevel.getLevel() <span>Level</span></p>
+                        </div>
+                        #set( $count = $count + 1 )
+                        #end
+                    </div>
+                </div>
+                <div class="tab">
+                    <input type="radio" id="tab-2" name="tab-group-1">
+                    <label for="tab-2"><span>PvP</span></label>
+                    <div class="tab-content">
+                        #set( $count = 1 )
+                        #foreach($topPvP in $topPvPList)
+                        <div class="top-col">
+                            <span>${count}.</span> $topPvP.getName() <p>$topPvP.getPvP() <span>PvP</span> $topPvP.getPk() <span>PK</span></p>
+                        </div>
+                        #set( $count = $count + 1 )
+                        #end
+                    </div>
+                </div>
+                <div class="tab">
+                    <input type="radio" id="tab-3" name="tab-group-1">
+                    <label for="tab-3"><span>PK</span></label>
+                    <div class="tab-content">
+                        #set( $count = 1 )
+                        #foreach($topPK in $topPKList)
+                        <div class="top-col">
+                            <span>${count}.</span> $topPK.getName() <p>$topPK.getPvP() <span>PvP</span> $topPK.getPk() <span>PK</span></p>
+                        </div>
+                        #set( $count = $count + 1 )
+                        #end
+                    </div>
+                </div>
+            </div>
+        </div-->
+    </div>
+    <div class="clr"></div>
+</div>

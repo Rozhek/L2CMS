@@ -1,0 +1,161 @@
+<div id="page-wrapper" class="page-loading"><!-- Preloader -->
+    <!-- Preloader functionality (initialized in js/app.js) - pageLoading() -->
+    <!-- Used only if page preloader is enabled from inc/config (PHP version) or the class 'page-loading' is added in #page-wrapper element (HTML version) -->
+    <div class="preloader themed-background"><h1 class="push-top-bottom text-light text-center"><strong>Your Title</h1>
+
+        <div class="inner"><h3 class="text-light visible-lt-ie9 visible-lt-ie10"><strong>Загрузка..</strong></h3>
+
+            <div class="preloader-spinner hidden-lt-ie9 hidden-lt-ie10"></div>
+        </div>
+    </div>
+    <div id="page-container" class="sidebar-partial sidebar-visible-lg">
+        <!-- Alternative Sidebar -->
+        #parse("cp/ru/menu.vm")
+        <!-- END Main Sidebar -->
+        <!-- Main Container -->
+        <div id="main-container"><!-- Header -->
+            <!-- In the PHP version you can set the following options from inc/config file -->
+            <!-- Available header.navbar classes: 'navbar-default' for the default light header 'navbar-inverse' for an alternative dark header 'navbar-fixed-top' for a top fixed header (fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar()) 'header-fixed-top' has to be added on #page-container only if the class 'navbar-fixed-top' was added 'navbar-fixed-bottom' for a bottom fixed header (fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar())) 'header-fixed-bottom' has to be added on #page-container only if the class 'navbar-fixed-bottom' was added -->
+            #parse("cp/ru/admin/menu.vm")
+            <div id="page-content">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+	                    <style> .remove-tab{ cursor: pointer; color: rgba(0, 0, 0, 0.3); } .remove-tab:hover{ color: rgba(0, 0, 0, 1); } </style>
+                        <ul class="breadcrumb breadcrumb-top">
+                            <li><a href="/admin">Admin</a></li>
+                            <li><a href="/admin/blocks">Blocks</a></li>
+                        </ul>
+	                    #set($create = !$!block.title)
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="block">
+                                    <!-- Tickets Title -->
+                                    <div class="block-title">
+                                        <div class="block-options pull-right"><a href="javascript:void(0)" class="btn btn-alt btn-sm btn-primary"
+                                                                                 data-toggle="block-toggle-fullscreen"><i class="fa fa-desktop"></i></a>
+                                        </div>
+                                        <ul class="nav nav-tabs" data-toggle="tabs">
+                                            <li #if($create)class="active"#end><a href="#block-list">Russian blocks</a></li>
+                                            <li><a href="#block-list-en">English blocks</a></li>
+                                            <li #if(!$create)class="active"#end><a href="#block-edit"> Editor <i class="fa fa-times remove-tab"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- END Tickets Title -->
+                                    <!-- Tabs Content -->
+                                    <div class="tab-content">
+                                        <!-- Tickets List -->
+                                        <div class="tab-pane #if($create)active#end" id="block-list">
+                                            <div class="block-content-full">
+                                                <div class="table-responsive remove-margin-bottom">
+                                                    <table class="table table-striped table-vcenter remove-margin-bottom">
+                                                        <thead>
+                                                        <tr>
+                                                            <th class="text-center">ID</th>
+                                                            <th class="text-center">Title</th>
+	                                                        <th>Image</th>
+                                                            <th class="text-center"><i class="fa fa-comments"></i></th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        #foreach($block in $blockList)
+                                                        #if($block.lang != "en")
+                                                        <tr><td class="text-center">$block.id</td><td class="text-center">$block.title</td><td><img src="$block.background" alt="" width="104" height="64"/></td><td class="text-center"><a href="/admin/blocks/edit/$block.id" class="btn btn-sm btn-warning"><i class="fa fa-angle-right"></i> Edit </a><i class="col-md-offset-1"></i><a href="/admin/blocks/remove/$block.id" class="btn btn-sm btn-danger"><i class="fa fa-angle-right"></i> Delete </a></td></tr>
+                                                        #end
+                                                        #end
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- END Tickets List -->
+                                        <!-- Tickets List -->
+                                        <div class="tab-pane" id="block-list-en">
+                                            <div class="block-content-full">
+                                                <div class="table-responsive remove-margin-bottom">
+                                                    <table class="table table-striped table-vcenter remove-margin-bottom">
+                                                        <thead>
+                                                        <tr>
+                                                            <th class="text-center">ID</th>
+                                                            <th class="text-center">Title</th>
+	                                                        <th>Image</th>
+                                                            <th class="text-center"><i class="fa fa-comments"></i></th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        #foreach($block in $blockList)
+                                                        #if($block.lang != "ru")
+                                                        <tr><td class="text-center">$block.id</td><td class="text-center">$block.title</td><td><img src="$block.background" alt="" width="104" height="64"/></td><td class="text-center"><a href="/admin/blocks/edit/$block.id" class="btn btn-sm btn-warning"><i class="fa fa-angle-right"></i> Edit </a><i class="col-md-offset-1"></i><a href="/admin/blocks/remove/$block.id" class="btn btn-sm btn-danger"><i class="fa fa-angle-right"></i> Delete </a></td></tr>
+                                                        #end
+                                                        #end
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        #if($!container)
+                                        #parse("$!container")
+                                        #end
+                                    </div>
+                                    <!-- END Tabs Content -->
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-lg-4">
+                                <a href="/admin/blocks" class="widget widget-hover-effect4 label-success">
+                                    <div class="widget-simple" style="padding: 10px;">
+                                        <h4 class="widget-content widget-content-light text-center">
+                                            <strong style="font-weight: 400;">Create Block</strong></h4>
+                                    </div>
+                                </a>
+	                            <div class="block">
+		                            <div class="text-center"><h3><strong>Prize pool</strong></h3></div>
+		                            <form class="form-horizontal" action="#springUrl("/admin/blocks/setparam")">
+		                            <div class="form-group">
+			                            <label for="inputPool" class="col-sm-6 col-form-label">Prize pool</label>
+			                            <div class="col-sm-4">
+				                            <input type="hidden" name="param1" value="pool_amount">
+				                            <input type="text" name="pool_amount" value="$pool_amount"  class="form-control" id="inputPool" placeholder="Amount">
+			                            </div>
+		                            </div>
+		                            <div class="form-group">
+			                            <label for="inputDonate" class="col-sm-6 col-form-label">Add % of donate</label>
+			                            <div class="col-sm-2">
+				                            <input type="hidden" name="param2" value="pool_donate">
+				                            <input type="text" name="pool_donate" value="$pool_donate"  class="form-control" id="inputDonate" placeholder="%">
+			                            </div>
+		                            </div>
+		                            <div class="form-group form-actions">
+			                            <div class="col-md-3 col-md-offset-6">
+				                            <button type="submit" class="btn btn-sm btn-primary submit-btn"><i class="fa fa-angle-right"></i> Save </button>
+			                            </div>
+		                            </div>
+		                            </form>
+	                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="clearfix">
+                <div class="pull-left"><span id="year-copy"></span> &copy; <a href="http://${domain}/"
+                                                                              target="_blank">${domain}</a></div>
+            </footer>
+        </div>
+    </div>
+</div><!-- Scroll to top link, initialized in js/app.js - scrollToTop() --><a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
+<script type="text/javascript">
+function typeSelectHandler(select){
+if(select.value == 0){
+document.getElementById('block_text').style.display = 'none';
+document.getElementById('block_src').style.display = 'none';
+document.getElementById('block_back').style.display = 'none';
+}else if(select.value == 1){
+document.getElementById('block_text').removeAttribute("style");
+document.getElementById('block_src').removeAttribute("style");
+document.getElementById('block_back').removeAttribute("style");
+}else if(select.value == 2){
+document.getElementById('block_text').style.display = 'none';
+document.getElementById('block_src').removeAttribute("style");
+document.getElementById('block_back').removeAttribute("style");
+}}</script>
+<script type="text/javascript">typeSelectHandler(document.getElementById('block_type'));</script>
+

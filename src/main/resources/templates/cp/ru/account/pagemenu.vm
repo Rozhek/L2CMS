@@ -1,0 +1,206 @@
+<!-- In the PHP version you can set the following options from inc/config file -->
+<!-- Available header.navbar classes:
+'navbar-default' for the default light header
+'navbar-inverse' for an alternative dark header
+'navbar-fixed-top' for a top fixed header
+(fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar())
+'header-fixed-top' has to be added on #page-container only if the class 'navbar-fixed-top' was added
+'navbar-fixed-bottom' for a bottom fixed header
+(fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar()))
+'header-fixed-bottom' has to be added  on #page-container only if the class 'navbar-fixed-bottom' was added -->
+<header class="navbar navbar-default">
+    <!-- Navbar Header -->
+    <div class="navbar-header">
+        <!-- Horizontal Menu Toggle + Alternative Sidebar Toggle Button, Visible only in small screens (< 768px) -->
+        <!--ul class="nav navbar-nav-custom pull-right visible-xs">
+            <li>
+                <a href="javascript:void(0)" data-toggle="collapse" data-target="#horizontal-menu-collapse">Menu</a>
+            </li>
+            <li><a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar-alt');"><i
+                                class="fa fa-envelope"></i><span
+                                class="label label-primary label-indicator animation-floating">1</span></a></li>
+        </ul-->
+        <!-- END Horizontal Menu Toggle + Alternative Sidebar Toggle Button -->
+        <!-- Main Sidebar Toggle Button -->
+        <ul class="nav navbar-nav-custom">
+            <li>
+                <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar');this.blur();"><i class="fa fa-bars fa-fw"></i></a>
+            </li>
+        </ul>
+        <!-- END Main Sidebar Toggle Button -->
+    </div>
+    <!-- END Navbar Header -->
+    <!--ul class="nav navbar-nav-custom pull-right hidden-xs">
+                    <li><a href="javascript:void(0)"
+                           onclick="App.sidebar('toggle-sidebar-alt', 'toggle-other');this.blur();"><i
+                            class="fa fa-envelope"></i><span
+                            class="label label-danger label-indicator animation-floating">1</span></a></li>
+                </ul-->
+    <div id="horizontal-menu-collapse" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="#modal-bonus-cod" data-toggle="modal"><i class="hi hi-gift"></i> Бонус код</a>
+            </li>
+            <!-- Modal Terms -->
+            <div id="modal-bonus-cod" class="modal animation-fadeInQuick" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title"><strong>Бонус код</strong> активация</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form name="get_bonus_cod_modal" action="" class="form-horizontal" method="post" onsubmit="return false;">
+                                <input type="hidden" name="module" value="buttons_bonus_code">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-gift"></i></span>
+                                            <input type="text" name="bonus-cod" class="form-control" placeholder="Введите бонус код">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="impute-hide-cod-modal" style="display: none">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                                <select id="account-bonus-cod-modal" name="account" class="form-control" size="1">
+                                                    <option value="0">Выберите аккаунт</option>
+                                                    #foreach($account in $accounts)<option value="$account.account">$account.account</option>#end
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="char-list-bonus-cod-modal" style="display: none">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-street-view"></i></span>
+                                                <select id="select-char-id-bonus-cod-modal" name="char" class="form-control" size="1">
+                                                    <option value="0">Выберите персонажа</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group form-actions">
+                                    <div style="min-height: 30px">
+                                        <div class="col-xs-9">
+                                            <div class="show_get_bonus_cod_modal"></div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <button type="submit" class="btn btn-sm btn-success submit-btn">
+                                                <i class="fa fa-angle-right"></i> Активация
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Modal Terms -->
+            <script>var char_list_bonus_modal = new Array(); #foreach($account in $accounts) char_list_bonus_modal["$account.account"] = new Array( #set($result=false)#foreach($player in $players)#if($player.accountId == $account.id)#if($result),#end {value:'$player.id',name:'$player.name'}#set($result=true)#end#end ); #end</script>
+            <li>
+                <a href="/account/donate"><i class="hi hi-credit_card"></i> Пожертвование</a>
+            </li>
+            <li>
+                <a href="#modal-bay-coin" data-toggle="modal"><i class="gi gi-coins"></i> Перевести Gold!</a>
+            </li>
+            <!-- Modal Terms -->
+            <div id="modal-bay-coin" class="modal animation-fadeInQuick" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title"><strong>Перевести </strong> Gold в игру</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form name="get_bay_coin_modal" action="" class="form-horizontal" method="post" onsubmit="return false;">
+                                <input type="hidden" name="module" value="buttons_buy_coins">
+
+                                <p>Вы можете перевести Gold своему персонажу </p>
+
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-plus-square"></i></span>
+                                            <input type="number" min="1" max="600000" maxlength="6" name="count" class="form-control" placeholder="Введите количество">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                            <select id="account-bay-coin-modal" name="account" class="form-control" size="1">
+                                                <option value="0">Выберите аккаунт</option>
+                                                #foreach($account in $accounts)<option value="$account.account">$account.account</option>#end
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" id="char-list-bay-coin-modal" style="display: none">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-street-view"></i></span>
+                                            <select id="select-char-id-bay-coin-modal" name="char" class="form-control" size="1">
+                                                <option value="0">Выберите персонажа</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group form-actions">
+                                    <div style="min-height: 30px">
+                                        <div class="col-xs-9">
+                                            <div class="show_get_bay_coin_modal"></div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <button type="submit" id="button-bay-coin" class="btn btn-sm btn-success submit-btn" style="display: none">
+                                                <i class="fa fa-angle-right"></i> Отправить </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Modal Terms -->
+            <script>var char_list_bay_coin = new Array(); #foreach($account in $accounts) char_list_bay_coin["$account.account"] = new Array( #set($result=false)#foreach($player in $players)#if($player.accountId == $account.id)#if($result),#end {value:'$player.id',name:'$player.name'}#set($result=true)#end#end ); #end</script>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Язык <img width="25" src="/account/img/flag/rus.png">
+                    <i class="fa fa-angle-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a lang="en" href="javascript:void(0)">English <img class="pull-right" width="25" src="/account/img/flag/eng.png"></a>
+                    </li>
+                    <li>
+                        <a lang="ru" href="javascript:void(0)">Русский <img class="pull-right" width="25" src="/account/img/flag/rus.png"></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-server"></i> Сервер <i class="fa fa-angle-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a server="11" href="javascript:void(0)"><i style="opacity: 1;" class="fa fa-check text-success pull-right"></i> High Five x30 </a>
+                    </li>
+                    <!--li><a server="5" href="javascript:void(0)"> Another Server </a></li-->
+                </ul>
+            </li>
+        </ul>
+        <ul style="float: right;" class="nav navbar-nav">
+            <li>
+                <a href="/account/log"><i class="fi fi-log"></i> Лог</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="exit-mw" data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="gi gi-exit"></i> Выход</a>
+            </li>
+        </ul>
+    </div>
+</header>

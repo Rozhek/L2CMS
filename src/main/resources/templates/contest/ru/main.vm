@@ -1,0 +1,64 @@
+<div id="content" class="column panel-panel panel-col" role="main">
+	<div>
+		<div class="panel-pane pane-pane-messages">
+			<div class="pane-content">
+				<div class="tabs"></div>
+			</div>
+		</div>
+		<div class="panel-separator"></div>
+
+		<div class="panel-pane pane-page-content">
+			<h2 class="pane-title">Contest</h2>
+			<div class="pane-content">
+				<div class="panel-display panel-3col-33-double-stacked  clearfix">
+					<div class="panel-panel panel-col-featured">
+						<div class="inside page">
+							<div class="panel-pane pane-fieldable-panels-pane qualifier-banner pane-bundle-fieldable-panels-pane">
+								<div class="pane-content">
+									<div class="fieldable-panels-pane">
+										<div class="field field-name-field-qualifier-banner field-type-file field-label-hidden">
+											<div class="field-items">
+												<div class="field-item even">
+													<div id="file-3569" class="file file-image file-image-jpeg">
+														<div class="content"><img src="/contest/champs_header.jpg" width="1400" height="210" alt=""></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel-bg-container"></div>
+					</div>
+
+					<div class="panel-panel panel-col-top pro-kit-dark-wrapper pro-kit-dark-wrapper-bottom">
+						<div class="pro-kit-dark">
+							<div class="inside page">
+								<div class="panel-pane">
+									<h2 class="pane-title">To the next <span class="accent">Level</span></h2>
+									<div class="pane-content destress">Представляем вам первый турнир по <span class="accent">Lineage 2.</span>
+										<br>Турнир будет проведен среди партий игроков из 9 человек.<br>Призовой фонд турнира будет собран из суммы пожертвований игроков + начальный взнос в 30 000 рублей от нашего проекта.<br>
+										<!--<br>Турнир будет проводиться <span class="accent">16-18 Марта.</span> Трансляцию турнира можно будет посмотреть на главной странице сайта.<br>-->
+										<br>Призовой фонд разделится следующим образом:<br>
+										<br>1 место — 40% от суммы призового фонда<br>
+										<br>2 место — 25% от суммы призового фонда<br>
+										<br>3 место — 20% от суммы призового фонда<br>
+										<br>4 место — 10% от суммы призового фонда<br>
+										<br>5 место — 5% от суммы призового фонда<br>
+										<br>6-8 места: 5% от суммы призового фонда в эквиваленте игровой валюты<br>
+										<br>Каждый участник получит сертификат на премиум аккаунт сроком 1 неделю.<br>
+										<br>Ознакомиться с регламентом и зарегистрироваться на турнир можно на <span class="accent">форуме</span>
+									</div>
+								</div>
+								<div class="panel-separator"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,59 @@
+<div class="tab-pane" id="block-edit">
+    <div class="block-content-full">
+        <div class="block" style="border: 0px;">
+            <div class="text-center"><h3><strong>Создать блок</strong></h3></div>
+            <!-- Basic Form Elements Content -->
+            <form class="form-horizontal" action="#springUrl("/admin/blocks/add")">
+
+	        <div class="form-group">
+		        <label class="col-md-2 control-label" for="example-text-input">Тип</label>
+		        <div class="col-md-3">
+			        <select class="form-control" id="block_type" size="1" name="type" onchange="typeSelectHandler(this)">
+				        <option selected value=0>Спрятан</option>
+				        <option value=1>Банер</option>
+				        <option value=2>Стрим</option>
+			        </select>
+		        </div>
+	        </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="example-text-input">Заголовок</label>
+                <div class="col-md-8">
+                    #springFormInput("block.title" 'type="text" class="form-control" placeholder="Заголовок банера, стрима"')
+                </div>
+            </div>
+            <div class="form-group" id="block_text">
+                <label class="col-md-2 control-label" for="example-textarea-input">Текст</label>
+                <div class="col-md-8">
+                    #springFormTextarea("block.text" 'id="example-textarea-input" rows="4" class="form-control" placeholder="Текст банера.."')
+                </div>
+            </div>
+            <div class="form-group" id="block_src">
+                <label class="col-md-2 control-label" for="example-text-input">Ссылка</label>
+                <div class="col-md-8">
+                    #springFormInput("block.src" 'type="text" class="form-control" placeholder="Ссылка на стрим\ссылка банера"')
+                </div>
+            </div>
+            <div class="form-group" id="block_back">
+                <label class="col-md-2 control-label" for="example-text-input">Картинка</label>
+	            <div class="col-md-8">
+		            #springFormInput("block.background" 'type="text" class="form-control" placeholder="Картинка баннера\стрима"')
+	            </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="example-select">Язык</label>
+                <div class="col-md-3">
+                    <select class="form-control" size="1" name="lang">
+	                    <option selected value="">Оба</option>
+                        <option value="ru">Русский</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group form-actions">
+                <div class="col-md-3 col-md-offset-2">
+                    <button type="submit" class="btn btn-sm btn-primary submit-btn"><i class="fa fa-angle-right"></i> Создать </button>
+                </div>
+            </div>
+            </form><!-- END Basic Form Elements Content --></div>
+    </div>
+</div>

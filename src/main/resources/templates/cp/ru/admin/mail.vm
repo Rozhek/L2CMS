@@ -1,0 +1,158 @@
+<div id="page-wrapper" class="page-loading"><!-- Preloader -->
+    <!-- Preloader functionality (initialized in js/app.js) - pageLoading() -->
+    <!-- Used only if page preloader is enabled from inc/config (PHP version) or the class 'page-loading' is added in #page-wrapper element (HTML version) -->
+    <div class="preloader themed-background"><h1 class="push-top-bottom text-light text-center"><strong>Your Title</h1>
+
+        <div class="inner"><h3 class="text-light visible-lt-ie9 visible-lt-ie10"><strong>Загрузка..</strong></h3>
+
+            <div class="preloader-spinner hidden-lt-ie9 hidden-lt-ie10"></div>
+        </div>
+    </div>
+    <div id="page-container" class="sidebar-partial sidebar-visible-lg">
+        <!-- Alternative Sidebar -->
+        #parse("cp/ru/menu.vm")
+        <!-- END Main Sidebar -->
+        <!-- Main Container -->
+        <div id="main-container"><!-- Header -->
+            <!-- In the PHP version you can set the following options from inc/config file -->
+            <!-- Available header.navbar classes: 'navbar-default' for the default light header 'navbar-inverse' for an alternative dark header 'navbar-fixed-top' for a top fixed header (fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar()) 'header-fixed-top' has to be added on #page-container only if the class 'navbar-fixed-top' was added 'navbar-fixed-bottom' for a bottom fixed header (fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar())) 'header-fixed-bottom' has to be added on #page-container only if the class 'navbar-fixed-bottom' was added -->
+            #parse("cp/ru/admin/menu.vm")
+            <div id="page-content">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <ul class="breadcrumb breadcrumb-top">
+                            <li><a href="/admin">Админка</a></li>
+                            <li><a href="/admin/mail">Рассылка</a></li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="block">
+                                    <!-- Tickets Title -->
+                                    <div class="block-title">
+                                        <div class="block-options pull-right">
+	                                        <a href="javascript:void(0)" class="btn btn-alt btn-sm btn-primary" data-toggle="block-toggle-fullscreen">
+		                                        <i class="fa fa-desktop"></i>
+	                                        </a>
+                                        </div>
+                                        <ul class="nav nav-tabs" data-toggle="tabs">
+                                            <li class="active"><a href="#new-mail"> Новое письмо <i class="fa fa-pencil"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- END Tickets Title -->
+                                    <!-- Tabs Content -->
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="news-edit">
+                                            <div class="block-content-full">
+                                                <div class="block" style="border: 0px;">
+                                                    <div class="text-center"><h3><strong>Новое письмо</strong></h3></div>
+                                                    <!-- Basic Form Elements Content -->
+                                                    <div class="text-center">Отправлено: $count из $max</div><br>
+                                                    <form class="form-horizontal" action="#springUrl("/admin/sendMail")" method="POST">
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label" for="example-text-input">Заголовок</label>
+                                                        <div class="col-md-8">
+                                                            <input class="form-control" type="text" name="title" placeholder="Введите тему письма">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label" for="example-textarea-input">Текст</label>
+                                                        <div class="col-md-8">
+                                                            <textarea class="form-control" name="content" rows="20" cols="70" placeholder="Текст..."></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group form-actions">
+                                                        <div class="col-md-3 col-md-offset-2">
+                                                            <button type="submit" class="btn btn-sm btn-success"><i
+                                                                    class="fa fa-angle-right"></i> Отправить </button>
+                                                        </div>
+                                                    </div>
+                                                    </form>
+                                                    <form class="form-horizontal" action="#springUrl("/admin/sendTestEmail")" method="POST">
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label" for="example-text-input">Тестовое письмо</label>
+                                                        <div class="col-md-8">
+                                                            <input class="form-control" type="text" name="email" placeholder="Email"></input>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group form-actions">
+                                                        <div class="col-md-3 col-md-offset-2">
+                                                            <button type="submit" class="btn btn-sm btn-primary"><i
+                                                                    class="fa fa-angle-right"></i> Отправить тест </button>
+                                                        </div>
+                                                    </div>
+                                                    </form>
+                                                    <!-- END Basic Form Elements Content -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- END Tabs Content -->
+                                </div>
+                            </div>
+
+                            <!-- Right Block -->
+                            <div class="col-md-6">
+                                <div class="block">
+                                    <!-- Tickets Title -->
+                                    <div class="block-title">
+                                        <div class="block-options pull-right"><a href="javascript:void(0)" class="btn btn-alt btn-sm btn-primary"
+                                                                                 data-toggle="block-toggle-fullscreen"><i class="fa fa-desktop"></i></a>
+                                        </div>
+                                        <ul class="nav nav-tabs" data-toggle="tabs">
+                                            <li class="active"><a href="#import-mail"> Импорт получателей <i class="fa fa-book"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- END Tickets Title -->
+                                    <!-- Tabs Content -->
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="news-edit">
+                                            <div class="block-content-full">
+                                                <div class="block" style="border: 0px;">
+                                                    <div class="text-center"><h3><strong>Импорт получателей</strong></h3></div>
+                                                    <!-- Basic Form Elements Content -->
+                                                    <div class="text-center">Число получателей: $max</div><br>
+                                                    <form class="form-horizontal" action="#springUrl("/admin/importMail")" method="POST">
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label" for="example-text-input">Адреса</label>
+                                                        <div class="col-md-8">
+                                                            <textarea class="form-control" name="emails" rows="20" cols="70" ></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group form-actions">
+                                                        <div class="col-md-3 col-md-offset-2">
+                                                            <button type="submit" class="btn btn-sm btn-info"><i
+                                                                    class="fa fa-angle-right"></i> Импорт </button>
+                                                        </div>
+                                                    </div>
+                                                    </form>
+                                                    <div class="form-horizontal">
+                                                        <div class="form-group form-actions">
+                                                            <div class="col-md-3 col-md-offset-2">
+                                                                <a class="btn btn-sm btn-warning" href="/admin/removeDublicateEmail" > Удалить дубли </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- END Basic Form Elements Content -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- END Tabs Content -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="clearfix">
+                <div class="pull-left"><span id="year-copy"></span> &copy; <a href="http://${domain}/"
+                                                                              target="_blank">${domain}</a></div>
+            </footer>
+        </div>
+    </div>
+</div>
+<!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
+<a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
+
+

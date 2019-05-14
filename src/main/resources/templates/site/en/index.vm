@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-language" content="ru"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="high, five, tournament, l2, la2, mmorpg, lineage, PvP, craft, server, бигвар, ишпцфк, линейдж, л2, сервер, revolution" />
+    <meta name="description" content="Lineage 2 server" />
+    <meta name="author" content="You">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <script type="text/javascript" src="/site/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/site/js/jquery.videoBG.js"></script>
+    <link rel="stylesheet" href="/site/js/arcticmodal/jquery.arcticmodal.css">
+    <link rel="stylesheet" href="/site/js/arcticmodal/themes/dark.css">
+    <link rel="stylesheet" type="text/css" href="/site/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/site/css/animation.css">
+    <link rel="stylesheet" type="text/css" href="/site/fonts/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Play">
+	<link rel="alternate" href="/" hreflang="ru" />
+    <title>Lineage 2 server</title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- Yandex.Metrika counter -->
+	<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<div id="top-menu">
+    <div id="menu-in">
+        <ul class="main-menu">
+            <li><a href="/">Main</a></li>
+            <li><a href="/reg">Start</a></li>
+            <li><a href="/stats">Stats</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/account/donate">Donate</a></li>
+            <li><a href="$forumLink">Community</a></li>
+	        <li style="background: #1c1c1c;"><a href="/contest">Tournament</a></li>
+        </ul>
+        <div id="languages">
+            <div id="page-wrap">
+                <div id="rus-button" class="button">
+                    <a href="javascript:void(0);"><img src="/site/images/ru-on.jpg" alt="rus" class="button-off" /></a>
+                </div>
+                <div id="en-button" class="button">
+                    <a href="javascript:void(0);"><img src="/site/images/en-on.jpg" alt="eng" class="button-on" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="header">
+    <div id="html5video">
+            <div id="headvideo">
+            <script>
+					$(document).ready(function() {
+						$('#headvideo').videoBG({
+							mp4:'/site/images/header/header.mp4',
+							ogv:'/site/images/header/header.ogv',
+							webm:'/site/images/header/header.webm',
+							scale:false,
+							zIndex:0,
+							poster: '/site/images/header-bg.jpg'
+						});
+					})
+				</script>
+        </div>
+    </div>
+    <div id="header-in">
+        <div id="socials">
+            <li class="soc"><a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
+            <li class="soc"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        </div>
+        <div id="logo"><a href="/" class="logo hvr-icon-float-away"></a></div>
+    </div>
+</div>
+<div id="info-block">
+    <div id="infoblock-in">
+        <div id="vx-pie-1" class="pie-title-center" data-percent="${percent}">
+            <span class="pie-value"><span id="online-info">Online: <p>${online}</p><span id="triagle"></span></span><p>Bellum</p>x30</span>
+        </div>
+        <!--div id="vx-pie-2" class="pie-title-center" data-percent="70">
+            <span class="pie-value"><span id="online-info">Online: <p>2000+</p><span id="triagle"></span></span><p>Craft PvP</p>x50</span>
+        </div>
+        <div id="vx-pie-3" class="pie-title-center" data-percent="50">
+            <span class="pie-value"><span id="online-info">Online: <p>2000+</p><span id="triagle"></span></span><p>Only PvP</p>x1200</span>
+        </div-->
+        <div id="cpanel">
+            <a href="/login"><i class="fa fa-lock" aria-hidden="true"></i> <i class="fa fa-unlock" aria-hidden="true"></i></i>Control panel</a>
+        </div>
+        <div id="count">
+            <h5>Timer to start:</h5>
+            <br>
+            <body onload="counter();">
+            <span id="counteroff">
+        </div>
+	    <div id="badge"><i class="badge"></i></div>
+        <!--div id="count">
+            <h5>Prize pool:</h5>
+            <br>
+            <span id="counterprize"><span>$prizepool<p>Rur</p></span></span>
+        </div-->
+    </div>
+</div>
+#parse("$page")
+<div id="footer-1">
+    <div class="footer-in-1">
+        <div id="spoiler">
+            <a href="" class="spoiler_links">Terms of use<span><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
+            <div class="spoiler_body">
+                THIS SERVER IS ONLY TEST VERSION OF THE LINEAGE II AND IS INTENDED ONLY FOR TESTING BY PLAYERS ONLY. ALL RIGHTS BELONG TO NCSOFT.
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer-2">
+    <div class="footer-in-2">
+	    <div class="about_us">
+		    <h3 class="about_us_title">About Us</h3>
+		    <p>Lineage 2 server</p>
+	    </div>
+	    <div class="about_us"></div>
+	    <div class="about_us">
+		    <h3 class="about_us_title">Contacts</h3>
+		    <p>robot@server.com</p>
+	    </div>
+        <div class="copy"><a target="_blank" href="http://marts.pro/"></a></div>
+    </div>
+</div>
+<!-- Pop Up Frames -->
+<div style="display: none;">
+    <div class="box-modal" id="boxExample">
+        <div class="box-modal_close arcticmodal-close"><i class="fa fa-lg fa-times" aria-hidden="true"></i></div>
+	    <h3>Hello!</h3>
+	    <div id="popup-c-text"></div>
+	    <!--iframe width="500" height="281" src="https://www.youtube.com/embed/nB_Ty712etk" frameborder="0" allowfullscreen></iframe-->
+	    <div id="popup-image"><!--img src="" alt=""--></div>
+	    <div class="popup-readmore"><a href="#">Read More</a></div>
+    </div>
+</div>
+<div style='display:inline-block; position:fixed; bottom:0; right:0; z-index:100;'><a href="https://la2.mmotop.ru/servers/12345" target="_blank">
+	<img src="http://img.mmotop.ru/mmo_12345.png" border="0" id="mmotopratingimg" alt="Рейтинг серверов mmotop">
+</a></div>
+<script type="text/javascript">document.write("<script src='http://js.mmotop.ru/rating_code.js?" + Math.round((((new Date()).getUTCDate() + (new Date()).getMonth() * 30) / 7)) + "_" + (new Date()).getFullYear() + "' type='text/javascript'><\/script>");</script>
+<script type="text/javascript" src="/site/js/lang.js"></script>
+<script type="text/javascript" src="/site/js/arcticmodal/jquery.arcticmodal.min.js"></script>
+<script type="text/javascript" src="/site/js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="/site/js/scripts.js"></script>
+<script type="text/javascript" src="/site/js/preloaders.js"></script>
+<script type="text/javascript" src="/site/js/timer-en.js"></script>
+<script type="text/javascript" src="/site/js/spoiler.js"></script>
+<script type="text/javascript"> $('.main-menu li').each(function () {if (this.getElementsByTagName("a")[0].href == location.href) this.className = "selected";});</script>
+</body>
+</html>

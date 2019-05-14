@@ -1,0 +1,52 @@
+#set($match = $final[0])
+#if($!match)
+#if($!match.team1)#set($team1 = $finalTeams.get($match.team1))#end
+#if($!match.team2)#set($team2 = $finalTeams.get($match.team2))#end
+<div class="tree-node top-node">
+	<div class="parent 3rd-round">
+		<div class="content" style="margin-left: 500px;">
+			<div class="match-type regular-match">
+				<a href="javascript:void(0);"><span></span></a>
+				<div class="match bracket-main-3rd ${match.state} #if(!$!team1 && !$!team2)no-teams-set#end">
+					<a href="javascript:void(0);" class="match-link">
+						#if($!team1)
+						<div class="contestant tourney-contestant contestant-1 #if($match.winner==$team1.id)winner#else looser#end eid-node-$team1.id">
+							<span class="seed seed-holder"></span>
+							<span class="team-image"><img src="$team1.icon" width="32" height="32" alt=""></span>
+							<span class="team-moved" title="$team1.name">$team1.name</span>
+							<span class="wins">$match.score1</span>
+						</div>
+						#else
+						<div class="contestant tourney-contestant contestant-1">
+							<span class="seed seed-holder"></span>
+							<span class="team-image"></span>
+							<span class="no-team" title="Team 1">--</span>
+							<span class="wins">0</span>
+						</div>
+						#end
+						#if($!team2)
+						<div class="contestant tourney-contestant contestant-2 #if($match.winner==$team2.id)winner#else looser#end eid-node-$team2.id">
+							<span class="seed seed-holder"></span>
+							<span class="team-image"><img src="$team2.icon" width="32" height="32" alt=""></span>
+							<span class="team-moved" title="$team2.name">$team2.name</span>
+							<span class="wins">$match.score2</span>
+						</div>
+						#else
+						<div class="contestant tourney-contestant contestant-2">
+							<span class="seed seed-holder"></span>
+							<span class="team-image"></span>
+							<span class="no-team" title="Team 2">--</span>
+							<span class="wins">0</span>
+						</div>
+						#end
+					</a>
+				</div>
+				#if($!match.getStartTime())
+				<span class="time"><time class="local-time" datetime="$match.getStartTime()">$match.getLocalTime()</time> - </span>
+				<span><time class="date" datetime="$match.getStartTime()">$match.getLocalDate()</time></span>
+				#end
+			</div>
+		</div>
+	</div>
+</div>
+#end

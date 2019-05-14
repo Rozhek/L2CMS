@@ -1,0 +1,137 @@
+<div id="page-wrapper" class="page-loading"><!-- Preloader -->
+    <!-- Preloader functionality (initialized in js/app.js) - pageLoading() -->
+    <!-- Used only if page preloader is enabled from inc/config (PHP version) or the class 'page-loading' is added in #page-wrapper element (HTML version) -->
+    <div class="preloader themed-background"><h1 class="push-top-bottom text-light text-center"><strong>Your Title</h1>
+        <div class="inner"><h3 class="text-light visible-lt-ie9 visible-lt-ie10"><strong>Загрузка..</strong></h3>
+            <div class="preloader-spinner hidden-lt-ie9 hidden-lt-ie10"></div>
+        </div>
+    </div>
+    <div id="page-container" class="sidebar-partial sidebar-visible-lg">
+        <!-- Sidebar -->
+        #parse("cp/ru/menu.vm")
+        <!-- END Sidebar -->
+        <!-- Main Container -->
+        <div id="main-container">
+            <!-- Header -->
+            #parse("cp/ru/account/pagemenu.vm")
+            <div id="page-content">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="block">
+                                    <div class="block-title">
+                                        <div class="block-options pull-right"><a href="javascript:void(0)"
+                                                                                 class="btn btn-alt btn-sm btn-primary"
+                                                                                 data-toggle="block-toggle-fullscreen"><i
+                                                class="fa fa-desktop"></i></a></div>
+                                        <h2><i class="fa fa-pencil"></i> <strong>Смена пароля </strong> Мастер Аккаунта!</h2></div>
+                                    <div class="block-content"><p></p>
+                                        <legend></legend>
+                                        <form name="master_account_change_password" action=""
+                                              id="form-change-password-ma" class="form-bordered" method="post"
+                                              onsubmit="return false;">
+                                            <input type="hidden" name="module" value="global_informaiton_block">
+                                            <input type="hidden" name="action" value="change_password_ma">
+
+                                            <div class="form-group">
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                        class="gi gi-asterisk"></i></span><input type="password"
+                                                                                                 name="change-password-old"
+                                                                                                 id="change-password"
+                                                                                                 class="form-control"
+                                                                                                 placeholder="Старый пароль">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                        class="gi gi-asterisk"></i></span><input type="password"
+                                                                                                 name="change-password-new"
+                                                                                                 id="change-password"
+                                                                                                 class="form-control"
+                                                                                                 placeholder="Новый пароль">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                        class="gi gi-asterisk"></i></span><input type="password"
+                                                                                                 name="change-password-verify"
+                                                                                                 id="change-password-verify"
+                                                                                                 class="form-control"
+                                                                                                 placeholder="Повторите новый пароль">
+                                                </div>
+                                            </div>
+                                            <div class="form-group form-actions">
+                                                <div style="min-height: 30px">
+                                                    <div class="col-xs-9">
+                                                        <div class="show_master_account_change_password"></div>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <button type="submit" id="change_password_master_account"
+                                                                class="btn btn-sm btn-success submit-btn"><i
+                                                                class="fa fa-angle-right"></i> Смена пароля
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="block">
+                                    <div class="block-title">
+                                        <div class="block-options pull-right">
+                                            <a href="javascript:void(0)" class="btn btn-alt btn-sm btn-primary"
+                                               data-toggle="block-toggle-fullscreen"><i class="fa fa-desktop"></i></a>
+                                        </div>
+                                        <h2><i class="fa fa-envelope-o"></i> <strong>Подтверждение</strong> E-mail!</h2>
+                                    </div>
+                                    <div class="block-content"><p>Подтвердите E-mail для получения доступа ко всем функциям Личного Кабинета.</p>
+                                        <legend></legend>
+                                        #if($!isActive)
+                                        <ul class="fa-ul list-li-push">
+                                            <li>
+                                                <i class="fa fa-li fa-check text-success"></i> Аккаунт привязан к E-mail <span class="themed-color-autumn">$!name</span></p>
+                                            </li>
+                                        </ul>
+                                        #else
+                                        <ul class="fa-ul list-li-push">
+                                            <li><i class="fa fa-li fa-warning text-warning"></i> Для подтверждения аккаунта, вам нужно лишь нажать на ссылку в письме на вашем E-mail.
+                                                <p></p></li>
+                                        </ul>
+                                        <form name="send_verification_email" action="" id="form-send-verification" class="form-bordered" method="post" onsubmit="return false;">
+                                            <input type="hidden" name="module" value="global_informaiton_block">
+                                            <input type="hidden" name="action" value="send_verification">
+                                            <div class="form-group text-center"></div>
+                                            <div class="form-group form-actions">
+                                                <div class="center-block" style="min-height: 30px">
+                                                    <label class="col-md-9 col-xs-9 help-block">Отправить еще один верификационный код на $!name</label>
+                                                    <div class="col-md-2 col-md-offset-1 col-xs-2 col-xs-offset-1">
+                                                        <button type="submit" class="btn btn-sm btn-primary submit-btn"><i class="fa fa-angle-right"></i> Отправить </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        #end
+                                    </div>
+                                    <p class="text-muted"></p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="clearfix">
+                <div class="pull-left"><span id="year-copy"></span> &copy; <a href="http://${domain}/"
+                                                                              target="_blank">${domain}</a></div>
+            </footer>
+        </div>
+    </div>
+</div>
+<!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
+<a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
+

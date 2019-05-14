@@ -1,0 +1,112 @@
+<div id="content" class="column panel-panel panel-col" role="main">
+	<div>
+		<div class="panel-pane pane-pane-messages">
+			<div class="pane-content">
+				<div class="tabs"></div>
+			</div>
+		</div>
+		<div class="panel-separator"></div>
+
+		<div class="panel-pane pane-page-content">
+			<h2 class="pane-title">Standings</h2>
+			<div class="pane-content">
+				<div class="panel-display panel-3col-33-double-stacked  clearfix">
+					<div class="panel-panel panel-col-featured">
+						<div class="inside page">
+							<div class="panel-pane pane-fieldable-panels-pane qualifier-banner pane-bundle-fieldable-panels-pane">
+								<div class="pane-content">
+									<div class="fieldable-panels-pane">
+										<div class="field field-name-field-qualifier-banner field-type-file field-label-hidden">
+											<div class="field-items">
+												<div class="field-item even">
+													<div id="file-3569" class="file file-image file-image-jpeg">
+														<div class="content"><img src="/contest/champs_header.jpg" width="1400" height="210" alt=""></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel-bg-container"></div>
+					</div>
+
+					<div class="panel-panel panel-col-top pro-kit-dark-wrapper pro-kit-dark-wrapper-bottom">
+						<div class="pro-kit-dark">
+							<div class="inside page">
+								<div class="panel-pane pane-tourney-bracket esports-bracket-fit-width worlds-bracket no-seed">
+									<h2 class="pane-title">Bracket <span class="accent">Stage</span></h2>
+									<div class="pane-content">
+										#if(!$final.isEmpty())
+										<div class="tourney-bracket-view">
+											<div class="entity entity-tourney-tournament tourney-tournament-tournament clearfix">
+												<div class="content">
+													<div class="field-label">Matches:</div>
+													<div class="field-content">
+														<div class="tourney-tournament tourney-tournament-render tourney-tournament-tree" style="padding-bottom: 50px;">
+															#if($final.size() > 6)
+															#parse("/contest/en/brackets/3round.vm")
+															#elseif($final.size() > 2)
+															#parse("/contest/en/brackets/2round.vm")
+															#else
+															#parse("/contest/en/brackets/1round.vm")
+															#end
+															#parse("/contest/en/brackets/3rd.vm")
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										#end
+									</div>
+								</div>
+								<div class="panel-separator"></div>
+
+								#if(!$groups.isEmpty())
+								<div class="panel-pane pane-custom pane-1 pro-kit-dark">
+									<h2 class="pane-title">Group Stage</h2>
+									<div class="pane-content">
+										<p></p>
+									</div>
+								</div>
+
+								<div class="panel-separator"></div>
+								<div class="panel-pane pane-team-standings esports-carousel-wrapper world-bracket">
+									<div class="pane-content">
+										<div class="series-tourney">
+											<div class="item-list">
+												<ul class="esports-standings-view">
+													#set($first=true)
+													#foreach( $group in $groups.keySet() )
+													<li #if($first==true)class="first"#end style="min-height:320px;">
+														<div class="item"><h4>Group $group</h4>
+															<table class="stats-container table sticky-enabled tableheader-processed sticky-table">
+																<tbody>
+																#set($id = 1)
+																#foreach( $team in $groups.get($group) )
+																<tr #if($id<3)class="winner"#end><td>0$id</td><td><span class="team-image"><a href="javascript:void(0);"><img src="$team.icon" width="134" height="134" alt="$team.name"></a></span></td><td><a href="javascript:void(0);">$team.name</a><span class="wl-stats">$team.wins W - $team.loses L</span></td> </tr>
+																#set($id = $id+1)
+																#end
+																</tbody>
+															</table>
+														</div>
+													</li>
+													#if($first==true)#set($first=false)#else#set($first=true)#end
+													#end
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								#end
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</div>

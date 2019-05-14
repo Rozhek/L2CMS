@@ -1,0 +1,78 @@
+<div id="page-wrapper" class="page-loading"><!-- Preloader -->
+    <!-- Preloader functionality (initialized in js/app.js) - pageLoading() -->
+    <!-- Used only if page preloader is enabled from inc/config (PHP version) or the class 'page-loading' is added in #page-wrapper element (HTML version) -->
+    <div class="preloader themed-background"><h1 class="push-top-bottom text-light text-center"><strong>Your Title</h1>
+
+        <div class="inner"><h3 class="text-light visible-lt-ie9 visible-lt-ie10"><strong>Loading..</strong></h3>
+
+            <div class="preloader-spinner hidden-lt-ie9 hidden-lt-ie10"></div>
+        </div>
+    </div>
+    <div id="page-container" class="sidebar-partial sidebar-visible-lg">
+        <!-- Alternative Sidebar -->
+        #parse("cp/en/menu.vm")
+        <!-- END Main Sidebar -->
+        <!-- Main Container -->
+        <div id="main-container">
+            <!-- Header -->
+            <!-- In the PHP version you can set the following options from inc/config file -->
+            <!-- Available header.navbar classes: 'navbar-default' for the default light header 'navbar-inverse' for an alternative dark header 'navbar-fixed-top' for a top fixed header (fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar()) 'header-fixed-top' has to be added on #page-container only if the class 'navbar-fixed-top' was added 'navbar-fixed-bottom' for a bottom fixed header (fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar())) 'header-fixed-bottom' has to be added on #page-container only if the class 'navbar-fixed-bottom' was added -->
+            #parse("cp/en/account/pagemenu.vm")
+            <div id="page-content">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="content-header">
+                                    <div class="header-section">
+                                        <h1><i class="fa fa-table"></i> Logs<br>
+                                            <small>50 last actions</small>
+                                        </h1>
+                                    </div>
+                                </div>
+                                <ul class="breadcrumb breadcrumb-top">
+                                    <li><a href="/account">Cabinet</a></li>
+                                    <li><a href="/account/log">Logs</a></li>
+                                </ul>
+                                <div class="block full">
+                                    <div class="block-title"><h2><strong>Log</strong> list</h2></div>
+                                    <div class="table-responsive">
+                                        <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center">ID</th>
+                                                <th>Action</th>
+                                                <th>Date</th>
+                                                <th>IP</th>
+                                                <th>Browser</th>
+                                                <th class="text-center">Value</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            #set( $id = 0 )
+                                            #foreach($userLog in $userLogs)
+                                            <tr class=$userLog.getType()>
+                                                <td>$id</td>
+                                                <td>#springMessage("$userLog.getMsg()")</td>
+                                                <td class="text-center">$userLog.getTime()</td>
+                                                <td class="text-center">$userLog.getIp()</td>
+                                                <td class="text-center">$userLog.getBrowser()</td>
+                                                <td class="text-center">$userLog.getParam()</td>
+                                            </tr>
+                                            #set( $id = $id + 1 )
+                                            #end
+                                            </tbody>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="clearfix">
+                <div class="pull-left"><span id="year-copy"></span> &copy; <a href="http://${domain}/" target="_blank">${domain}</a></div>
+            </footer>
+        </div>
+    </div>
+</div><!-- Scroll to top link, initialized in js/app.js - scrollToTop() --><a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
+

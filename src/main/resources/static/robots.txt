@@ -1,0 +1,18 @@
+User-agent: *
+Disallow: /login/
+Disallow: /account/
+Disallow: /error/
+Disallow: /cdn-cgi/
+Disallow: /pay/
+Disallow: /success/
+Disallow: /failed/
+Disallow: /data/	
+Disallow: /register/
+Disallow: /confirmation/
+Disallow: /reminder/
+Disallow: /image/
+
+Allow: /image/?*
+
+Host: http://localhost
+Sitemap: http://localhost/sitemap.xml

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="js">
+<!--<![endif]-->
+<head>
+	<meta http-equiv="content-language" content="en"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<title>Contest</title>
+
+	<meta name="MobileOptimized" content="width">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="cleartype" content="on">
+	<meta name="description" content="Lineage 2 server" />
+
+	<link type="text/css" rel="stylesheet" href="/contest/css/styles.css" media="all">
+	<link type="text/css" rel="stylesheet" href="/contest/css/prokit.css" media="all">
+	<script src="/contest/js/drupal.js"></script>
+	<script src="/contest/js/jquerry_ui.js"></script>
+	#if($!final)
+	<script src="/contest/js/brackets.js"></script>
+	#end
+	#if($!schedule)
+	<script src="/contest/js/schedule.js"></script>
+	#end
+	<script src="/contest/js/theme.js"></script>
+	<script src="/contest/js/lang.js"></script>
+</head>
+<body class="html page-standings riot-realm-na hidden-title banner-top-no-overlap-fix section-standings page-panels generictourneyseriescontroller">
+<div id="page" class="panel-display panel-esports-mainpage clearfix">
+	<header class="header-wrapper" id="header" role="banner">
+		<div class="header">
+			<div class="header-content page">
+				<div id="panel-logo" class="panel-panel panel-col">
+					<div>
+						<div class="panel-pane pane-page-logo">
+							<div class="pane-content">
+								<a href="/" rel="home" id="logo" title="Home"><img src="/site/images/logo.png" alt="Home"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="panel-header" class="panel-panel panel-col">
+					<div>
+						<div class="panel-pane pane-custom pane-5 stub">
+							<div class="pane-content">
+								<div id="languages">
+									<div id="page-wrap">
+										<div id="rus-button" class="button">
+											<a href="javascript:void(0);"><img src="/site/images/ru-on.jpg" alt="rus" class="button-off" /></a>
+										</div>
+										<div id="en-button" class="button">
+											<a href="javascript:void(0);"><img src="/site/images/en-on.jpg" alt="eng" class="button-on" /></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel-separator"></div>
+
+						#if($!nextmatch)
+						#if($!nextmatch.team1)#if($!nextmatch.group) #set($team1 = $groupTeams.get($nextmatch.team1)) #else #set($team1 = $finalTeams.get($nextmatch.team1)) #end #end
+						#if($!nextmatch.team2)#if($!nextmatch.group) #set($team2 = $groupTeams.get($nextmatch.team2)) #else #set($team2 = $finalTeams.get($nextmatch.team2)) #end #end
+						<div class="panel-pane pane-views-panes pane-next-game-next-match-teaser">
+							<div class="pane-content">
+								<div class="view view-next-game view-id-next_game view-display-id-next_match_teaser next-match-teaser">
+									<div class="view-content">
+										<div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+											<div class="match-wrapper">
+												<div class="match-time">
+													<span>Next Match: </span>
+													<div class="field-content game-date inline ">
+														<span class="date"><time datetime="$nextmatch.getStartTime()" class="short-date">$nextmatch.getLocalDate()</time> - </span>
+														<span class="time destress"><time datetime="$nextmatch.getStartTime()" class="local-time">$nextmatch.getLocalTime()</time></span>
+													</div>
+												</div>
+												<div class="match-label">
+													<span class="field-content"><a href="#">#if($!team1)$team1.name#end vs #if($!team2)$team2.name#end</a></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel-separator"></div>
+						#end
+
+						<div class="panel-pane pane-pane-navigation">
+							<div id="navigation" class="menu withprimary ">
+								<nav id="main-navigation" role="navigation">
+									<h2>Main menu</h2>
+									<ul id="main-menu" class="links clearfix inline">
+										<li><a href="/contest">Contest</a></li>
+										<li><a href="/contest/schedule">Schedule</a></li>
+										<li><a href="/contest/bracket">Bracket</a></li>
+										<li><a href="/" id="header-button" class="btn">Back to site</a></li>
+									</ul>
+								</nav>
+							</div>
+							<!-- /navigation -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div id="main">
+		#parse("$page")
+	</div>
+
+	<div id="panel-footer" class="panel-panel panel-col footer-wrapper">
+		<div class="footer page">
+			<div><div class="panel-pane pane-panels-mini pane-postscript">
+				<div class="pane-content">
+					<div class="pane-uneven-four">
+						<div id="panel-left" class="panel-panel panel-col">
+							<div><div class="panels-pane--select-panetitle footer-block double-separator" id="hide-spoilers">
+
+								<h5 class="pane-title"></h5><h5>Hide <span class="h-accent">Spoilers</span></h5>
+
+								<div class="pane-content">
+									<div class="slider-frame">
+										<a class="slider-button btn grippie off">OFF</a>
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div id="panel-right" class="panel-panel panel-col">
+							<div><div class="panels-pane--select-panetitle footer-block double-separator" id="footer-social">
+
+								<h5 class="pane-title"><span class="h-accent">Follow</span> Us</h5>
+
+								<div class="pane-content">
+									<p><a href="#" target="_blank" class="vk">Vkontakte</a><a href="#" target="_blank" class="facebook">Facebook</a><a href="#" target="_blank" class="twitter">Twitter</a><a href="#" target="_blank" class="youtube">YouTube</a></p>
+								</div>
+							</div>
+							</div>
+						</div>
+					</div></div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

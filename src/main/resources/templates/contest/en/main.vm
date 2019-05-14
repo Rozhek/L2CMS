@@ -1,0 +1,64 @@
+<div id="content" class="column panel-panel panel-col" role="main">
+	<div>
+		<div class="panel-pane pane-pane-messages">
+			<div class="pane-content">
+				<div class="tabs"></div>
+			</div>
+		</div>
+		<div class="panel-separator"></div>
+
+		<div class="panel-pane pane-page-content">
+			<h2 class="pane-title">Contest</h2>
+			<div class="pane-content">
+				<div class="panel-display panel-3col-33-double-stacked  clearfix">
+					<div class="panel-panel panel-col-featured">
+						<div class="inside page">
+							<div class="panel-pane pane-fieldable-panels-pane qualifier-banner pane-bundle-fieldable-panels-pane">
+								<div class="pane-content">
+									<div class="fieldable-panels-pane">
+										<div class="field field-name-field-qualifier-banner field-type-file field-label-hidden">
+											<div class="field-items">
+												<div class="field-item even">
+													<div id="file-3569" class="file file-image file-image-jpeg">
+														<div class="content"><img src="/contest/champs_header.jpg" width="1400" height="210" alt=""></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel-bg-container"></div>
+					</div>
+
+					<div class="panel-panel panel-col-top pro-kit-dark-wrapper pro-kit-dark-wrapper-bottom">
+						<div class="pro-kit-dark">
+							<div class="inside page">
+								<div class="panel-pane">
+									<h2 class="pane-title">To the next <span class="accent">Level</span></h2>
+									<div class="pane-content destress">Introducing the first tournament of <span class="accent">Lineage 2.</span>
+										<br>The tournament will be held for the parties of 9 players.<br> The prize pool of the tournament will be collected from the amount of the players donations + an bonus contribution of 30 000 rubles from our project.<br>
+										<!--<br>The tournament will be held <span class="accent">March 16-18.</span> The stream of the tournament can be viewed on the main page of the site.<br>-->
+										<br>The prize pool will be divided as follows:<br>
+										<br>1st place - 40% of the prize pool<br>
+										<br>2place - 25% of the prize pool<br>
+										<br>3rd place - 20% of the prize pool<br>
+										<br>4th place - 10% of the prize pool<br>
+										<br>5 place - 5% of the prize pool<br>
+										<br>6-8 places: 5% of the amount of the prize pool in the equivalent of the game currency<br>
+										<br>Each participant will receive a certificate for a premium account for 1 week.<br>
+										<br>You can read the rules and register for the tournament on the <span class="accent">forum</span>
+									</div>
+								</div>
+								<div class="panel-separator"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</div>

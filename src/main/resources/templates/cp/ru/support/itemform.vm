@@ -1,0 +1,162 @@
+<div class="block" style="border: 0px;">
+    <div class="text-center"><h3><strong>Кража предметов</strong></h3></div>
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="progress progress-striped active">
+                <div id="progress-bar-wizard" class="progress-bar progress-bar-danger" role="progressbar"
+                     aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0">
+                </div>
+            </div>
+            <form id="progress-wizard" action="" name="support" class="form-horizontal" method="post" onsubmit="return false;">
+                <input type="hidden" name="module" value="block_wedget_support">
+                <input type="hidden" name="send" value="tickets-new-drop-item">
+                <input type="hidden" id="sharing" name="sharing" value="not">
+                <input type="hidden" id="protect" name="protect" value="not">
+                <!-- First Step -->
+                <div id="progress-first" class="step">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="example-select">Сервер</label>
+                        <div class="col-md-9">
+                            <select id="server" name="support_server" class="form-control" size="1">
+                            <option value="0">Выберите сервер</option>
+                            <option value="1" selected>High Five x30</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="example-select">Аккаунт</label>
+                        <div class="col-md-9">
+                            <select id="account_name" name="support_account_name" class="form-control" size="1">
+                            <option value="0">Выберите аккаунт</option>
+                            #foreach($account in $accounts)<option value="$account.account">$account.account</option>#end
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="example-select">Персонаж</label>
+                        <div class="col-md-9">
+                            <select id="char_id" name="support_char_name" class="form-control" size="1">
+                            <option value="0">Выберите персонажа</option>
+                            </select>
+                        </div>
+                    </div>
+                </div><!-- END First Step --><!-- Second Step -->
+                <div id="progress-second" class="step">
+                    <div class="form-group">
+                        <label class="col-md-12 text-center" style="font-size: 15px;">У других игроков был доступ к вашей учетной записи?</label>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <span class="help-block">Обратите внимание, если в ходе расследования будет обнаружено, что у других игроков был доступ к вашему аккаунту, мы рассмотрим этот факт как попытку запутать администрацию. В этом случае, к вам будет применена мера наказания в соответствии с правилами.</span>
+                            <button type="button" class="btn btn-block btn-warning" id="button-not">Нет</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-block btn-success" id="button-yes">Да</button>
+                            <span class="help-block">Если у других игроков был доступ к вашему аккаунту - предметы не будут возвращены. В этом случае вы можете заказать услугу расследования, и мы предоставим вам результаты. Стоимость услуги - индивидуально</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Second Step -->
+                <!-- Third Step -->
+                <div id="progress-third" class="step">
+                    <div id="show-not">
+                        <div class="form-group">
+                            <label class="col-md-12 text-center" style="font-size: 15px;">Была ли включена защита учетной записи?</label>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-block btn-warning" id="button-protect-not">Нет</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-block btn-success" id="button-protect-yes">Да</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="show-yes" style="display: none">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="example-lastname">Примерная дата пропажи</label>
+                            <div class="col-md-8">
+                                <input type="text" name="data-date-drop-sharing" class="form-control input-datepicker-close"
+                                                         data-date-format="mm/dd/yy" placeholder="mm/dd/yy" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="example-lastname">Дата последнего входа в игровой мир до обнаружения пропажи</label>
+                            <div class="col-md-8">
+                                <input type="text" name="data-date-last-enter-sharing"
+                                                         class="form-control input-datepicker-close"
+                                                         data-date-format="mm/dd/yy" placeholder="mm/dd/yy" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="example-firstname">Перечислите ники у кого был доступ к вашему аккаунту</label>
+                            <div class="col-md-8"><input type="text" name="nick_sharing" class="form-control"
+                                                         placeholder="..." required></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Third Step -->
+                <!-- Third Step -->
+                <div id="progress-finish" class="step">
+                    <div id="show-not-2">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="example-lastname">Примерная дата пропажи</label>
+                            <div class="col-md-8">
+                                <input type="text" name="data-date-drop-no-sharing" class="form-control input-datepicker-close"
+                                                         data-date-format="mm/dd/yy" placeholder="mm/dd/yy" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="example-lastname">Дата последнего входа в игровой мир до обнаружения пропажи</label>
+                            <div class="col-md-8">
+                                <input type="text" name="data-date-last-enter-no-sharing"
+                                                         class="form-control input-datepicker-close"
+                                                         data-date-format="mm/dd/yy" placeholder="mm/dd/yy" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="example-firstname">Skype</label>
+                            <div class="col-md-8">
+                                <input type="text" name="skype" class="form-control" placeholder="..." required>
+                            </div>
+                        </div>
+                        <div class="form-group"><label class="col-md-4 control-label" for="example-bio">Укажите список пропавших предметов</label>
+                            <div class="col-md-8">
+                                <textarea id="example-progress-bio" name="comment_no_share" rows="5" class="form-control" placeholder="..." required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="show-yes-2" style="display: none">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="example-bio">Укажите список пропавших предметов</label>
+                            <div class="col-md-8">
+                                <textarea id="example-progress-bio" name="comment_share" rows="5"
+                                                            class="form-control" placeholder="..." required></textarea>
+                            </div>
+                        </div>
+                        <label class="col-md-12 text-center" style="font-size: 15px;">Внимание! Стоимость проведения
+                            расследования назначается индивидуально! Результаты расследования будут предоставлены в
+                            течении 24 часов.</label>
+                    </div>
+                </div>
+                <!-- END Third Step -->
+                <!-- Form Buttons -->
+                <div class="form-group form-actions">
+                    <div class="col-md-8 col-md-offset-4">
+                        <input type="reset" class="btn btn-sm btn-warning" value="Назад">
+                        <input type="submit" class="btn btn-sm btn-primary" value="Дальше" id="subm">
+                    </div>
+                </div>
+                <!-- END Form Buttons -->
+            </form>
+            <!-- END Progress Wizard Content -->
+        </div>
+    </div>
+</div>
+<script>
+var char_support = new Array(); #foreach($account in $accounts) char_support["$account.account"] = new Array( #foreach($player in $players)#if($player.accountId == $account.id)#if($result),#end {value:'$player.name',name:'$player.name'}#set($result=true)#end#end ); #end  $('.input-datepicker-close').datepicker({ weekStart: 1}).on('changeDate', function(e){ $(this).datepicker('hide'); }); $('.input-timepicker24').timepicker({ minuteStep: 1,showSeconds: true,showMeridian: false}); $('body').on('click', '#button-not', function () {  $('#sharing').val( 'not' ); $('#show-not-2').fadeIn(); $('#show-not').fadeIn(); $('#show-yes-2').fadeOut(); $('#show-yes').fadeOut(); }).on('click', '#button-yes', function () {  $('#sharing').val( 'yes' ); $('#show-yes-2').fadeIn(); $('#show-yes').fadeIn(); $('#show-not-2').fadeOut(); $('#show-not').fadeOut(); }).on('click', '#button-protect-not', function () {  $('#protect').val( 'yes' ); }).on('click', '#button-protect-yes', function () {  $('#protect').val( 'yes' ); }); $('#progress-wizard').formwizard({  focusFirstInput: true, disableUIStyles: true, validationEnabled: true, validationOptions: {  errorClass: 'help-block animation-slideDown', errorElement: 'span', errorPlacement: function(error, e) {  e.parents('.form-group > div').append(error); }, highlight: function(e) {  $(e).closest('.form-group').removeClass('has-success has-error').addClass('has-error'); $(e).closest('.help-block').remove(); }, success: function(e) {  e.closest('.form-group').removeClass('has-success has-error'); e.closest('.help-block').remove(); } }, inDuration: 0, outDuration: 0, textBack : 'Back', textNext : 'Next', textSubmit : 'Send' });  var progressBar = $('#progress-bar-wizard'); progressBar .css('width', '33%') .attr('aria-valuenow', '33'); $("#progress-wizard").bind('step_shown', function(event, data){  if (data.currentStep === 'progress-first') {  progressBar .css('width', '25%') .attr('aria-valuenow', '25') .removeClass('progress-bar-warning progress-bar-success') .addClass('progress-bar-danger'); } else if (data.currentStep === 'progress-second') {  progressBar .css('width', '50%') .attr('aria-valuenow', '50') .removeClass('progress-bar-danger progress-bar-success') .addClass('progress-bar-warning'); } else if (data.currentStep === 'progress-third') {  progressBar .css('width', '75%') .attr('aria-valuenow', '75') .removeClass('progress-bar-danger progress-bar-warning') .addClass('progress-bar-success'); } else if (data.currentStep === 'progress-finish') {  $("#subm").addClass('submit-btn'); progressBar .css('width', '100%') .attr('aria-valuenow', '100') .removeClass('progress-bar-danger progress-bar-warning') .addClass('progress-bar-success'); } });
+</script>

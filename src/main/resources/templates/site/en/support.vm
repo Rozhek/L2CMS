@@ -1,0 +1,25 @@
+<div id="wrapper">
+    <div id="left-stat">
+        <h2><span>Support</span></h2>
+        <div id="support">
+	        <h1>How can we help you?</h1>
+            <div id="banner-bottom">
+                <div class="container">
+                    <img src="/site/images/content/support1-min.jpg" alt="" />
+                    <p class="title">Solve the problem<br>in the ticket system<span>If the problem relates to your account, donations, or you want to create a complaint against another player</span></p>
+                    <div class="overlay"></div>
+                    <div class="button"><a href="/account/support"> LINK </a></div>
+                </div>
+            </div>
+            <div id="banner-bottom">
+                <div class="container">
+                    <img src="/site/images/content/support2-min.jpg" alt="" />
+                    <p class="title">Discuss the problem<br>on the forum<span>If you want to discuss client errors, possible server bugs</span></p>
+                    <div class="overlay"></div>
+                    <div class="button"><a href="$forumLink/index.php?forums/podderzhka-support.27/"> LINK </a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>

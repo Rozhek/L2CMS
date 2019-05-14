@@ -1,0 +1,52 @@
+<!-- Ticket View -->
+<div class="block" style="border: 0px;">
+    <div class="alert alert-$support.gridLabel animation-fadeInQuick">Текущий статус: <strong>#if($support.type == "NEW") NEW #elseif($support.type == "CLOSE")CLOSE #else IN PROGRESS #end</strong></div>
+    <hr>
+    <ul class="media-list media-feed push">
+        #foreach($message in $messages)
+        <!-- Ticket -->
+        <li class="media">
+            <a href="#" class="pull-left">
+                #if($message.postIsAdmin)<img src="/account/img/online_support.png" width="64" height="64" alt="You" class="img-circle">
+                #else <img src="/account/img/Support.jpg" width="64" height="64" alt="You" class="img-circle">
+                #end
+            </a>
+            <div class="media-body">
+                <p class="push-bit"><span class="text-muted pull-right"><small>$message.time</small></span></p>
+                <h4><strong></strong></h4>
+                <p class="comment_text_$message.id">$message.content</p>
+                <p><button data-tid="$message.id" class="btn btn-xs btn-default"><i class="fa fa-comments"></i> Цитата </button></p>
+            </div>
+        </li>
+        <!-- END Ticket -->
+        #end
+        <li class="media">
+            <a href="#" class="pull-left">
+                <img src="/account/img/Support.jpg" alt="Avatar" class="img-circle">
+            </a>
+            <div class="media-body">
+                <form name="send_answer_ticket" action="" class="form-horizontal" method="post" onsubmit="return false;">
+                    <input type="hidden" name="module" value="block_wedget_support">
+                    <input type="hidden" name="act" value="admin_answer_ticket">
+                    <input type="hidden" name="tickets-id" value="$support.id">
+                    <textarea id="tickets-reply" name="tickets-reply" class="form-control" rows="5" placeholder="Ваш ответ"></textarea>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <select name="support_type" class="form-control" size="1">
+                                <option value="0">Обновить статус</option>
+                                #foreach($supporttype in $types)
+                                #if($supporttype != $support.type && $supporttype != "ALL" && $supporttype != "NEW")
+                                <option value="$supporttype.ordinal()">$supporttype.getName()</option>
+                                #end
+                                #end
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-primary submit-btn"><i class="fa fa-reply"></i> Ответить </button>
+                </form>
+            </div>
+        </li>
+        <!-- END Replies -->
+    </ul>
+</div>
+<!-- END Ticket View -->

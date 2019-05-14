@@ -1,0 +1,156 @@
+<div id="wrapper">
+    <div id="left-stat">
+        <h2><span>Статистика серверов</span></h2>
+        <div id="statistic">
+            <div id="top-players">
+                <div class="tabs">
+                    <div class="tab" id="serv-tab">
+                        <label> Топ:</label>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" id="tab-1" name="tab-group-1" checked>
+                        <label for="tab-1"><span>Level/Adena</span></label>
+                        <div class="tab-content">
+                            <div id="block-in-stat">
+                                <h1>Топ Exp</h1>
+                                #set( $count = 1 )
+                                #foreach($topLevel in $topLevelList)
+                                <div class="top-col">
+	                                <span>${count}.</span> $topLevel.getName() - <span class="prof">$topLevel.getClazz()</span><p>$topLevel.getLevel() <span>Level</span> $topLevel.getAdena()M <span>Adena</span></p>
+                                </div>
+                                #set( $count = $count + 1 )
+                                #end
+                            </div>
+                            <div id="block-in-stat">
+                                <h1>Топ Adena</h1>
+                                #set( $count = 1 )
+                                #foreach($topAdena in $topAdenaList)
+                                <div class="top-col">
+	                                <span>${count}.</span> $topAdena.getName() - <span class="prof">$topAdena.getClazz()</span><p>$topAdena.getLevel() <span>Level</span> $topAdena.getAdena()M <span>Adena</span></p>
+                                </div>
+                                #set( $count = $count + 1 )
+                                #end
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" id="tab-2" name="tab-group-1">
+                        <label for="tab-2"><span>PvP/PK</span></label>
+                        <div class="tab-content">
+                            <div id="block-in-stat">
+                                <h1>Топ PvP</h1>
+                                #set( $count = 1 )
+                                #foreach($topPvP in $topPvPList)
+                                <div class="top-col">
+	                                <span>${count}.</span> $topPvP.getName() - <span class="prof">$topPvP.getClazz()</span><p>$topPvP.getPvP() <span>PvP</span> $topPvP.getPk() <span>PK</span></p>
+                                </div>
+                                #set( $count = $count + 1 )
+                                #end
+                            </div>
+                            <div id="block-in-stat">
+                                <h1>Топ PK</h1>
+                                #set( $count = 1 )
+                                #foreach($topPK in $topPKList)
+                                <div class="top-col">
+	                                <span>${count}.</span> $topPK.getName() - <span class="prof">$topPK.getClazz()</span><p>$topPK.getPvP() <span>PvP</span> $topPK.getPk() <span>PK</span></p>
+                                </div>
+                                #set( $count = $count + 1 )
+                                #end
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" id="tab-3" name="tab-group-1">
+                        <label for="tab-3"><span>Hero</span></label>
+                        <div class="tab-content">
+                            <div id="block-in-stat">
+                                <h1>Heroes</h1>
+                                #set( $count = 1 )
+                                #foreach($hero in $heroesList1)
+                                <div class="top-col">
+	                                <span>${count}.</span> $hero.getName() - <span class="prof">$hero.getClazz()</span><p>$hero.getMatches() <span>Matches</span> $hero.getWins() <span>Wins</span></p>
+                                </div>
+                                #set( $count = $count + 1 )
+                                #end
+                            </div>
+                            <div id="block-in-stat">
+                                <h1>Heroes</h1>
+                                #foreach($hero in $heroesList2)
+                                <div class="top-col">
+	                                <span>${count}.</span> $hero.getName() - <span class="prof">$hero.getClazz()</span><p>$hero.getMatches() <span>Matches</span> $hero.getWins() <span>Wins</span></p>
+                                </div>
+                                #set( $count = $count + 1 )
+                                #end
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" id="tab-4" name="tab-group-1">
+                        <label for="tab-4"><span>Clan/Castle</span></label>
+                        <div class="tab-content">
+                            <div id="block-in-stat">
+                                <h1>Топ Clan</h1>
+                                #set( $count = 1 )
+                                #foreach($clan in $topClanList)
+                                <div class="top-col">
+	                                <span>${count}.</span> #if($clan.getAllyCrest()!="")<img class="ally" src="data:image/png;base64, ${clan.getAllyCrest()}">#end#if($clan.getClanCrest()!="")<img class="clan" src="data:image/png;base64, ${clan.getClanCrest()}">#end$clan.getName() - <span class="prof">$clan.getLeader()</span><p>$clan.getLvL() <span>Level</span> $clan.getCount() <span>Members</span></p>
+                                </div>
+                                #set( $count = $count + 1 )
+                                #end
+                            </div>
+                            <div id="block-in-stat">
+                                <h1>Castles</h1>
+                                #set( $count = 1 )
+                                #foreach($castle in $castleList)
+                                <div class="top-col">
+	                                <span>${count}.</span> $castle.getName() Castle - <span class="prof">#if($castle.getAllyCrest()!="")<img class="ally" src="data:image/png;base64, ${castle.getAllyCrest()}">#end#if($castle.getClanCrest()!="")<img class="clan" src="data:image/png;base64, ${castle.getClanCrest()}">#end$castle.getOwner()</span>
+                                    <p> #foreach($ward in $castle.getWards())
+                                        <img class="ward" src="/site/images/castle/${ward}.png" alt=""
+                                             #if($ward == 1) title="Gludio STR +1/INT +1"#end
+                                             #if($ward == 2) title="Dion DEX +1/WIT +1"#end
+                                             #if($ward == 3) title="Giran STR +1/MEN +1"#end
+                                             #if($ward == 4) title="Oren CON +1/MEN +1"#end
+                                             #if($ward == 5) title="Aden DEX +1/MEN +1"#end
+                                             #if($ward == 6) title="Innadril CON +1/INT +1"#end
+                                             #if($ward == 7) title="Goddard  DEX +1/INT +1"#end
+                                             #if($ward == 8) title="Rune STR +1/WIT +1"#end
+                                             #if($ward == 9) title="Schuttgart CON +1/WIT +1"#end/>
+                                        #end<span>Wards</span></p>
+	                                <div class="date">$castle.getSiegeDate()<span class="left"> Siege Date</span><p>$castle.getTWDate()<span> TW Date</span></p></div>
+                                </div>
+                                #set( $count = $count + 1 )
+                                #end
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" id="tab-5" name="tab-group-1">
+                        <label for="tab-5"><span>Бан лист</span></label>
+                        <div class="tab-content">
+                            <div id="block-in-stat">
+                                <h1>Баны</h1>
+                                #set( $count = 1 )
+                                #foreach($ban in $banList1)
+                                <div class="top-col">
+	                                <span>${count}.</span> $ban.getName() - <span class="prof">$ban.getReason()</span><p>$ban.getBanDate() <span>Дата</span> $ban.getBanEnd() <span>Срок</span></p>
+                                </div>
+                                #set( $count = $count + 1 )
+                                #end
+                            </div>
+                            <div id="block-in-stat">
+                                <h1>Баны</h1>
+                                #foreach($ban in $banList2)
+                                <div class="top-col">
+	                                <span>${count}.</span> $ban.getName() - <span class="prof">$ban.getReason()</span><p>$ban.getBanDate() <span>Дата</span> $ban.getBanEnd() <span>Срок</span></p>
+                                </div>
+                                #set( $count = $count + 1 )
+                                #end
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>

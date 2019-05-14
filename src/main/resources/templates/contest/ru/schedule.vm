@@ -1,0 +1,156 @@
+<div id="content" class="column panel-panel panel-col" role="main">
+	<div>
+		<div class="panel-pane pane-pane-messages">
+			<div class="pane-content">
+				<div class="tabs"></div>
+			</div>
+		</div>
+		<div class="panel-separator"></div>
+
+		<div class="panel-pane pane-page-content">
+			<h2 class="pane-title">Schedule</h2>
+			<div class="pane-content">
+				<div class="panel-display panel-3col-33-double-stacked  clearfix">
+					<div class="panel-panel panel-col-featured">
+						<div class="inside page">
+							<div class="panel-pane pane-fieldable-panels-pane qualifier-banner pane-bundle-fieldable-panels-pane">
+								<div class="pane-content">
+									<div class="fieldable-panels-pane">
+										<div class="field field-name-field-qualifier-banner field-type-file field-label-hidden">
+											<div class="field-items">
+												<div class="field-item even">
+													<div id="file-3569" class="file file-image file-image-jpeg">
+														<div class="content"><img src="/contest/champs_header.jpg" width="1400" height="210" alt=""></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel-bg-container"></div>
+					</div>
+
+					<div class="panel-panel panel-col-top pro-kit-dark-wrapper pro-kit-dark-wrapper-bottom">
+						<div class="pro-kit-dark">
+							<div class="inside page">
+								<div class="panel-pane pane-schedule-title match-week">
+									<h2 class="pane-title">Match <span class="accent">Schedule</span></h2>
+									<div class="pane-content"></div>
+								</div>
+								<div class="panel-separator"></div>
+								<div class="panel-pane pane-matches-nav match-week-nav tabbed-nav esports-tabs esports-tabs-table">
+									<div class="pane-content">
+										<div class="item-list">
+											<ul class="week-nav">
+												#foreach( $id in $schedule.keySet())
+												#if($id>0)<li><a href="#round-$id" rel="round-day-$id" class="$schedule_state.get($id)">РАУНД $id</a></li>#end
+												#end
+												#if($schedule.get(-3)!=$null)
+												<li><a href="#round-quarterfinals" rel="round-quarterfinals" class="$schedule_state.get(-3)">Четвертьфинал</a></li>
+												#end
+												#if($schedule.get(-2)!=$null)
+												<li><a href="#round-semifinals" rel="round-semifinals" class="$schedule_state.get(-2)">Полуфинал</a></li>
+												#end
+												#if($schedule.get(-1)!=$null)
+												<li><a href="#round-finals" rel="round-finals" class="$schedule_state.get(-1)">Финал</a></li>
+												#else
+												<li><a href="#round-finals" rel="round-finals" class="future-week">Финал</a></li>
+												#end
+											</ul>
+										</div>
+										<div class="description-wrapper">
+											<div></div>
+										</div>
+										<div class="match-to-watch-wrapper"><span class="match-to-watch"></span>Расписание указано в вашей временной зоне. Время может быть изменено.</div>
+									</div>
+								</div>
+								<div class="panel-separator"></div>
+								<div class="panel-pane pane-views-panes pane-next-game-match-schedule">
+
+
+									<div class="pane-content">
+										#foreach( $id in $schedule.keySet())
+										<div class="view view-next-game view-id-next_game view-display-id-match_schedule match match-schedule" #if($id==-3)id="round-quarterfinals"#elseif($id==-2)id="round-semifinals"#elseif($id==-1)id="round-finals"#else id="round-$id"#end>
+											<div class="view-content">
+												<table class="views-view-grid cols-3">
+													<tbody>
+													#set($col = 1)
+													#set($row = 1)
+													#foreach( $match in $schedule.get($id))
+													#if($col==1)<tr class="row-$row">#end
+														<td class="col-$col">
+															#if($!match.team1)#if($!match.group) #set($team1 = $groupTeams.get($match.team1)) #else #set($team1 = $finalTeams.get($match.team1)) #end #end
+															#if($!match.team2)#if($!match.group) #set($team2 = $groupTeams.get($match.team2)) #else #set($team2 = $finalTeams.get($match.team2)) #end #end
+															<div class="views-field views-field-field-game-date-1 highlight-separator">
+																<div class="field-content match-date">
+																	#if($!match.getStartTime())
+																	<span class="date"><time class="short-date" datetime="$match.getStartTime()">$match.getLocalDate()</time> - </span>
+																	<span class="time destress"><time class="local-time" datetime="$match.getStartTime()">$match.getLocalTime()</time></span>
+																	#end
+																</div>
+															</div>
+															<div class="views-field views-field-rendered-entity">
+																			<span class="field-content head-to-head double-separator">
+																				<div class="tourney-match">
+																					<div class="content">
+																						<div class="match-type regular-match">
+																							<span></span>
+																							#if($!team1)
+																							#set($winner="")
+																							#if($!match.group && $match.winner==$team1.groupId)#set($winner="winner")#elseif($match.winner==$team1.id)#set($winner="winner")#end
+																							<div class="node-team field-content contestant contestant-1 $winner">
+																								<div class="field-content contestant contestant-1 $winner team-logo">
+																									<img src="$team1.icon" width="134" height="134" alt=""/></div>
+																							</div>
+																							#end
+																							<div class="match-type normal-match"></div>
+																							#if($!team2)
+																							#set($winner="")
+																							#if($!match.group && $match.winner==$team2.groupId)#set($winner="winner")#elseif($match.winner==$team2.id)#set($winner="winner")#end
+																							<div class="node-team field-content contestant contestant-2 $winner">
+																								<div class="field-content contestant contestant-2 $winner team-logo">
+																									<img src="$team2.icon" width="134" height="134" alt=""/></div>
+																							</div>
+																							#end
+																						</div>
+																					</div>
+
+																				</div>
+																			</span>
+															</div>
+															<div class="views-field views-field-label match-title highlight-separator">
+																<span class="field-content">#if($!team1)$team1.name#end <span style="display:inline" class="accent">vs</span><br/> #if($!team2)$team2.name#end</span>
+															</div>
+															<div class="views-field views-field-url match-url double-separator">
+																			<span class="field-content btn icon icon-active-arrow-right">
+																				<a href="javascript:void(0);">Смотреть</a>
+																			</span>
+															</div>
+															#set($team1 = $null) #set($team2 = $null) #set($match = $null)
+														</td>
+														#set($col=$col+1)
+														#if($col==4)</tr>#set($col=1)#set($row=$row+1)#end
+													#end
+													#if($col==4)</tr>#elseif($col==3)<td></td></tr>#elseif($col==2)<td></td><td></td></tr>#end
+													</tbody>
+												</table>
+											</div>
+										</div>
+										#end
+									</div>
+
+
+								</div>
+								<div class="panel-separator"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</div>

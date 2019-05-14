@@ -1,0 +1,48 @@
+<!--[if (gte mso 9)|(IE)]><table width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="content" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+<tbody>
+<tr>
+    <td style="padding: 15px 10px 15px 10px;">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+    <td><br></td>
+</tr>
+</tbody></table></td></tr>
+<tr>
+    <td align="center" bgcolor="#ce3c3d" style="padding: 20px 20px 20px 20px; color: #ffffff; font-family: Arial, sans-serif; font-size: 36px; font-weight: bold;">${mailtitle}</td></tr>
+<tr>
+    <td align="center" bgcolor="#ffffff" style="padding: 40px 20px 4 0px 20px; color: #555555; font-family: Arial, sans-serif; font-size: 20px; line-height: 30px; border-bottom: 1px solid #f6f6f6;">
+    <strong>Вы успешно зарегистрировались !</strong></td>
+</tr>
+<tr>
+    <td align="center" bgcolor="#f9f9f9" style="padding: 20px 20px 0 20px; color: #555555; font-family: Arial, sans-serif; font-size: 20px; line-height:30px;">
+    <strong>Мастер аккаунт:</strong> ${name}<br><strong>Игровой аккаунт:</strong> ${account}</td>
+</tr>
+<tr>
+    <td align="center" bgcolor="#f9f9f9" style="padding: 20px 20px 0 20px; color: #555555 ; font-family: Arial, sans-serif; font-size: 20px; line-height: 30px;">
+    <strong>Пароль:</strong> ${password}</td>
+</tr>
+<tr>
+    <td align="center" bgcolor="#f9f9f9" style="padding: 30px 20px 30px 20px; font-family: Arial, sans-serif; border-bottom: 1px solid #f6f6f6;">
+    <table bgcolor="#ce3c3d" border="0" cellpadding="0" cellspacing="0" class="buttonwrapper">
+        <tbody>
+        <tr>
+            <td align="center" class="button" height="50" style="padding: 0 25px 0 25px; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold;">
+            <a href="http://${hostname}/confirmation?token=${token}" style="color: #ffffff; text-align: center; text-decoration: none;">Активировать аккаунт</a></td></tr>
+        </tbody>
+    </table>
+    </td></tr>
+<tr>
+    <td align="center" bgcolor="#ffffff" style="padding: 10px 20px 10px 20px; color: #555555; font-family: Arial, sans-serif; font-size: 15px; line-height:24px;"> Никому не сообщайте эту информацию! В случае подозрительной активности на вашем аккаунте немедленно измените свой пароль!</td></tr>
+<tr>
+    <td align="center" bgcolor="#dddddd" style="padding: 15px 10px 15px 10px; color: #555555; font-family: Arial, sans-serif; font-size: 12px; line-height: 18px;"> Первый турнирный lineage 2 проект</td></tr>
+<tr>
+    <td style="padding: 15px 10px 15px 10px;">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tbody>
+        <tr>
+            <td align="center" style="color: #999999; font-family: Arial, sans-serif; font-size: 12px;" width="100%">2018 &copy; <a href="http://${hostname}/" style="color:#69b899;">$mailtitle</a></td></tr>
+        </tbody>
+    </table></td>
+</tr></tbody></table><!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->

@@ -1,0 +1,228 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1">
+            <div id="login-alt-container"><!-- Title --><h1 class="push-top-bottom" style="margin-top: 0px; "><i
+                    class="fa fa-shield"></i> <strong>Lineage - your <br>title</strong><br></h1>
+                <!-- END Title -->
+                <!-- Key Features -->
+                <ul class="fa-ul text-muted">
+                    <li><i class="fa fa-check fa-li text-success"></i>
+                        <a class="text-danger" href="/reg">Скачать файлы для подключения</a>
+                    </li>
+                    <li><i class="fa fa-check fa-li text-success"></i>
+                        <a class="text-light" href="http://forum.${domain}/index.php?forums/informacija-o-servere.25/">Концепция High Five x30</a>
+                    </li>
+                    <li><i class="fa fa-check fa-li text-success"></i>
+                        <a class="text-light" href="http://forum.${domain}/index.php?forums/podderzhka-support.27/">Обратиться в службу поддержки</a>
+                    </li>
+                </ul>
+                <!-- END Key Features -->
+                <!-- Footer -->
+                <footer class="text-muted push-top-bottom">
+                    <small><span id="year-copy"></span> &copy; ${domain}</small>
+                </footer>
+                <!-- END Footer -->
+            </div>
+        </div>
+        <div class="col-md-5">
+            <!-- Login Container -->
+            <div id="login-container">
+                <!-- Login Title -->
+                <div class="login-title text-center">
+                    <h1><strong>Войдите</strong> или <strong>Зарегистрируйтесь</strong></h1>
+                </div>
+                <!-- END Login Title -->
+                <!-- Login Block -->
+                <div class="block push-bit">
+                    <!-- Login Form -->
+                    <form action="#springUrl("/login")" method="post" id="form-login" class="form-horizontal" onsubmit="return false;">
+                    <!--input type="hidden" name="login" value="1"-->
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="input-group"><span class="input-group-addon"><i class="gi gi-envelope"></i></span><input
+                                        type="text" id="login-email" name="username" class="form-control input-lg"
+                                        placeholder="Почта"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="input-group"><span class="input-group-addon"><i class="gi gi-asterisk"></i></span><input
+                                        type="password" id="login-password" name="password"
+                                        class="form-control input-lg" placeholder="Пароль"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div id="recaptcha1" class="g-recaptcha"></div>
+                            </div>
+                        </div>
+                        <div class="form-group form-actions">
+                            <div class="col-xs-4"><label class="switch switch-primary" data-toggle="tooltip"
+                                                         title="Запомни меня?"><input type="checkbox"
+                                                                                      id="login-remember-me"
+                                                                                      name="remember-me"><span></span></label>
+                            </div>
+                            <div class="col-xs-8 text-right">
+                                <button type="submit" class="btn btn-sm btn-primary submit-btn"><i
+                                        class="fa fa-angle-right"></i> Войти
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12 text-center"><a href="javascript:void(0)" id="link-reminder-login">
+                                <small>Забыли пароль?</small>
+                            </a> - <a href="javascript:void(0)" id="link-register-login">
+                                <small>Создать новый аккаунт</small>
+                            </a></div>
+                        </div>
+                    </form>
+                    <!-- END Login Form -->
+                    <!-- Reminder Form -->
+                    <form action="#springUrl("/reminder")" method="post" id="form-reminder"
+                          class="form-horizontal display-none" onsubmit="return false;">
+
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="input-group"><span class="input-group-addon"><i class="gi gi-envelope"></i></span><input
+                                        type="text" id="reminder-email" name="username"
+                                        class="form-control input-lg" placeholder="Почта"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div id="recaptcha2" class="g-recaptcha"></div>
+                            </div>
+                        </div>
+                        <div class="form-group form-actions">
+                            <div class="col-xs-12 text-right">
+                                <button type="submit" class="btn btn-sm btn-primary submit-btn"><i
+                                        class="fa fa-angle-right"></i> Сброс пароля
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12 text-center">
+                                <small>Вспомнили свой пароль?</small>
+                                <a href="javascript:void(0)" id="link-reminder">
+                                    <small>Войти</small>
+                                </a></div>
+                        </div>
+                    </form>
+                    <!-- END Reminder Form -->
+                    <!-- Register Form -->
+                    <form action="#springUrl("/register")" method="post" id="form-register"
+                          class="form-horizontal display-none" onsubmit="return false;">
+                        <input type="hidden" id="register-prefix-input" name="prefix" value="$prefix">
+	                #if($xmlRpcRegAccount)
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="gi gi-user"></i></span>
+                                    <span id="register-prefix" class="input-group-addon" style="cursor: pointer">$prefix</span><input
+                                        type="text" id="register-account" name="account"
+                                        class="form-control input-lg" placeholder="Аккаунт"></div>
+                            </div>
+                        </div>
+	                #end
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="input-group"><span class="input-group-addon"><i class="gi gi-envelope"></i></span><input
+                                        type="text" id="register-email" name="username"
+                                        class="form-control input-lg" placeholder="Почта"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="input-group"><span class="input-group-addon"><i class="gi gi-asterisk"></i></span><input
+                                        type="password" id="register-password" name="password"
+                                        class="form-control input-lg" placeholder="Пароль"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="input-group"><span class="input-group-addon"><i class="gi gi-asterisk"></i></span><input
+                                        type="password" id="register-password-verify" name="password-verify"
+                                        class="form-control input-lg" placeholder="Повторите пароль"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div id="recaptcha3" class="g-recaptcha"></div>
+                            </div>
+                        </div>
+                        <div class="form-group form-actions">
+                            <div class="col-xs-6">
+                                <!--a href="#modal-terms" data-toggle="modal" class="register-terms">Правила</a--><a
+                                    href="http://forum.${domain}/threads/pravila-i-narushenija-proekta.519/"
+                                    target="_blank" class="register-terms">Правила</a><label
+                                    class="switch switch-primary" data-toggle="tooltip" title="Согласитесь с правилами"><input
+                                    type="checkbox" id="register-terms" name="terms"><span></span></label>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <button type="submit" class="btn btn-sm btn-success submit-btn"><i
+                                        class="fa fa-plus"></i> Регистрация Аккаунта
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12 text-center">
+                                <small>У тебя есть аккаунт?</small>
+                                <a href="javascript:void(0)" id="link-register">
+                                    <small>Войти</small>
+                                </a></div>
+                        </div>
+                    </form>
+                    <!-- END Register Form -->
+                </div>
+                <!-- END Login Block -->
+            </div>
+            <!-- END Login Container -->
+        </div>
+    </div>
+</div>
+<!-- END Login Alternative Row -->
+<a style="display: none" href="#reg-mail" id="modal-reg-mail" data-toggle="modal" class="modal-reg-active">&times;</a>
+<!-- Modal Terms -->
+<div id="reg-mail" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">Ваш Мастер аккаунт был успешно создан!</h3></div>
+	        <div class="modal-body">
+		        <h4>Подтверждение и реквизиты высланы на ваш Email, <br>если письма нет - <span style="color: #E2404A;">проверьте папку "спам".</span>
+			        <br>Пожалуйста, дождитесь его получения и подтвирдите адрес электронной почты.<br>
+			        <br>Внимание, игровой аккаунт <span style="text-decoration: underline;">создается</span> внутри Мастер Аккаунта!.<br><br>
+			        <a href="/account">Войти в Личный Кабинет!</a></h4>
+		        <br>
+		        <div class="text-center">
+			        <a href="/">Вернутся на сайт</a>
+		        </div>
+	        </div>
+        </div>
+    </div>
+</div>
+<!-- END Modal Terms -->
+<!-- END Login Alternative Row -->
+<a style="display: none" href="#reg-nomail" id="modal-reg-nomail" data-toggle="modal" class="modal-reg-active">&times;</a>
+<!-- Modal Terms -->
+<div id="reg-nomail" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3 class="modal-title">Ваш Мастер аккаунт был успешно создан!</h3></div>
+			<div class="modal-body">
+				<h4>Подтверждение и реквизиты не удалось отправить на ваш Email.<br>
+					<br>Пожалуйста, повторите отправку из Личного Кабинета позднее.<br>
+					<br>Внимание, игровой аккаунт <span style="text-decoration: underline;">создается</span> внутри Мастер Аккаунта!.<br><br>
+					<a href="/account">Войти в Личный Кабинет</a></h4>
+				<br>
+				<div class="text-center">
+					<a href="/">Вернутся на сайт</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END Modal Terms -->

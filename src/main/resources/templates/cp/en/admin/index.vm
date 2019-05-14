@@ -1,0 +1,213 @@
+<div id="page-wrapper" class="page-loading"><!-- Preloader -->
+    <!-- Preloader functionality (initialized in js/app.js) - pageLoading() -->
+    <!-- Used only if page preloader is enabled from inc/config (PHP version) or the class 'page-loading' is added in #page-wrapper element (HTML version) -->
+    <div class="preloader themed-background"><h1 class="push-top-bottom text-light text-center"><strong>Your Title</h1>
+
+        <div class="inner"><h3 class="text-light visible-lt-ie9 visible-lt-ie10"><strong>Loading..</strong></h3>
+
+            <div class="preloader-spinner hidden-lt-ie9 hidden-lt-ie10"></div>
+        </div>
+    </div>
+    <div id="page-container" class="sidebar-partial sidebar-visible-lg">
+        <!-- Alternative Sidebar -->
+        #parse("cp/en/menu.vm")
+        <!-- END Main Sidebar -->
+        <!-- Main Container -->
+        <div id="main-container"><!-- Header -->
+            <!-- In the PHP version you can set the following options from inc/config file -->
+            <!-- Available header.navbar classes: 'navbar-default' for the default light header 'navbar-inverse' for an alternative dark header 'navbar-fixed-top' for a top fixed header (fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar()) 'header-fixed-top' has to be added on #page-container only if the class 'navbar-fixed-top' was added 'navbar-fixed-bottom' for a bottom fixed header (fixed sidebars with scroll will be auto initialized, functionality can be found in js/app.js - handleSidebar())) 'header-fixed-bottom' has to be added on #page-container only if the class 'navbar-fixed-bottom' was added -->
+            #parse("cp/en/admin/menu.vm")
+            <div id="page-content">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+	                        <div class="col-md-7">
+		                        <div class="row">
+			                        <div class="col-md-12">
+				                        <div class="widget information-window">
+					                        <div class="widget-extra themed-background-dark-flatie">
+						                        <div class="row text-center">
+							                        <div class="col-xs-4">
+								                        <h3 class="widget-content-light">
+									                        <strong class="themed-color-flatie">$website_accounts</strong><br>
+									                        <small>Registered accounts</small>
+								                        </h3>
+							                        </div>
+							                        <div class="col-xs-4">
+								                        <h3 class="widget-content-light">
+									                        <strong class="themed-color-flatie">$game_accounts</strong><br>
+									                        <small>Game accounts</small>
+								                        </h3>
+							                        </div>
+							                        <div class="col-xs-4">
+								                        <h3 class="widget-content-light">
+									                        <strong class="themed-color-flatie">$player_amount</strong><br>
+									                        <small>Characters amount</small>
+								                        </h3>
+							                        </div>
+						                        </div>
+					                        </div>
+					                        <div class="widget-extra themed-background-dark-flatie">
+						                        <div class="row text-center">
+							                        <div class="col-xs-4">
+								                        <h3 class="widget-content-light">
+									                        <strong class="themed-color-flatie">$credit_purchased</strong><br>
+									                        <small>Gold purchased</small>
+								                        </h3>
+							                        </div>
+							                        <div class="col-xs-4">
+								                        <h3 class="widget-content-light">
+									                        <strong class="themed-color-flatie">$gold_amount</strong><br>
+									                        <small>Game Golds amount</small>
+								                        </h3>
+							                        </div>
+							                        <div class="col-xs-4">
+								                        <h3 class="widget-content-light">
+									                        <strong class="themed-color-flatie">-</strong><br>
+									                        <small>-</small>
+								                        </h3>
+							                        </div>
+						                        </div>
+					                        </div>
+				                        </div>
+			                        </div>
+		                        </div>
+		                        <div class="block">
+			                        <!-- Responsive Full Title -->
+			                        <div class="block-title"><h2><strong>Accounts</strong> marked as RMT</h2></div>
+			                        <!-- END Responsive Full Title -->
+			                        <!-- Responsive Full Content -->
+			                        <div class="table-responsive text-center">
+				                        <table class="table table-vcenter table-striped">
+					                        <tbody>
+					                        #set($alertId = 1)
+					                        #foreach($alert in $alert_list)
+					                        <tr>
+						                        <td class="col-md-1"><span class="label label-warning" id="alert-$alertId">$alert.getPoints()</span></td>
+						                        <td class="col-md-4">$alert.getLogin()</td>
+						                        <td class="col-md-4"></td>
+						                        <td class="col-md-3">
+							                        <form action="/admin/setAlertPoints" class="form-inline" method="post">
+								                        <input type="hidden" name="login" class="form-control" value="$alert.getLogin()">
+								                        <input type="hidden" name="alertId" class="form-control" value="$alertId">
+							                            <input type="number" min="1" max="999" name="points" class="form-control" placeholder="$alert.getPoints()">
+							                            <button type="submit" class="btn btn-sm btn-success submit-btn"><i class="fa fa-angle-right"></i> Set new </button>
+					                                </form>
+						                        </td>
+					                        </tr>
+					                        #set($alertId = $alertId + 1)
+					                        #end
+					                        </tbody>
+				                        </table>
+			                        </div>
+			                        <!-- END Responsive Full Content -->
+		                        </div>
+	                        </div>
+                            <div class="col-md-5">
+                                <div class="block">
+                                    <div class="block-title">
+                                        <div class="block-options pull-right"><a href="javascript:void(0)"
+                                                                                 class="btn btn-alt btn-sm btn-primary"
+                                                                                 data-toggle="block-toggle-fullscreen"><i
+                                                class="fa fa-desktop"></i></a></div>
+                                        <h2><i class="fa fa-pencil"></i> <strong>Add Money to</strong> User!</h2></div>
+                                    <div class="block-content"><p></p>
+                                        <legend></legend>
+                                        <form action="/admin/addMoneyToUserId" class="form-bordered" method="post" name="add_money">
+
+                                            <div class="form-group">
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                        class="gi gi-user"></i></span><input type="text"
+                                                                                                 name="userId"
+                                                                                                 class="form-control"
+                                                                                                 placeholder="User ID">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                        class="gi gi-money"></i></span><input type="text"
+                                                                                                 name="sum"
+                                                                                                 class="form-control"
+                                                                                                 placeholder="Sum">
+                                                </div>
+                                            </div>
+                                            <div class="form-group form-actions">
+                                                <div style="min-height: 30px">
+                                                    <div class="col-xs-9">
+                                                        <div class="show_add_money"></div>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <button type="submit"
+                                                                class="btn btn-sm btn-success submit-btn"><i
+                                                                class="fa fa-angle-right"></i> Add money
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+	                            <div class="block">
+		                            <div class="block-title">
+			                            <div class="block-options pull-right"><a href="javascript:void(0)"
+			                                                                     class="btn btn-alt btn-sm btn-primary"
+			                                                                     data-toggle="block-toggle-fullscreen"><i
+					                            class="fa fa-desktop"></i></a></div>
+			                            <h2><i class="fa fa-pencil"></i> <strong>Generate bonus</strong> Code!</h2></div>
+		                            <div class="block-content"><p></p>
+			                            <legend></legend>
+			                            <form action="/admin/generateBonus" class="form-bordered" method="post" name="generated_code">
+
+				                            <div class="form-group">
+					                            <div class="input-group"><span class="input-group-addon"><i
+							                            class="gi gi-user"></i></span><input type="text"
+					                                                                         name="countS"
+					                                                                         class="form-control"
+					                                                                         placeholder="Count of codes">
+					                            </div>
+				                            </div>
+				                            <div class="form-group">
+					                            <div class="input-group"><span class="input-group-addon"><i
+							                            class="gi gi-money"></i></span><input type="text"
+					                                                                          name="sum"
+					                                                                          class="form-control"
+					                                                                          placeholder="Sum">
+					                            </div>
+				                            </div>
+				                            <div class="form-group form-actions">
+					                            <div style="min-height: 30px">
+						                            <div class="col-xs-9">
+							                            <div class="show_generated_code"></div>
+						                            </div>
+						                            <div class="col-xs-3">
+							                            <button type="submit"
+							                                    class="btn btn-sm btn-success submit-btn"><i
+									                            class="fa fa-angle-right"></i> Generate code </button>
+						                            </div>
+					                            </div>
+				                            </div>
+			                            </form>
+		                            </div>
+	                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="clearfix">
+                <div class="pull-left"><span id="year-copy"></span> &copy; <a href="http://${domain}/"
+                                                                              target="_blank">${domain}</a></div>
+            </footer>
+        </div>
+    </div>
+</div>
+<script>
+  downloadFile = function (text) {
+    var data = new Blob([text], {type: 'text/plain;charset=UTF-8'});
+    var textFile = window.URL.createObjectURL(data);
+    var link = document.getElementById('downloadlink');
+    link.href = textFile;
+  };
+</script>
+<!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
+<a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>

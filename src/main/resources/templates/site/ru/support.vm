@@ -1,0 +1,25 @@
+<div id="wrapper">
+    <div id="left-stat">
+        <h2><span>Поддержка</span></h2>
+        <div id="support">
+	        <h1>Как мы можем вам помочь?</h1>
+            <div id="banner-bottom">
+                <div class="container">
+                    <img src="/site/images/content/support1-min.jpg" alt="" />
+                    <p class="title">Решение проблем<br>в тикет-системе<span>Если проблема связана с вашим аккаунтом, пожертвованиями или вы хотите оставить жалобу на другого игрока</span></p>
+                    <div class="overlay"></div>
+                    <div class="button"><a href="/account/support"> ПЕРЕЙТИ </a></div>
+                </div>
+            </div>
+            <div id="banner-bottom">
+                <div class="container">
+                    <img src="/site/images/content/support2-min.jpg" alt="" />
+                    <p class="title">Обсуждение проблем<br>на форуме<span>Если вы хотите обсудить ошибки клиента, возможные баги сервера</span></p>
+                    <div class="overlay"></div>
+                    <div class="button"><a href="$forumLink/index.php?forums/podderzhka-support.27/"> ПЕРЕЙТИ </a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>

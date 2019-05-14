@@ -1,0 +1,470 @@
+<div id="page-wrapper" class="page-loading"><!-- Preloader -->
+    <!-- Preloader functionality (initialized in js/app.js) - pageLoading() -->
+    <!-- Used only if page preloader is enabled from inc/config (PHP version) or the class 'page-loading' is added in #page-wrapper element (HTML version) -->
+    <div class="preloader themed-background"><h1 class="push-top-bottom text-light text-center"><strong>Your Title</h1>
+        <div class="inner"><h3 class="text-light visible-lt-ie9 visible-lt-ie10"><strong>Loading..</strong></h3>
+            <div class="preloader-spinner hidden-lt-ie9 hidden-lt-ie10"></div>
+        </div>
+    </div>
+    <div id="page-container" class="sidebar-partial sidebar-visible-lg">
+        <!-- Sidebar -->
+        #parse("cp/en/menu.vm")
+        <!-- END Sidebar -->
+        <!-- Main Container -->
+        <div id="main-container">
+            <!-- Header -->
+            #parse("cp/en/account/pagemenu.vm")
+            <div id="page-content">
+                <style type="text/css"> .balance-animation { position: relative; cursor: pointer; } .balance-animation
+                    .update-balance { position: absolute; top: 40%; left: 50%; font-size:30px; margin:-15px 0 0 -15px;
+                    opacity: 0; -webkit-transition: all 0.3s ease; -moz-transition: all 0.3s ease; -o-transition: all
+                    0.3s ease; transition: all 0.3s ease; } .balance-animation:hover strong , .balance-animation.active
+                    strong { display: none; -webkit-transition: all 0.3s ease; -moz-transition: all 0.3s ease;
+                    -o-transition: all 0.3s ease; transition: all 0.3s ease; } .balance-animation:hover .update-balance,
+                    .balance-animation.active .update-balance { opacity:1; -webkit-animation: rotate 2s linear infinite;
+                    animation: rotate 2s linear infinite; } @-webkit-keyframes rotate { 0%{ -webkit-transform:
+                    rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); transform: rotate(0deg); }
+                    100% { -webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); -o-transform:
+                    rotate(360deg); transform: rotate(360deg); } } @keyframes rotate { 0%{ -webkit-transform:
+                    rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); transform: rotate(0deg); }
+                    100% { -webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); -o-transform:
+                    rotate(360deg); transform: rotate(360deg); } }
+                </style>
+                <div class="content-header content-header-media">
+                    <div class="header-section">
+                        <div class="row">
+                            <!-- Main Title (hidden on small devices for the statistics to fit) -->
+                            <div class="col-md-7 col-lg-9 hidden-xs hidden-sm">
+                                <div>
+                                    <strong style="font-size: 27px;">$!name</strong><br>
+                                    <h1><small>First Tournament!</small></small></h1>
+                                </div>
+                            </div>
+                            <!-- END Main Title -->
+                            <!-- Top Stats -->
+                            <div class="col-md-5 col-lg-3">
+                                <div class="row text-center">
+                                    <div class="col-xs-6 col-sm-6">
+                                        <h2 class="animation-hatch balance-animation">
+                                            <i style="color: red" class="gi gi-roundabout update-balance"></i><strong>$!MONEY</strong><br>
+                                            <small><i class="gi gi-coins"></i> Donation Balance</small>
+                                        </h2>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6">
+                                        <h2 class="animation-hatch"><strong>0</strong>%<br>
+                                            <small><i class="gi gi-wallet"></i> Discount</small>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END Top Stats -->
+                        </div>
+                    </div>
+                    <img src="/account/img/placeholders/headers/dashboard_header.jpg" alt="header image" class="animation-pulseSlow">
+                </div>
+                <div class="row">
+                    <div class="col-md-8  col-sm-8">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="widget information-window">
+                                            <div class="widget-simple" style="padding: 11px;">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="widget-main">
+                                                            <div class="list-group remove-margin">
+                                                                <div class="list-group-item">
+                                                                    <span class="pull-right">
+                                                                        <strong><a href="#modal-information-panel" class="information-window-open text-info" style="font-size: 12px;"
+                                                                           data-toggle="modal" data-window="open_logs_auth">$!lastLogin</a></strong>
+                                                                    </span>
+                                                                    <h6 class="list-group-item-heading remove-margin"><i class="fa fa-calendar"></i> Last login </h6>
+                                                                </div>
+                                                                <div class="list-group-item">
+                                                                    <span class="pull-right">
+                                                                    <strong><a href="#modal-information-panel" class="information-window-open text-info"
+                                                                        data-toggle="modal" data-window="open_logs_auth">$!lastIp</a></strong>
+                                                                    </span>
+                                                                    <h6 class="list-group-item-heading remove-margin"><i class="fa fa-exchange"></i> Last IP</h6>
+
+                                                                    <p class="list-group-item-text"></p>
+                                                                </div>
+                                                                <div class="list-group-item">
+                                                                    <span class="pull-right"><strong>$!currentIp</strong></span>
+                                                                    <h6 class="list-group-item-heading remove-margin"><i class="fa fa-code-fork"></i> Current IP</h6>
+
+                                                                    <p class="list-group-item-text"></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="widget-main">
+                                                            <div class="list-group remove-margin">
+                                                                <div class="list-group-item">
+                                                                    <!--label label-primary-->
+                                                                    <h6 class="list-group-item-heading remove-margin">
+                                                                        <a href="#modal-information-panel"
+                                                                           class="information-window-open text-info"
+                                                                           data-toggle="modal"
+                                                                           data-window="change_password_ma">
+                                                                           <i class="fa fa-pencil"></i> Change password for MA</a>
+                                                                    </h6>
+                                                                </div>
+                                                                <div class="list-group-item"><span class="pull-right">
+                                                                    <strong>#if($!isActive) Active #else Not Activated #end</strong></span>
+                                                                    <h6 class="list-group-item-heading remove-margin"><i class="fa fa-gamepad"></i> Current</h6>
+
+                                                                    <p class="list-group-item-text"></p>
+                                                                </div>
+                                                                <div class="list-group-item">
+                                                                    <a href="#modal-information-panel"
+                                                                       class="button-pin-shield" data-toggle="modal"
+                                                                       style="display: none"></a>
+                                                                    <span class="pull-right"><strong>
+                                                                        <label class="switch-min switch-checked">
+                                                                            <!--input id="pin-shield" class="pin-shield" data-window="change_disable_pin" type="checkbox"-->
+                                                                            <span></span>
+                                                                        </label></strong>
+                                                                    </span>
+                                                                    <h6 class="list-group-item-heading remove-margin">
+                                                                        <i class="fa fa-expeditedssl"></i> Phone-protect </h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="widget-extra themed-background-dark-flatie">
+                                                <div class="row text-center">
+                                                    <div class="col-xs-4">
+                                                        <h3 class="widget-content-light">
+                                                            <strong class="themed-color-flatie">$accounts.size()</strong><br>
+                                                            <small>Game accounts</small>
+                                                        </h3>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <h3 class="widget-content-light">
+                                                            <strong class="themed-color-flatie">$players.size()</strong><br>
+                                                            <small>Total Characters</small>
+                                                        </h3>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <h3 class="widget-content-light">
+                                                            <a href="javascript:void(0)" class="themed-color-flatie"><strong>-</strong></a><br>
+                                                            <small>Achievements</small>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Modal Terms -->
+                                        <div id="modal-information-panel" class="modal animation-fadeInQuick" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                        <h4 class="modal-title"><span class="title-information-panel"></span></h4>
+                                                    </div>
+                                                    <div class="modal-body" id="body-information-panel"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- END Modal Terms -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="block full account-list-char">
+                                    <!-- Block Tabs Title -->
+                                    <div class="block-title">
+                                        <ul class="nav nav-tabs" data-toggle="tabs">
+                                            #set($result=false)
+                                            #foreach($account in $accounts)
+                                            <li class="#if(!$result)active#end"><a href="#${account.account}-account">$account.account</a></li>
+                                            #set($result=true)
+                                            #end
+                                            <li style="line-height: 35px;">
+                                                <button href="#modal-create-game" data-toggle="modal" title="Add account" class="btn btn-alt btn-default">
+                                                    <i class="fa fa-plus"></i>
+                                                </button>
+                                                <button title="Refresh" class="btn btn-alt btn-default btn-refresh-char">
+                                                    <i class="gi gi-roundabout"></i>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- END Block Tabs Title -->
+                                    <!-- Tabs Content -->
+                                    <div class="tab-content">
+	                                    #set($result=false)
+                                        #foreach($acc in $accounts)
+                                        <div class="tab-pane #if(!$result)active#end" id="${acc.account}-account">
+                                            <ul class="nav nav-tabs push" data-toggle="tabs">
+                                            #set($result=false)
+                                            #foreach($player in $players)
+                                                #if($player.accountId == $acc.id)
+                                                <li class="#if(!$result)active#end"><a href="#${player.name}-char">$player.name</a></li>
+                                                #set($result=true)
+                                                #end
+                                            #end
+                                            #if(!$result)
+                                                <li>There are no characters on your account!</li>
+                                            #end
+                                                <li style="line-height: 35px;float: right;">
+                                                    <div class="btn-group">
+                                                        <button href="#modal-change-password" data-toggle="modal" data-change="$acc.account"
+                                                                title="Change password" class="btn btn-alt btn-sm btn-success btn-account-char">
+                                                            <i class="fa fa-retweet"></i>
+                                                        </button>
+                                                        <button href="#modal-recovery-password" data-toggle="modal" data-recovery="$acc.account"
+                                                                title="Recovery password" class="btn btn-alt btn-sm btn-success btn-account-char">
+                                                            <i class="fa fa-key"></i>
+                                                        </button>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                #set($result=false)
+                                                #foreach($player in $players)
+                                                #if($player.accountId == $acc.id)
+                                                <div class="tab-pane #if(!$result)active#end" id="${player.name}-char">
+                                                    <div class="timeline block-content-full">
+                                                        <ul class="timeline-list timeline-hover">
+                                                            <li class="active">
+                                                                <div class="timeline-icon"><i class="fa fa-sitemap"></i></div>
+                                                                <div class="timeline-time"></div>
+                                                                <div class="timeline-content"><p class="push-bit">Main class - $player.getCharClass()</p></div>
+                                                            </li>
+                                                            <li class="active">
+                                                                <div class="timeline-icon"><i class="gi gi-heat"></i></div>
+                                                                <div class="timeline-time"></div>
+                                                                <div class="timeline-content"><p class="push-bit">Level - <strong>$player.level</strong></p></div>
+                                                            </li>
+                                                            <li class="active">
+                                                                <div class="timeline-icon"><i class="gi gi-ax"></i></div>
+                                                                <div class="timeline-time"></div>
+                                                                <div class="timeline-content">
+                                                                    <p class="push-bit"><strong>Achievements</strong></p>
+
+                                                                    <p class="push-bit">PvP - <strong>$player.pvp</strong></p>
+
+                                                                    <p class="push-bit">PK - <strong>$player.pk</strong></p>
+
+                                                                    <p class="push-bit">Karma - <strong>$player.karma</strong></p>
+                                                                </div>
+                                                            </li>
+                                                            <li class="active">
+                                                                <div class="timeline-icon"><i class="gi gi-stopwatch"></i></div>
+                                                                <div class="timeline-time"></div>
+                                                                <div class="timeline-content">
+                                                                    <p class="push-bit"><strong>Time</strong></p>
+
+                                                                    <p class="push-bit">Last entry - <strong> $player.getTime() </strong></p></div>
+                                                            </li>
+                                                            <li class="active">
+                                                                <div class="timeline-time"></div>
+                                                                <div class="timeline-content"><p class="push-bit"> <strong></strong></p>
+
+                                                                    <form name="game_account_teleport_character" action="" method="post" onsubmit="return false;">
+                                                                        <strong>
+                                                                            <input type="hidden" name="module" value="account_list_all">
+                                                                            <input type="hidden" name="teleport-account" value="$acc.account">
+                                                                            <input type="hidden" name="teleport-char" value="${player.id}">
+                                                                            <button type="button" class="btn btn-alt btn-sm btn-success submit-btn"> Teleport character </button>
+                                                                        </strong>
+                                                                    </form>
+                                                                    <p></p>
+                                                                </div>
+                                                            </li>
+                                                            <li class="active">
+                                                                <div class="timeline-time"></div>
+                                                                <div class="timeline-content"><p class="push-bit"> <strong></strong></p>
+
+                                                                    <form name="game_account_remove_hwid" action="" method="post" onsubmit="return false;">
+                                                                        <strong>
+                                                                            <input type="hidden" name="module" value="account_list_all">
+                                                                            <input type="hidden" name="unlock-account" value="$acc.account">
+                                                                            <input type="hidden" name="unlock-char" value="${player.id}">
+                                                                            <button type="button" class="btn btn-alt btn-sm btn-success submit-btn"> Remove HWID bind </button>
+                                                                        </strong>
+                                                                    </form>
+                                                                    <p></p>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                #set($result=true)
+                                                #end
+                                                #end
+	                                            #set($result=true)
+                                            </div>
+                                        </div>
+                                        #end
+                                    </div>
+                                    <!-- END Tabs Content -->
+                                </div>
+                                <!-- Modal Terms -->
+                                <div id="modal-change-password" class="modal animation-fadeInQuick" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title">Change password for <span class="name-account-modal"></span></h4>
+                                            </div>
+                                            <div class="modal-body" id="body-change-password"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END Modal Terms -->
+                                <!-- Modal Terms -->
+                                <div id="modal-recovery-password" class="modal animation-fadeInQuick" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title">Recover password for <span class="name-account-modal"></span></h4>
+                                            </div>
+                                            <div class="modal-body" id="body-recovery-password"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END Modal Terms -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="#modal-create-game" data-toggle="modal" class="widget widget-hover-effect4 themed-background-modern">
+                                    <div class="widget-simple">
+                                        <i class="fa fa-plus-square-o fa-5x widget-image img-circle pull-right" style="color: white;"></i>
+                                        <h4 class="widget-content widget-content-light"><strong>Create an account</strong>
+                                            <small>Game account</small>
+                                        </h4>
+                                    </div>
+                                </a>
+                                <!-- Modal Terms -->
+                                <div id="modal-create-game" class="modal animation-fadeInQuick" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title">Create a game account</h4>
+                                            </div>
+                                            <div class="modal-body" id="body-create-game-account">
+                                                <form name="game_account_create" action="" id="form-register-game-account" class="form-bordered"
+                                                      method="post" onsubmit="return false;">
+                                                    <input type="hidden" name="module" value="buttons_create_account">
+                                                    <input type="hidden" name="register-prefix" id="register-prefix-input" value="$prefix">
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="gi gi-user"></i></span>
+                                                            <span title="Prefix" id="register-prefix" class="input-group-addon register-prefix">$prefix</span>
+                                                            <input type="text" name="register-account" id="register-account" class="form-control"
+                                                                placeholder="Login">
+                                                            <span class="input-group-btn">
+                                                                <button type="button" class="btn btn-primary register-prefix"> Generate prefix </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                                                            <input type="password" name="register-password" id="register-password"
+                                                                   class="form-control" placeholder="Password">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                                                            <input type="password" name="register-password-verify" id="register-password-verify"
+                                                                   class="form-control" placeholder="Confirm password">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group form-actions">
+                                                        <div style="min-height: 30px">
+                                                            <div class="col-xs-9">
+                                                                <div class="show_game_account_create"></div>
+                                                            </div>
+                                                            <div class="col-xs-3">
+                                                                <button type="submit" id="create_game_account" class="btn btn-sm btn-success submit-btn">
+                                                                    <i class="fa fa-angle-right"></i> Register </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END Modal Terms -->
+                                <a href="#modal-add-game" data-toggle="modal" class="widget widget-hover-effect4 themed-background">
+                                    <div class="widget-simple">
+                                        <i class="fa fa-plus-square fa-5x widget-image img-circle pull-right" style="color: white;"></i>
+                                        <h4 class="widget-content widget-content-light"><strong>Add the account</strong>
+                                            <small>Game account</small>
+                                        </h4>
+                                    </div>
+                                </a>
+                                <!-- Modal Terms -->
+                                <div id="modal-add-game" class="modal animation-fadeInQuick" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title">Add an existing game account</h4></div>
+                                            <div class="modal-body" id="body-create-game-account">
+                                                <form name="game_account_add" action="" id="form-add-game-account"
+                                                      class="form-bordered" method="post" onsubmit="return false;">
+                                                    <input type="hidden" name="module" value="buttons_add_account">
+
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="gi gi-user"></i></span>
+                                                            <input type="text" name="register-account" id="register-account"
+                                                                   class="form-control" placeholder="Login">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                                                            <input type="password" name="register-password" id="register-password"
+                                                                   class="form-control" placeholder="Password">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group form-actions">
+                                                        <div style="min-height: 30px">
+                                                            <div class="col-xs-9">
+                                                                <div class="show_game_account_add"></div>
+                                                            </div>
+                                                            <div class="col-xs-3">
+                                                                <button type="submit" id="add_game_account"
+                                                                        class="btn btn-sm btn-success submit-btn">
+                                                                    <i class="fa fa-angle-right"></i> Register </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END Modal Terms -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="clearfix">
+                <div class="pull-left"><span id="year-copy"></span> &copy; <a href="/" target="_blank">${domain}</a></div>
+            </footer>
+        </div>
+    </div>
+</div>
+<!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
+<a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
+
+

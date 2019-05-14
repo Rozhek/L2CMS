@@ -1,0 +1,5 @@
+#parse("cp/ru/header.vm")
+#if($!page)
+	#parse("$!page")
+#end
+#parse("cp/ru/footer.vm")

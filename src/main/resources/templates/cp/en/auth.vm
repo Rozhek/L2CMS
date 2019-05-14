@@ -1,0 +1,224 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1">
+            <div id="login-alt-container"><!-- Title --><h1 class="push-top-bottom" style="margin-top: 0px; "><i
+                    class="fa fa-shield"></i> <strong>Lineage - your <br>title</strong><br></h1>
+                <!-- END Title -->
+                <!-- Key Features -->
+                <ul class="fa-ul text-muted">
+                    <li><i class="fa fa-check fa-li text-success"></i>
+                        <a class="text-danger" href="/reg">Download files to connect</a>
+                    </li>
+                    <li><i class="fa fa-check fa-li text-success"></i>
+                        <a class="text-light" href="http://forum.${domain}/index.php?forums/informacija-o-servere.25/">High Five x30 description</a>
+                    </li>
+                    <li><i class="fa fa-check fa-li text-success"></i>
+                        <a class="text-light" href="http://forum.${domain}/index.php?forums/podderzhka-support.27/">Contact with support</a>
+                    </li>
+                </ul>
+                <!-- END Key Features -->
+                <!-- Footer -->
+                <footer class="text-muted push-top-bottom">
+                    <small><span id="year-copy"></span> &copy; ${domain}</small>
+                </footer>
+                <!-- END Footer -->
+            </div>
+        </div>
+        <div class="col-md-5">
+            <!-- Login Container -->
+            <div id="login-container">
+                <!-- Login Title -->
+                <div class="login-title text-center">
+                    <h1><strong>Login</strong> or <strong>Sign up</strong></h1>
+                </div>
+                <!-- END Login Title -->
+                <!-- Login Block -->
+                <div class="block push-bit">
+                    <!-- Login Form -->
+                    <form action="#springUrl("/login")" method="post" id="form-login" class="form-horizontal" onsubmit="return false;">
+                    <!--input type="hidden" name="login" value="1"-->
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="input-group"><span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+                                    <input type="text" id="login-email" name="username" class="form-control input-lg" placeholder="Mail">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="input-group"><span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                                    <input type="password" id="login-password" name="password" class="form-control input-lg" placeholder="Password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div id="recaptcha1" class="g-recaptcha"></div>
+                            </div>
+                        </div>
+                        <div class="form-group form-actions">
+                            <div class="col-xs-4">
+                                <label class="switch switch-primary" data-toggle="tooltip" title="Remember me?">
+                                    <input type="checkbox" id="login-remember-me" name="remember-me"><span></span>
+                                </label>
+                            </div>
+                            <div class="col-xs-8 text-right">
+                                <button type="submit" class="btn btn-sm btn-primary submit-btn">
+                                    <i class="fa fa-angle-right"></i> Sign In</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12 text-center">
+                                <a href="javascript:void(0)" id="link-reminder-login">
+                                <small>Forgot your password?</small>
+                            </a> - <a href="javascript:void(0)" id="link-register-login">
+                                <small>Create new account</small>
+                            </a></div>
+                        </div>
+                    </form>
+                    <!-- END Login Form -->
+                    <!-- Reminder Form -->
+                    <form action="#springUrl("/reminder")" method="post" id="form-reminder"
+                          class="form-horizontal display-none" onsubmit="return false;">
+
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="input-group"><span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+                                    <input type="text" id="reminder-email" name="username" class="form-control input-lg" placeholder="Mail">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div id="recaptcha2" class="g-recaptcha"></div>
+                            </div>
+                        </div>
+                        <div class="form-group form-actions">
+                            <div class="col-xs-12 text-right">
+                                <button type="submit" class="btn btn-sm btn-primary submit-btn"><i
+                                        class="fa fa-angle-right"></i> Password reset</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12 text-center">
+                                <small>Remembered your password?</small>
+                                <a href="javascript:void(0)" id="link-reminder">
+                                    <small>Sign In</small>
+                                </a></div>
+                        </div>
+                    </form>
+                    <!-- END Reminder Form -->
+                    <!-- Register Form -->
+                    <form action="#springUrl("/register")" method="post" id="form-register"
+                          class="form-horizontal display-none" onsubmit="return false;">
+                        <input type="hidden" id="register-prefix-input" name="prefix" value="$prefix">
+	                #if($xmlRpcRegAccount)
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="gi gi-user"></i></span>
+                                    <span id="register-prefix" class="input-group-addon" style="cursor: pointer">$prefix</span>
+                                    <input type="text" id="register-account" name="account" class="form-control input-lg" placeholder="Game account">
+                                </div>
+                            </div>
+                        </div>
+	                #end
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="input-group"><span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+                                    <input type="text" id="register-email" name="username" class="form-control input-lg" placeholder="Mail">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="input-group"><span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                                    <input type="password" id="register-password" name="password" class="form-control input-lg" placeholder="Password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="input-group"><span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                                    <input type="password" id="register-password-verify" name="password-verify" class="form-control input-lg" placeholder="Confirm password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div id="recaptcha3" class="g-recaptcha"></div>
+                            </div>
+                        </div>
+                        <div class="form-group form-actions">
+                            <div class="col-xs-6">
+                                <a href="http://forum.${domain}/threads/pravila-i-narushenija-proekta.519/" target="_blank" class="register-terms">Rules</a>
+                                <label class="switch switch-primary" data-toggle="tooltip" title="Agree with the rules">
+                                <input type="checkbox" id="register-terms" name="terms"><span></span></label>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <button type="submit" class="btn btn-sm btn-success submit-btn">
+                                    <i class="fa fa-plus"></i> Register Account</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12 text-center">
+                                <small>Do you have an account?</small>
+                                <a href="javascript:void(0)" id="link-register">
+                                    <small>Sign In</small>
+                                </a></div>
+                        </div>
+                    </form>
+                    <!-- END Register Form -->
+                </div>
+                <!-- END Login Block -->
+            </div>
+            <!-- END Login Container -->
+        </div>
+    </div>
+</div>
+<!-- END Login Alternative Row -->
+<a style="display: none" href="#reg-mail" id="modal-reg-mail" data-toggle="modal" class="modal-reg-active">&times;</a>
+<!-- Modal Terms -->
+<div id="reg-mail" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">Your account was successfully created!</h3></div>
+	        <div class="modal-body">
+		        <h4>The confirmation and logon params was sent to your email, <br>if it's not there - <span style="color: #E2404A;">check spam folder.</span>
+			        <br>Please wait for it received and click on the link in that email.<br>
+			        <br>Attention, Game Account can be created <span style="text-decoration: underline;">inside</span> Master Account!.<br><br>
+			        <a href="/account">Enter to the Control Panel!</a></h4>
+		        <br>
+		        <div class="text-center">
+			        <a href="/">Return to the site</a>
+		        </div>
+	        </div>
+        </div>
+    </div>
+</div>
+<!-- END Modal Terms -->
+<!-- END Login Alternative Row -->
+<a style="display: none" href="#reg-nomail" id="modal-reg-nomail" data-toggle="modal" class="modal-reg-active">&times;</a>
+<!-- Modal Terms -->
+<div id="reg-nomail" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3 class="modal-title">Your account was successfully created!</h3></div>
+			<div class="modal-body">
+				<h4>The sending confirmation and logon params on your email was failed<br>
+					<br>Please send of confirmation from Control Panel later.<br>
+					<br>Attention, Game Account can be created <span style="text-decoration: underline;">inside</span> Master Account!.<br><br>
+					<a href="/account">Enter to the Control Panel</a></h4>
+				<br>
+				<div class="text-center">
+					<a href="/">Return to the site</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END Modal Terms -->

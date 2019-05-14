@@ -1,0 +1,58 @@
+<!-- Main Sidebar -->
+<div id="sidebar">
+    <!-- Wrapper for scrolling functionality -->
+    <div id="sidebar-scroll">
+        <!-- Sidebar Content -->
+        <div class="sidebar-content">
+            <!-- Brand -->
+            <a href="/" class="sidebar-brand">
+            <img style=" margin-top: -6px;" src="/account/img/placeholders/headers/status_logo.png"></i>
+            </a>
+            <!-- END Brand -->
+            <!-- User Info -->
+            <div class="sidebar-section sidebar-user clearfix sidebar-nav-mini-hide">
+                <div class="sidebar-user-name">High Five x30</div>
+            </div>
+            <!-- END User Info -->
+            <!-- Sidebar Navigation -->
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="/account" class=" #if($!mainmenu)active#end"><i class="fa fa-home sidebar-nav-icon"></i>
+                        <span class="sidebar-nav-mini-hide">Аккаунт</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/account/transfer" class=" #if($!transfermenu)active#end"><i class="gi gi-coins sidebar-nav-icon"></i>
+                        <span class="sidebar-nav-mini-hide">Перевести Gold</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/account/donate" class=" #if($!donatemenu)active#end"><i class="hi hi-credit_card sidebar-nav-icon"></i>
+                        <span class="sidebar-nav-mini-hide">Пополнить баланс</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/account/support" class=" #if($!supportmenu)active#end"><i class="fa fa-support sidebar-nav-icon"></i>
+                        <span class="sidebar-nav-mini-hide">Поддержка</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/account/settings" class=" #if($!settingsmenu)active#end"><i class="gi gi-cogwheel sidebar-nav-icon"></i>
+                        <span class="sidebar-nav-mini-hide">Настройки</span>
+                    </a>
+                </li>
+                #if($!isAdmin)
+                <li>
+                    <a href="/admin" class=" #if($!adminmenu)active#end"><i class="fa fa-suitcase sidebar-nav-icon"></i>
+                        <span class="sidebar-nav-mini-hide">Админка</span>
+                    </a>
+                </li>
+                #end
+            </ul>
+            <!-- END Sidebar Navigation -->
+        </div>
+        <!-- END Sidebar Content -->
+    </div>
+    <!-- END Wrapper for scrolling functionality -->
+</div>
+<!-- END Main Sidebar -->

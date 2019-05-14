@@ -1,0 +1,58 @@
+.box-modal {
+	position: relative;
+	width: 500px;
+	padding: 20px;
+	background: #1b1b1a;
+	color: #818181;
+	border-radius: 6px;
+}
+.box-modal_close { 
+	position: absolute; 
+	right: 10px; 
+	top: 6px; 
+	font-size: 12px; 
+	line-height: 15px; 
+	color: #999; 
+	cursor: pointer; 
+	overflow: hidden;
+}
+
+.box-modal_close:hover { 
+	color: #ed2233; 
+}
+
+.box-modal h3{
+	font-size: 20px;
+	font-weight: 100;
+	padding: 20px 20px 20px 20px;
+	color: #fff;
+}
+
+#popup-c-text {
+	padding: 0px 0px 20px 0px;
+
+}
+
+.box-modal img {
+	width: 500px;
+	margin: 20px 0px 0px 0px;
+}
+
+.box-modal .popup-readmore a{
+	display: inline-block;
+	background: #ed2233;
+	color: #fff;
+	text-decoration: none;
+	padding: 10px 40px 10px 40px;
+	border-radius: 20px;
+	margin: 10px 0px 10px -19%;
+	transition: 0.5s;
+	position: relative;
+	left: 50%;
+	min-width: 145px;
+	text-align: center;
+}
+
+.box-modal .popup-readmore a:hover{
+	background: #9c1924;
+}

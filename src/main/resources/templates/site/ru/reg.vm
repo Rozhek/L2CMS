@@ -1,0 +1,146 @@
+<div id="wrapper">
+    <div id="left">
+        <h2><span>Регистрация аккаунта</span></h2>
+        <div id="register-form">
+            <form action="#springUrl("/register")" method="post" class="order-form" onsubmit="return false;">
+            <input type="hidden" id="prefixinput" name="prefix" value="$prefix">
+	        #if($xmlRpcRegAccount)
+                <span>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <div class="inp2">
+                        <p id="prefixval">Префикс: $prefix</p> <a href="javascript:void(0);" class="btn-generate">Генерация</a>
+                    </div>
+                    <input class="inp3" name="account" id="account" type="text" value="Аккаунт" onfocus="if(this.value=='Аккаунт')this.value=''; $('#acc-error').hide(200)" onblur="if(this.value=='')this.value='Аккаунт'; checkAccount()" />
+					<div class="error-reg" id="acc-error" hidden><p></p></div>
+				</span>
+	        #end
+                <span>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <input class="inp3" name="username" id="username" type="text" value="Email" onfocus="if(this.value=='Email')this.value='';" onblur="if(this.value=='')this.value='Email';" />
+                    <div class="error-reg" id="email-error" hidden><p></p></div>
+                </span>
+                <span>
+                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                    <input class="inp3" name="password" id="password" type="text" value="Пароль" onfocus="if(this.value=='Пароль'){this.value=''; this.type = 'password';} $('#pass-error').hide(200)" onblur="if(this.value==''){this.value='Пароль';this.type = 'text';}" />
+                    <div class="error-reg" id="pass-error" hidden><p></p></div>
+                </span>
+                <span>
+                    <i class="fa fa-unlock" aria-hidden="true"></i>
+                    <input class="inp3" name="password-verify" id="password_confirm" type="text" value="Повторите пароль" onfocus="if(this.value=='Повторите пароль'){this.value=''; this.type = 'password';} $('#cpass-error').hide(200)" onblur="if(this.value==''){this.value='Повторите пароль';this.type = 'text';} checkConfirmPassword()" />
+                    <div class="error-reg" id="cpass-error" hidden><p></p></div>
+                </span>
+                <span>
+                    <div style="width:355px;">
+                        <div id="recaptcha3"></div>
+                    </div>
+                </span>
+                <span>
+                    <input class="styled-checkbox" id="styled-checkbox" type="checkbox" name="terms">
+                    <label for="styled-checkbox">Я принимаю <a href="http://forum.${domain}/index.php?threads/polzovatelskoe-soglashenie-end-user-license-agreement.4/" target="_blank">лицензионное соглашение</a></label>
+                    <button class="btn register-btn-reg submit-btn">Зарегистрироваться</button>
+                    <a style="margin: 0px 20px 0px 0px;" href="/login#reminder" class="register-link-pass">Восстановить пароль</a>
+                    <a style="margin: 0px 20px 0px 0px;" href="/login" class="register-link-pass">Логин</a>
+                    <div class="error-reg" id="error-msg" hidden><p></p></div>
+                </span>
+            </form>
+        </div>
+    </div>
+    <div id="right">
+        <div id="client">
+            <div class="client-block" id="modal-boxClientInfo">
+                <div class="client-ico">
+                    <i class="fa fa-4x fa-cloud-download" aria-hidden="true"></i>
+                </div>
+                <div class="client-link"><a href="javascript:void(0);">Скачать клиент</a></div>
+            </div>
+            <div class="client-block" id="modal-boxPatchInfo">
+                <div class="client-ico">
+                    <i class="fa fa-4x fa-cloud-download" aria-hidden="true"></i>
+                </div>
+                <div class="client-link"><a href="javascript:void(0);">Скачать патч</a></div>
+            </div>
+            <div class="client-block" id="modal-boxUpdaterInfo">
+                <div class="client-ico">
+                    <i class="fa fa-4x fa-cloud-download" aria-hidden="true"></i>
+                </div>
+                <div class="client-link"><a href="javascript:void(0);">Скачать апдейтер</a></div>
+            </div>
+        </div>
+    </div>
+    <!-- Pop Up Client -->
+    <div style="display: none;">
+        <div class="box-modal" id="boxClientInfo">
+            <div class="box-modal_close arcticmodal-close"><i class="fa fa-lg fa-times" aria-hidden="true"></i></div>
+            <h3>Клиент High Five</h3>
+            <div class="popup-readmore"> <a href="#">Скачать с сайта</a> </div>
+            <div class="popup-readmore"> <a href="#">Скачать с яндекс диск</a> </div>
+            <div class="popup-readmore"> <a href="#">Скачать торрент</a> </div>
+        </div>
+    </div>
+    <!-- Pop Up Patch -->
+    <div style="display: none;">
+        <div class="box-modal" id="boxPatchInfo">
+            <div class="box-modal_close arcticmodal-close"><i class="fa fa-lg fa-times" aria-hidden="true"></i></div>
+            <h3>Патч для клиента High Five</h3>
+            <div class="popup-readmore"> <a href="#">Скачать с сайта</a> </div>
+            <div class="popup-readmore"> <a href="#">Скачать с яндекс диск</a> </div>
+            <div class="popup-readmore"> <a href="#">Скачать торрент</a> </div>
+        </div>
+    </div>
+    <!-- Pop Up Updater -->
+    <div style="display: none;">
+        <div class="box-modal" id="boxUpdaterInfo">
+            <div class="box-modal_close arcticmodal-close"><i class="fa fa-lg fa-times" aria-hidden="true"></i></div>
+            <h3>Апдейтер для клиента High Five</h3>
+            <div class="popup-readmore"> <a href="#">Скачать с сайта</a> </div>
+            <div class="popup-readmore"> <a href="#">Скачать с яндекс диск</a> </div>
+            <div class="popup-readmore"> <a href="#">Скачать торрент</a> </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>
+<script src="https://www.google.com/recaptcha/api.js?hl=ru&onload=onloadCallback&amp;render=explicit" async defer></script>
+<script type="text/javascript">
+var onloadCallback = function() {  mysitekey = '$!recaptchaKeySite'; recaptcha3_key = grecaptcha.render('recaptcha3', {  'sitekey': mysitekey, 'theme' : 'dark' }); };
+</script>
+<script type="text/javascript" src="/site/js/register.js"></script>
+<div class="bSpinner"></div>
+<!--[if IE 8]>
+<script src="/account/js/helpers/excanvas.min.js"></script><![endif]-->
+<script>
+$(document).ready(function () {
+$('#modal-boxClientInfo').on('click', function () {$('#boxClientInfo').arcticmodal({closeOnOverlayClick: true, closeOnEsc: true}); });
+$('#modal-boxPatchInfo').on('click', function () {$('#boxPatchInfo').arcticmodal({closeOnOverlayClick: true, closeOnEsc: true}); });
+$('#modal-boxUpdaterInfo').on('click', function () {$('#boxUpdaterInfo').arcticmodal({closeOnOverlayClick: true, closeOnEsc: true}); });
+$('#modal-boxRegMail').on('click', function () {$('#boxRegMail').arcticmodal({closeOnOverlayClick: true, closeOnEsc: true}); });
+$('#modal-boxRegNomail').on('click', function () {$('#boxRegNomail').arcticmodal({closeOnOverlayClick: true, closeOnEsc: true}); });
+});
+</script>
+<span id="modal-boxRegMail"></span>
+<div style="display: none;">
+	<div class="box-modal" id="boxRegMail">
+		<div class="box-modal_close arcticmodal-close"><i class="fa fa-lg fa-times" aria-hidden="true"></i></div>
+		<h3>Ваш Мастер аккаунт был успешно создан!</h3>
+		<div>Подтверждение и реквизиты высланы на ваш Email,<br>если письма нет - <span style="color: #E2404A;">проверьте папку "спам".</span>
+			<br>Пожалуйста, дождитесь его получения и подтвирдите адрес электронной почты.<br>
+			<br>Внимание, игровой аккаунт <span style="text-decoration: underline;">создается</span> внутри Мастер Аккаунта!.<br><br>
+		</div>
+		<div class="popup-readmore">
+			<a href="/account">Войти в Личный Кабинет</a>
+		</div>
+	</div>
+</div>
+<span id="modal-boxRegNomail"></span>
+<div style="display: none;">
+	<div class="box-modal" id="boxRegNomail">
+		<div class="box-modal_close arcticmodal-close"><i class="fa fa-lg fa-times" aria-hidden="true"></i></div>
+		<h3>Ваш Мастер аккаунт был успешно создан!</h3>
+		<div>Подтверждение и реквизиты не удалось отправить на ваш Email.<br>
+			<br>Пожалуйста, повторите отправку из Личного Кабинета позднее.<br>
+			<br>Внимание, игровой аккаунт <span style="text-decoration: underline;">создается</span> внутри Мастер Аккаунта!.<br><br>
+		</div>
+		<div class="popup-readmore">
+			<a href="/account">Войти в Личный Кабинет</a>
+		</div>
+	</div>
+</div>
