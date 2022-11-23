@@ -43,6 +43,7 @@ dependencies {
     compile('javax.mail:mail:1.4.7')
     compile('eu.bitwalker:UserAgentUtils:1.20')
     runtime('mysql:mysql-connector-java')
+    testCompile('org.junit.jupiter:junit-jupiter:5.7.0')
 }
 
 task wrapper(type: Wrapper) {

@@ -71,8 +71,8 @@
 												<div class="match-time">
 													<span>Next Match: </span>
 													<div class="field-content game-date inline ">
-														<span class="date"><time datetime="$nextmatch.getStartTime()" class="short-date">$nextmatch.getLocalDate()</time> - </span>
-														<span class="time destress"><time datetime="$nextmatch.getStartTime()" class="local-time">$nextmatch.getLocalTime()</time></span>
+														<span class="date"><time datetime="$nextmatch.getStartString()" class="short-date">$nextmatch.getLocalDate()</time> - </span>
+														<span class="time destress"><time datetime="$nextmatch.getStartString()" class="local-time">$nextmatch.getLocalTime()</time></span>
 													</div>
 												</div>
 												<div class="match-label">

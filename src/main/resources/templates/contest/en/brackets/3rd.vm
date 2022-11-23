@@ -41,9 +41,9 @@
 						#end
 					</a>
 				</div>
-				#if($!match.getStartTime())
-				<span class="time"><time class="local-time" datetime="$match.getStartTime()">$match.getLocalTime()</time> - </span>
-				<span><time class="date" datetime="$match.getStartTime()">$match.getLocalDate()</time></span>
+				#if($!match.getStartString())
+				<span class="time"><time class="local-time" datetime="$match.getStartString()">$match.getLocalTime()</time> - </span>
+				<span><time class="date" datetime="$match.getStartString()">$match.getLocalDate()</time></span>
 				#end
 			</div>
 		</div>

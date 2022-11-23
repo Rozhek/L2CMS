@@ -85,9 +85,9 @@
 															#if($!match.team2)#if($!match.group) #set($team2 = $groupTeams.get($match.team2)) #else #set($team2 = $finalTeams.get($match.team2)) #end #end
 															<div class="views-field views-field-field-game-date-1 highlight-separator">
 																<div class="field-content match-date">
-																	#if($!match.getStartTime())
-																	<span class="date"><time class="short-date" datetime="$match.getStartTime()">$match.getLocalDate()</time> - </span>
-																	<span class="time destress"><time class="local-time" datetime="$match.getStartTime()">$match.getLocalTime()</time></span>
+																	#if($!match.getStartString())
+																	<span class="date"><time class="short-date" datetime="$match.getStartString()">$match.getLocalDate()</time> - </span>
+																	<span class="time destress"><time class="local-time" datetime="$match.getStartString()">$match.getLocalTime()</time></span>
 																	#end
 																</div>
 															</div>
@@ -124,9 +124,9 @@
 																<span class="field-content">#if($!team1)$team1.name#end <span style="display:inline" class="accent">vs</span><br/> #if($!team2)$team2.name#end</span>
 															</div>
 															<div class="views-field views-field-url match-url double-separator">
-																			<span class="field-content btn icon icon-active-arrow-right">
-																				<a href="javascript:void(0);">Смотреть</a>
-																			</span>
+																<span class="field-content btn icon icon-active-arrow-right">
+																	<a href=#if($!match.link)"$match.link"#else"javascript:void(0);"#end>Смотреть</a>
+																</span>
 															</div>
 															#set($team1 = $null) #set($team2 = $null) #set($match = $null)
 														</td>
